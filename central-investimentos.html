@@ -338,7 +338,7 @@ background:#374151;color:white;font-weight:600;cursor:pointer;">
 
 <h2>➕ Adicionar ativo</h2>
 
-<button onclick="mostrarAdicionarAtivo()">
+<button type="button" onclick="mostrarAdicionarAtivo()">
     ➕ Novo ativo
 </button>
 
@@ -356,7 +356,56 @@ background:#374151;color:white;font-weight:600;cursor:pointer;">
         <option value="FII">FII</option>
         <option value="ETF">ETF</option>
         <option value="Cripto">Cripto</option>
+    
+<option value="Renda Fixa">Renda Fixa</option>
+</select>
+<div id="camposRendaFixa" style="display:none; margin-top:10px;">
+
+    <label>Instituição</label>
+    <input id="rfInstituicao"
+           type="text"
+           placeholder="Ex.: Nubank, Inter, XP">
+
+    <label>Produto</label>
+    <select id="rfProduto">
+        <option value="RDB">RDB</option>
+        <option value="LCA">LCA</option>
+        <option value="LCI">LCI</option>
+        <option value="Tesouro">Tesouro</option>
     </select>
+
+    <label>% do CDI</label>
+    <input id="rfCDI"
+           type="number"
+           step="0.01"
+           min="0"
+           placeholder="Ex.: 115">
+
+    <label>Liquidez</label>
+    <select id="rfLiquidez">
+        <option value="Diária">Diária</option>
+        <option value="No vencimento">No vencimento</option>
+        <option value="D+1">D+1</option>
+        <option value="D+2">D+2</option>
+        <option value="Outra">Outra</option>
+    </select>
+
+    <label>Valor aplicado</label>
+    <input id="rfValorAplicado"
+           type="number"
+           step="0.01"
+           min="0"
+           placeholder="R$ aplicado">
+
+    <label>Valor atual</label>
+    <input id="rfValorAtual"
+           type="number"
+           step="0.01"
+           min="0"
+           placeholder="R$ atual">
+
+</div>
+
 
     <input
         id="novaQtd"
@@ -463,12 +512,53 @@ function adicionarNovoAtivo() {
     }
 
     const novo = {
+        const ehRendaFixa =
+            tipo === "Renda Fixa";
+
+        const rfInstituicao =
+            ehRendaFixa
+                ? document.getElementById("rfInstituicao")?.value.trim() || ""
+                : "";
+
+        const rfProduto =
+            ehRendaFixa
+                ? document.getElementById("rfProduto")?.value || ""
+                : "";
+
+        const rfCDI =
+            ehRendaFixa
+                ? Number(document.getElementById("rfCDI")?.value || 0)
+                : 0;
+
+        const rfLiquidez =
+            ehRendaFixa
+                ? document.getElementById("rfLiquidez")?.value || ""
+                : "";
+
+        const rfValorAplicado =
+            ehRendaFixa
+                ? Number(document.getElementById("rfValorAplicado")?.value || 0)
+                : 0;
+
+        const rfValorAtual =
+            ehRendaFixa
+                ? Number(document.getElementById("rfValorAtual")?.value || rfValorAplicado || 0)
+                : 0;
+
+
         ativo: ativo,
         qtd: qtd,
         pm: pm,
         tipo: tipo,
-        dataCompra: dataISO
-    };
+        dataCompra: dataISO,
+            instituicao: rfInstituicao,
+            produto: rfProduto,
+            percentualCDI: rfCDI,
+            liquidez: rfLiquidez,
+            valorAplicado: rfValorAplicado,
+            valorAtual: rfValorAtual,
+            valorBase: rfValorAplicado,
+            valorBruto: rfValorAtual};
 
     carteira.push(novo);
 
@@ -6394,6 +6484,122 @@ document.addEventListener('DOMContentLoaded',carregarPersonalizacao);
 
     setInterval(atualizarValorRDBVisual, 5000);
 })();
+</script>
+
+
+<script>
+(function () {
+    function atualizarValorRDBVisual() {
+        const el = document.getElementById("valorRDB");
+        if (!el) return;
+
+        try {
+            let dados = null;
+
+            if (typeof obterCarteira === "function") {
+                try {
+                    dados = obterCarteira();
+                } catch (e) {}
+            }
+
+            if (!Array.isArray(dados) && Array.isArray(window.carteira)) {
+                dados = window.carteira;
+            }
+
+            if (!Array.isArray(dados)) {
+                try {
+                    dados = JSON.parse(localStorage.getItem("carteira") || "[]");
+                } catch (e) {}
+            }
+
+            if (!Array.isArray(dados)) return;
+
+            const rdb = dados.find(function (item) {
+                const nome = String(item.ativo || "").trim().toUpperCase();
+                const tipo = String(item.tipo || "").trim().toUpperCase();
+
+                return (
+                    nome === "RENDA FIXA" ||
+                    nome === "RDB" ||
+                    nome === "RDB NUBANK" ||
+                    nome.includes("RDB NUBANK") ||
+                    tipo === "RENDA FIXA"
+                );
+            });
+
+            if (!rdb) return;
+
+            const valor = Number(
+                rdb.valorAtual ||
+                rdb.valorBruto ||
+                rdb.valorBase ||
+                rdb.valorAplicado ||
+                0
+            );
+
+            if (valor > 0) {
+                el.textContent = "R$ " + valor.toLocaleString("pt-BR", {
+                    minimumFractionDigits: 2,
+                    maximumFractionDigits: 2
+                });
+            }
+        } catch (e) {
+            console.error("Erro ao atualizar Renda Fixa:", e);
+        }
+    }
+
+    window.atualizarValorRDBVisual = atualizarValorRDBVisual;
+
+    window.addEventListener("load", function () {
+        atualizarValorRDBVisual();
+        setTimeout(atualizarValorRDBVisual, 1000);
+        setTimeout(atualizarValorRDBVisual, 2500);
+        setTimeout(atualizarValorRDBVisual, 5000);
+    });
+
+    setInterval(atualizarValorRDBVisual, 5000);
+})();
+</script>
+
+<script id="RENDA-FIXA-CADASTRO-COMPLETO">
+(function () {
+
+    function controlarCamposRendaFixa() {
+        const tipo = document.getElementById("novoTipo");
+        const campos = document.getElementById("camposRendaFixa");
+
+        if (!tipo || !campos) return;
+
+        campos.style.display =
+            tipo.value === "Renda Fixa" ? "block" : "none";
+    }
+
+    document.addEventListener("change", function (e) {
+        if (e.target && e.target.id === "novoTipo") {
+            controlarCamposRendaFixa();
+        }
+    });
+
+    window.addEventListener("load", controlarCamposRendaFixa);
+
+})();
+</script>
+
+
+<script id="CORRECAO-BOTAO-ADICIONAR-ATIVO">
+window.mostrarAdicionarAtivo = function () {
+    const form = document.getElementById("formAdicionarAtivo");
+    if (form) {
+        form.style.display = "block";
+    }
+};
+
+window.fecharAdicionarAtivo = function () {
+    const form = document.getElementById("formAdicionarAtivo");
+    if (form) {
+        form.style.display = "none";
+    }
+};
 </script>
 
 </body>
