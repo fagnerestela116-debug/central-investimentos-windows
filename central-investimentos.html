@@ -1,0 +1,6208 @@
+
+
+
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Central de Investimentos</title>
+
+<style>
+bodyh1h2input, select, buttonbutton.card.total.verde.amarelo.item.excluir</style>
+
+<style id="RV415_BALOES_V1">
+/* =========================================================
+   RV415 — NOVO VISUAL DOS BALÕES DE NOTIFICAÇÃO
+   Somente aparência — nenhuma função alterada.
+   ========================================================= */
+
+.rv415-notificacao,
+.rv415-notification,
+.notificacao,
+.notification,
+.toast,
+.alert,
+[class*="notificacao"],
+[class*="notification"],
+[class*="toast"].rv415-notificacao:hover,
+.rv415-notification:hover,
+.notificacao:hover,
+.notification:hover,
+.toast:hover,
+.alert:hover,
+[class*="notificacao"]:hover,
+[class*="notification"]:hover,
+[class*="toast"]:hover/* ---------- TEMA CLÁSSICO ---------- */
+body:not(.rv415-theme-dark):not(.rv415-theme-light)
+.rv415-notificacao,
+body:not(.rv415-theme-dark):not(.rv415-theme-light)
+.rv415-notification,
+body:not(.rv415-theme-dark):not(.rv415-theme-light)
+.notificacao,
+body:not(.rv415-theme-dark):not(.rv415-theme-light)
+.notification,
+body:not(.rv415-theme-dark):not(.rv415-theme-light)
+.toast,
+body:not(.rv415-theme-dark):not(.rv415-theme-light)
+.alert/* ---------- TEMA DARK ---------- */
+body.rv415-theme-dark
+.rv415-notificacao,
+body.rv415-theme-dark
+.rv415-notification,
+body.rv415-theme-dark
+.notificacao,
+body.rv415-theme-dark
+.notification,
+body.rv415-theme-dark
+.toast,
+body.rv415-theme-dark
+.alert/* ---------- TEMA LIGHT ---------- */
+body.rv415-theme-light
+.rv415-notificacao,
+body.rv415-theme-light
+.rv415-notification,
+body.rv415-theme-light
+.notificacao,
+body.rv415-theme-light
+.notification,
+body.rv415-theme-light
+.toast,
+body.rv415-theme-light
+.alert/* ---------- ÍCONES / BADGES DENTRO DOS BALÕES ---------- */
+.rv415-notificacao svg,
+.rv415-notification svg,
+.notificacao svg,
+.notification svg,
+.toast svg,
+.alert svg.rv415-notificacao strong,
+.rv415-notification strong,
+.notificacao strong,
+.notification strong,
+.toast strong,
+.alert strong/* ---------- ANIMAÇÃO SUAVE ---------- */
+@keyframes RV415BalloonIn.rv415-notificacao,
+.rv415-notification,
+.notificacao,
+.notification,
+.toast,
+.alert/* ---------- CELULAR ---------- */
+@media (max-width: 600px)</style>
+
+
+<style id="RV415_PREMIUM_FINAL_V5">
+
+/* ============================================================
+   RV415 PREMIUM FINAL V5
+   Plataforma financeira / acabamento premium
+   ============================================================ */
+
+:root/* ============================================================
+   ATIVAÇÃO
+   ============================================================ */
+
+body.rv415-premium-active/* textura extremamente discreta */
+
+body.rv415-premium-active::before/* ============================================================
+   DARK PREMIUM
+   ============================================================ */
+
+body.rv415-premium-active.rv415-theme-darkbody.rv415-premium-active.rv415-theme-dark::before/* ============================================================
+   LIGHT PREMIUM
+   ============================================================ */
+
+body.rv415-premium-active.rv415-theme-light/* ============================================================
+   CONTAINERS / CARDS
+   ============================================================ */
+
+body.rv415-premium-active .card,
+body.rv415-premium-active .card-container,
+body.rv415-premium-active .painel,
+body.rv415-premium-active .panel,
+body.rv415-premium-active .dashboard-card,
+body.rv415-premium-active .box,
+body.rv415-premium-active section[class*="card"],
+body.rv415-premium-active div[class*="card"]body.rv415-premium-active .card:hover,
+body.rv415-premium-active .dashboard-card:hover,
+body.rv415-premium-active .panel:hover/* ============================================================
+   CABEÇALHOS
+   ============================================================ */
+
+body.rv415-premium-active h1,
+body.rv415-premium-active h2,
+body.rv415-premium-active h3body.rv415-premium-active h1body.rv415-premium-active h2body.rv415-premium-active h3/* ============================================================
+   BOTÕES
+   ============================================================ */
+
+body.rv415-premium-active buttonbody.rv415-premium-active button:hoverbody.rv415-premium-active button:active/* ============================================================
+   INPUTS / SELECTS
+   ============================================================ */
+
+body.rv415-premium-active input,
+body.rv415-premium-active select,
+body.rv415-premium-active textareabody.rv415-premium-active input:focus,
+body.rv415-premium-active select:focus,
+body.rv415-premium-active textarea:focus/* ============================================================
+   TABELAS
+   ============================================================ */
+
+body.rv415-premium-active tablebody.rv415-premium-active table thead thbody.rv415-premium-active table tbody trbody.rv415-premium-active table tbody tr:hoverbody.rv415-premium-active table tbody tdbody.rv415-premium-active table tbody td:first-childbody.rv415-premium-active table tbody td:last-child/* ============================================================
+   ABAS / NAVEGAÇÃO
+   ============================================================ */
+
+body.rv415-premium-active [role="tab"],
+body.rv415-premium-active .tab,
+body.rv415-premium-active .aba,
+body.rv415-premium-active [class*="tab-"]body.rv415-premium-active [role="tab"]:hover,
+body.rv415-premium-active .tab:hover,
+body.rv415-premium-active .aba:hover/* ============================================================
+   BADGES / TAGS
+   ============================================================ */
+
+body.rv415-premium-active .badge,
+body.rv415-premium-active .tag,
+body.rv415-premium-active [class*="badge"]/* ============================================================
+   ALERTAS — integração com V4
+   ============================================================ */
+
+body.rv415-premium-active #alertasCentral .rv415-alertabody.rv415-premium-active #alertasCentral .rv415-alerta:hover/* ============================================================
+   PREMIUM INDICADORES
+   ============================================================ */
+
+body.rv415-premium-active .rv415-premium-number/* ============================================================
+   BOTÃO FLUTUANTE PREMIUM
+   ============================================================ */
+
+#rv415PremiumToggle#rv415PremiumToggle:hover#rv415PremiumToggle .rv415-premium-dotbody.rv415-premium-active #rv415PremiumTogglebody.rv415-premium-active #rv415PremiumToggle .rv415-premium-dot/* ============================================================
+   MICRO ANIMAÇÃO DE ENTRADA
+   ============================================================ */
+
+body.rv415-premium-active .card,
+body.rv415-premium-active .dashboard-card@keyframes rv415PremiumCardIn/* ============================================================
+   REDUÇÃO DE MOVIMENTO
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce)/* ============================================================
+   CELULAR
+   ============================================================ */
+
+@media (max-width: 600px)</style>
+
+
+
+
+
+
+
+
+<style id="personalizacao-v3">
+/* PERSONALIZAR_CARTOES_DENSIDADE_V3 */
+
+body.pc-cards-arredondado .card,
+body.pc-cards-arredondado .card-box,
+body.pc-cards-arredondado section,
+body.pc-cards-arredondado .dashboard-card,
+body.pc-cards-arredondado .box,
+body.pc-cards-arredondado .panel,
+body.pc-cards-arredondado [class*="card"]body.pc-cards-moderno .card,
+body.pc-cards-moderno .card-box,
+body.pc-cards-moderno section,
+body.pc-cards-moderno .dashboard-card,
+body.pc-cards-moderno .box,
+body.pc-cards-moderno .panel,
+body.pc-cards-moderno [class*="card"]body.pc-density-compactabody.pc-density-normalbody.pc-density-confortavelbody.pc-density-compacta .card,
+body.pc-density-compacta .card-box,
+body.pc-density-compacta section,
+body.pc-density-compacta .dashboard-card,
+body.pc-density-compacta .box,
+body.pc-density-compacta .panelbody.pc-density-normal .card,
+body.pc-density-normal .card-box,
+body.pc-density-normal section,
+body.pc-density-normal .dashboard-card,
+body.pc-density-normal .box,
+body.pc-density-normal .panelbody.pc-density-confortavel .card,
+body.pc-density-confortavel .card-box,
+body.pc-density-confortavel section,
+body.pc-density-confortavel .dashboard-card,
+body.pc-density-confortavel .box,
+body.pc-density-confortavel .panelbody.pc-density-compacta buttonbody.pc-density-confortavel button</style>
+
+
+<style id="premium-contraste">
+/* PREMIUM_CONTRASTE_V1 */
+
+body.pc-premium/* Cabeçalho da Central */
+body.pc-premium headerbody.pc-premium header *,
+body.pc-premium nav *,
+body.pc-premium .header *,
+body.pc-premium .topbar *,
+body.pc-premium .navbar */* Título <span style="color:#202428 !important;font-weight:900 !important;text-shadow:0 1px 0 rgba(255,255,255,.65),0 2px 2px rgba(0,0,0,.35) !important;">CENTRAL DE INVESTIMENTOS</span> */
+body.pc-premium h1,
+body.pc-premium h2,
+body.pc-premium .titulo,
+body.pc-premium .title,
+body.pc-premium [class*="titulo"],
+body.pc-premium [class*="title"]/* Se o título estiver dentro do cabeçalho, mantém branco */
+body.pc-premium header h1,
+body.pc-premium header h2,
+body.pc-premium header .titulo,
+body.pc-premium header .title/* Botão Personalizar */
+body.pc-premium #btnPersonalizarCentral</style>
+
+
+<style id="premium-titulo-azul">
+/* PREMIUM_TITULO_AZUL_V2 */
+
+body.pc-premium/* Nome CENTRAL DE INVESTIMENTOS */
+body.pc-premium h1,
+body.pc-premium h2/* Caso o título esteja no cabeçalho */
+body.pc-premium header h1,
+body.pc-premium header h2</style>
+
+
+
+
+<!-- TITULO_DIRETO_GRAFITE_V1 -->
+
+<script id="limpeza-central-virgem">
+(function())();
+</script>
+
+
+<script id="central-virgem-final">
+(function(){
+  try {
+    const apagar = [];
+    for (let i=0; i<localStorage.length; i++) {
+      const k = localStorage.key(i);
+      if (k && /carteira|ativo|aporte|histor|registro|provento|dividend|compra|venda|renda|patrimonio|investido|cripto/i.test(k)) apagar.push(k);
+    }
+    apagar.forEach(k => localStorage.removeItem(k));
+    sessionStorage.clear();
+  } catch(e) {}
+})();
+</script>
+
+</head>
+
+<body>
+
+<button id="btnPersonalizarCentral" onclick="abrirPersonalizacao()" style="
+margin-left:8px;padding:9px 14px;border:0;border-radius:10px;
+background:#374151;color:white;font-weight:600;cursor:pointer;">
+⚙️ Personalizar
+</button>
+
+
+
+<h1>📊 Central de Investimentos</h1>
+
+
+
+
+<div class="card">
+
+<h2>Resumo</h2>
+
+<div class="total">
+📊 Valor investido:
+<strong id="valorInvestido">R$ 0,00</strong>
+</div>
+
+<div class="total">
+💵 Dividendos Recebidos:
+<strong id="totalProventos">R$ 0,00</strong>
+
+<div class="total" style="margin-top:20px; font-size:1.15em;">
+💰 TOTAL GERAL:
+<strong id="totalGeral">Calculando...</strong>
+</div>
+</div>
+
+<div class="total">
+🏦 Renda Fixa:
+<strong id="valorRDB">R$ 0,00</strong>
+</div>
+
+<div class="total" style="font-size:0.95em;">
+📅 <strong>Proventos a receber:</strong>
+<strong id="proventosReceber">R$ 0,00</strong>
+<div style="margin-top:8px;">
+<button onclick="cadastrarProventoAReceber()">➕ Cadastrar</button>
+<button onclick="registrarProventoRecebidoManual()">💵 Recebido</button>
+</div>
+<div id="proventosPendentesLista" style="margin-top:10px;font-size:0.9em;"></div>
+</div>
+
+<div class="total">
+📊 Patrimônio atual:
+<strong id="patrimonioAtual">Aguardando cotações</strong>
+</div>
+
+<div class="total amarelo">
+📈 Lucro / Prejuízo:
+<strong id="lucroPrejuizo">Aguardando cotações</strong>
+</div>
+
+</div>
+
+
+
+<div class="card">
+
+<h2>➕ Adicionar ativo</h2>
+
+<button onclick="mostrarAdicionarAtivo()">
+    ➕ Novo ativo
+</button>
+
+<div id="formAdicionarAtivo" style="display:none; margin-top:12px;">
+
+    <input id="novoAtivo" placeholder="Ticker — ex: ITUB4">
+
+    <select id="novoTipo">
+        <option value="Ação">Ação</option>
+        <option value="FII">FII</option>
+        <option value="ETF">ETF</option>
+        <option value="Cripto">Cripto</option>
+    </select>
+
+    <input
+        id="novaQtd"
+        type="number"
+        step="any"
+        min="0"
+        placeholder="Quantidade"
+    >
+
+    <input
+        id="novoPM"
+        type="number"
+        step="0.000001"
+        min="0"
+        placeholder="Preço de compra"
+    >
+
+    <br>
+
+    <button onclick="adicionarNovoAtivo()">
+        💾 Salvar ativo
+    </button>
+
+    <button onclick="fecharAdicionarAtivo()">
+        Cancelar
+    </button>
+
+</div>
+
+</div>
+
+<script>
+
+function mostrarAdicionarAtivo() {
+    document.getElementById("formAdicionarAtivo").style.display = "block";
+}
+
+function fecharAdicionarAtivo() {
+    document.getElementById("formAdicionarAtivo").style.display = "none";
+}
+
+function adicionarNovoAtivo() {
+
+    const ativo = document
+        .getElementById("novoAtivo")
+        .value
+        .trim()
+        .toUpperCase();
+
+    const tipo = document
+        .getElementById("novoTipo")
+        .value;
+
+    const qtd = Number(
+        document.getElementById("novaQtd").value
+    );
+
+    const pm = Number(
+        document.getElementById("novoPM").value
+            .replace(",", ".")
+    );
+
+    if (!ativo) {
+        alert("Informe o ticker.");
+        return;
+    }
+
+    if (!Number.isFinite(qtd) || qtd <= 0) {
+        alert("Informe uma quantidade válida.");
+        return;
+    }
+
+    if (!Number.isFinite(pm) || pm <= 0) {
+        alert("Informe um preço de compra válido.");
+        return;
+    }
+
+    const simbolo = ativo.replace(/F$/i, "");
+
+    const existente = carteira.find(
+        item => normalizarAtivo(item.ativo) === simbolo
+    );
+
+    if (existente) {
+        alert(
+            "Esse ativo já está na carteira.\\n\\n" +
+            "Para não alterar seu PM atual automaticamente, " +
+            "vamos manter o cadastro existente."
+        );
+        return;
+    }
+
+    const novo = {
+        ativo: ativo,
+        qtd: qtd,
+        pm: pm,
+        tipo: tipo
+    };
+
+    carteira.push(novo);
+
+    salvar();
+
+    // Registra automaticamente a compra no histórico
+    historico.push({
+        data: new Date().toLocaleDateString("pt-BR"),
+        tipo: "Compra",
+        ativo: ativo,
+        qtd: qtd,
+        quantidade: qtd,
+        preco: Number(pm.toFixed(6)),
+        valor: Number((qtd * pm).toFixed(2))
+    });
+
+    salvar();
+
+    // Atualiza a tela
+    if (typeof mostrarCarteira === "function") {
+        mostrarCarteira();
+    }
+
+    if (typeof atualizarHistorico === "function") {
+        atualizarHistorico();
+    }
+
+    if (typeof atualizarIndicadores === "function") {
+        atualizarIndicadores();
+    }
+
+    alert(
+        ativo +
+        " foi adicionado à carteira com sucesso."
+    );
+
+    document.getElementById("novoAtivo").value = "";
+    document.getElementById("novaQtd").value = "";
+    document.getElementById("novoPM").value = "";
+
+    fecharAdicionarAtivo();
+
+    // Tenta buscar a cotação imediatamente
+    if (typeof atualizarCotacoesBrapi === "function") {
+        atualizarCotacoesBrapi();
+    }
+}
+
+</script>
+
+<div class="card">
+
+<h2>Carteira</h2>
+<div id="carteira"></div>
+
+
+<h2>📈 Cotações</h2>
+<div id="lista-cotacoes"></div>
+
+<div id="carteira"></div>
+
+</div>
+
+
+
+
+
+
+<div class="card" id="registrarVendaCard">
+
+<h2>🔴 Registrar venda</h2>
+
+<button onclick="mostrarVenda()">🔴 Registrar venda</button>
+
+<div id="formRegistrarVenda" style="display:none; margin-top:12px;">
+
+<select id="vendaAtivo" style="margin-bottom:8px;"></select>
+
+<input id="vendaQtd"
+       type="number"
+       step="any"
+       min="0"
+       placeholder="Quantidade vendida"
+       style="margin-bottom:8px;">
+
+<input id="vendaPreco"
+       type="number"
+       step="0.000001"
+       min="0"
+       placeholder="Preço da venda"
+       style="margin-bottom:8px;">
+
+<br>
+
+<button onclick="salvarVenda()">💾 Salvar venda</button>
+<button onclick="fecharVenda()">Cancelar</button>
+
+<div id="resultadoVenda"
+     style="margin-top:12px;"></div>
+
+</div>
+</div>
+
+<script>
+
+function mostrarVenda() {
+
+    const select = document.getElementById("vendaAtivo");
+
+    if (!select) return;
+
+    select.innerHTML = "";
+
+    carteira.forEach((item, index) => {
+
+        const option = document.createElement("option");
+
+        option.value = index;
+
+        option.textContent =
+            item.ativo +
+            " — " +
+            Number(item.qtd || 0) +
+            " un. — PM R$ " +
+            Number(item.pm || 0).toFixed(2).replace(".", ",");
+
+        select.appendChild(option);
+    });
+
+    document.getElementById("formRegistrarVenda").style.display = "block";
+}
+
+function fecharVenda() {
+
+    const form = document.getElementById("formRegistrarVenda");
+
+    if (form) {
+        form.style.display = "none";
+    }
+
+    const resultado = document.getElementById("resultadoVenda");
+
+    if (resultado) {
+        resultado.innerHTML = "";
+    }
+}
+
+function salvarVenda() {
+
+    const select = document.getElementById("vendaAtivo");
+
+    if (!select) return;
+
+    const index = Number(select.value);
+    const item = carteira[index];
+
+    if (!item) {
+        alert("Ativo não encontrado.");
+        return;
+    }
+
+    const qtdVenda = Number(
+        document.getElementById("vendaQtd").value
+    );
+
+    const precoVenda = Number(
+        document.getElementById("vendaPreco").value.replace(",", ".")
+    );
+
+    const qtdAtual = Number(item.qtd || 0);
+    const pm = Number(item.pm || 0);
+
+    if (!Number.isFinite(qtdVenda) || qtdVenda <= 0) {
+        alert("Informe uma quantidade válida.");
+        return;
+    }
+
+    if (!Number.isFinite(precoVenda) || precoVenda <= 0) {
+        alert("Informe um preço de venda válido.");
+        return;
+    }
+
+    if (qtdVenda > qtdAtual) {
+        alert(
+            "Quantidade insuficiente.\n\n" +
+            "Você possui " +
+            qtdAtual +
+            " unidades de " +
+            item.ativo +
+            "."
+        );
+        return;
+    }
+
+    const valorVenda = qtdVenda * precoVenda;
+    const custoVenda = qtdVenda * pm;
+    const resultado = valorVenda - custoVenda;
+    const novaQtd = qtdAtual - qtdVenda;
+
+    const confirmacao =
+        "Registrar venda de " + item.ativo + "?\n\n" +
+        "Quantidade: " + qtdVenda + "\n" +
+        "Preço: R$ " + precoVenda.toFixed(2).replace(".", ",") + "\n" +
+        "Valor da venda: R$ " + valorVenda.toFixed(2).replace(".", ",") + "\n" +
+        "Resultado realizado: R$ " + resultado.toFixed(2).replace(".", ",") +
+        "\n\nA quantidade restante será: " + novaQtd;
+
+    if (!confirm(confirmacao)) return;
+
+    item.qtd = Number(novaQtd.toFixed(6));
+
+    historico.push({
+        data: new Date().toLocaleDateString("pt-BR"),
+        tipo: "Venda",
+        ativo: item.ativo,
+
+        quantidade: qtdVenda,
+        qtd: qtdVenda,
+
+        preco: precoVenda,
+        valor: Number(valorVenda.toFixed(2)),
+        custo: Number(custoVenda.toFixed(2)),
+        resultado: Number(resultado.toFixed(2)),
+
+        pmNaVenda: Number(pm.toFixed(6)),
+        quantidadeAnterior: qtdAtual,
+        quantidadeDepois: Number(novaQtd.toFixed(6))
+    });
+
+    if (typeof salvar === "function")
+        salvar();
+
+    if (typeof mostrarCarteira === "function")
+        mostrarCarteira();
+
+    if (typeof atualizarHistorico === "function")
+        atualizarHistorico();
+
+    if (typeof atualizarIndicadores === "function")
+        atualizarIndicadores();
+
+    if (typeof atualizarCotacoesBrapi === "function")
+        atualizarCotacoesBrapi();
+
+    const resultadoEl = document.getElementById("resultadoVenda");
+
+    if (resultadoEl) {
+
+        const sinal = resultado >= 0 ? "🟢" : "🔴";
+
+        resultadoEl.innerHTML =
+            "<strong>" + sinal + " Venda registrada</strong><br>" +
+            "Ativo: " + item.ativo + "<br>" +
+            "Quantidade vendida: " + qtdVenda + "<br>" +
+            "Valor da venda: R$ " +
+            valorVenda.toFixed(2).replace(".", ",") + "<br>" +
+            "Resultado realizado: R$ " +
+            resultado.toFixed(2).replace(".", ",") + "<br>" +
+            "Quantidade restante: " + novaQtd;
+    }
+
+    document.getElementById("vendaQtd").value = "";
+    document.getElementById("vendaPreco").value = "";
+
+    alert(
+        "Venda registrada com sucesso!\n\n" +
+        item.ativo +
+        "\nResultado realizado: R$ " +
+        resultado.toFixed(2).replace(".", ",") +
+        "\nQuantidade restante: " +
+        novaQtd
+    );
+}
+
+</script>
+
+<div class="card" id="corrigirAtivoCard">
+
+<h2>✏️ Corrigir ativo</h2>
+
+<button onclick="mostrarCorrecaoAtivo()">✏️ Corrigir cadastro</button>
+
+<div id="formCorrigirAtivo" style="display:none; margin-top:12px;">
+
+<select id="corrigirAtivoSelect" style="margin-bottom:8px;"></select>
+
+<input id="corrigirQtd"
+       type="number"
+       step="any"
+       min="0"
+       placeholder="Quantidade correta"
+       style="margin-bottom:8px;">
+
+<input id="corrigirPM"
+       type="number"
+       step="0.000001"
+       min="0"
+       placeholder="PM correto"
+       style="margin-bottom:8px;">
+
+<select id="corrigirTipo" style="margin-bottom:8px;">
+    <option value="Ação">Ação</option>
+    <option value="FII">FII</option>
+    <option value="ETF">ETF</option>
+    <option value="Cripto">Cripto</option>
+</select>
+
+<br>
+
+<button onclick="carregarDadosCorrecao()">🔄 Carregar dados atuais</button>
+<button onclick="salvarCorrecaoAtivo()">💾 Salvar correção</button>
+<button onclick="fecharCorrecaoAtivo()">Cancelar</button>
+
+</div>
+</div>
+
+<script>
+
+function mostrarCorrecaoAtivo() {
+
+    const select = document.getElementById("corrigirAtivoSelect");
+
+    if (!select) return;
+
+    select.innerHTML = "";
+
+    carteira.forEach((item, index) => {
+
+        const option = document.createElement("option");
+
+        option.value = index;
+
+        option.textContent =
+            item.ativo +
+            " — " +
+            Number(item.qtd || 0) +
+            " un. — PM R$ " +
+            Number(item.pm || 0).toFixed(2).replace(".", ",");
+
+        select.appendChild(option);
+    });
+
+    document.getElementById("formCorrigirAtivo").style.display = "block";
+
+    carregarDadosCorrecao();
+}
+
+function carregarDadosCorrecao() {
+
+    const select = document.getElementById("corrigirAtivoSelect");
+
+    if (!select || !carteira.length) return;
+
+    const index = Number(select.value);
+    const item = carteira[index];
+
+    if (!item) return;
+
+    document.getElementById("corrigirQtd").value =
+        Number(item.qtd || 0);
+
+    document.getElementById("corrigirPM").value =
+        Number(item.pm || 0);
+
+    const tipo = document.getElementById("corrigirTipo");
+
+    if (item.tipo) {
+        tipo.value = item.tipo;
+    }
+}
+
+function fecharCorrecaoAtivo() {
+
+    const form = document.getElementById("formCorrigirAtivo");
+
+    if (form) {
+        form.style.display = "none";
+    }
+}
+
+function salvarCorrecaoAtivo() {
+
+    const select = document.getElementById("corrigirAtivoSelect");
+
+    if (!select) return;
+
+    const index = Number(select.value);
+    const item = carteira[index];
+
+    if (!item) {
+        alert("Ativo não encontrado.");
+        return;
+    }
+
+    const novaQtd = Number(
+        document.getElementById("corrigirQtd").value
+    );
+
+    const novoPM = Number(
+        document.getElementById("corrigirPM").value.replace(",", ".")
+    );
+
+    const novoTipo =
+        document.getElementById("corrigirTipo").value;
+
+    if (!Number.isFinite(novaQtd) || novaQtd <= 0) {
+        alert("Informe uma quantidade válida.");
+        return;
+    }
+
+    if (!Number.isFinite(novoPM) || novoPM <= 0) {
+        alert("Informe um PM válido.");
+        return;
+    }
+
+    const confirmar = confirm(
+        "Corrigir " + item.ativo + "?\n\n" +
+        "Quantidade: " + novaQtd + "\n" +
+        "PM: R$ " +
+        novoPM.toFixed(2).replace(".", ",") +
+        "\nTipo: " + novoTipo +
+        "\n\nEssa ação NÃO registrará uma nova compra."
+    );
+
+    if (!confirmar) return;
+
+    item.qtd = novaQtd;
+    item.pm = Number(novoPM.toFixed(6));
+    item.tipo = novoTipo;
+
+    if (typeof salvar === "function")
+        salvar();
+
+    if (typeof mostrarCarteira === "function")
+        mostrarCarteira();
+
+    if (typeof atualizarHistorico === "function")
+        atualizarHistorico();
+
+    if (typeof atualizarIndicadores === "function")
+        atualizarIndicadores();
+
+    if (typeof atualizarCotacoesBrapi === "function")
+        atualizarCotacoesBrapi();
+
+    alert("Cadastro de " + item.ativo + " corrigido com sucesso!");
+
+    fecharCorrecaoAtivo();
+}
+
+</script>
+
+<div class="card" id="compraAdicionalCard">
+
+<h2>🛒 Compra adicional</h2>
+
+<button onclick="mostrarCompraAdicional()">🛒 Registrar compra</button>
+
+<div id="formCompraAdicional" style="display:none; margin-top:12px;">
+
+<select id="compraAtivo" style="margin-bottom:8px;"></select>
+
+<input id="compraQtd"
+       type="number"
+       step="any"
+       min="0"
+       placeholder="Quantidade"
+       style="margin-bottom:8px;">
+
+<input id="compraPreco"
+       type="number"
+       step="0.000001"
+       min="0"
+       placeholder="Preço da compra"
+       style="margin-bottom:8px;">
+
+<br>
+
+<button onclick="registrarCompraAdicional()">💾 Salvar compra</button>
+<button onclick="fecharCompraAdicional()">Cancelar</button>
+
+</div>
+</div>
+
+<script>
+function mostrarCompraAdicional() {
+    const select = document.getElementById("compraAtivo");
+
+    if (!select) return;
+
+    select.innerHTML = "";
+
+    carteira.forEach(item => {
+        const option = document.createElement("option");
+        option.value = item.ativo;
+        option.textContent =
+            item.ativo + " — " + Number(item.qtd || 0) + " un.";
+        select.appendChild(option);
+    });
+
+    document.getElementById("formCompraAdicional").style.display = "block";
+}
+
+function fecharCompraAdicional() {
+    const form = document.getElementById("formCompraAdicional");
+    if (form) form.style.display = "none";
+}
+
+function registrarCompraAdicional() {
+
+    const ativo = document.getElementById("compraAtivo").value;
+
+    const qtd = Number(
+        document.getElementById("compraQtd").value
+    );
+
+    const preco = Number(
+        document.getElementById("compraPreco").value.replace(",", ".")
+    );
+
+    if (!ativo) {
+        alert("Selecione o ativo.");
+        return;
+    }
+
+    if (!Number.isFinite(qtd) || qtd <= 0) {
+        alert("Informe uma quantidade válida.");
+        return;
+    }
+
+    if (!Number.isFinite(preco) || preco <= 0) {
+        alert("Informe um preço válido.");
+        return;
+    }
+
+    const item = carteira.find(x => x.ativo === ativo);
+
+    if (!item) {
+        alert("Ativo não encontrado.");
+        return;
+    }
+
+    const qtdAntiga = Number(item.qtd || 0);
+    const pmAntigo = Number(item.pm || 0);
+
+    const custoAntigo = qtdAntiga * pmAntigo;
+    const custoNovo = qtd * preco;
+
+    const novaQtd = qtdAntiga + qtd;
+
+    const novoPM =
+        (custoAntigo + custoNovo) / novaQtd;
+
+    item.qtd = novaQtd;
+    item.pm = Number(novoPM.toFixed(6));
+
+    if (typeof historico !== "undefined") {
+        historico.push({
+            data: new Date().toLocaleDateString("pt-BR"),
+            tipo: "Compra",
+            ativo: ativo,
+            qtd: qtd,
+            quantidade: qtd,
+            preco: Number(preco.toFixed(6)),
+            valor: Number(custoNovo.toFixed(2)),
+
+            pmAnterior: Number(pmAntigo.toFixed(6)),
+            pmNaCompra: Number(preco.toFixed(6)),
+            pmDepois: Number(novoPM.toFixed(6)),
+
+            quantidadeAnterior: Number(qtdAntiga.toFixed(6)),
+            quantidadeDepois: Number(novaQtd.toFixed(6))
+        });
+    }
+
+    if (typeof salvar === "function") salvar();
+
+    if (typeof mostrarCarteira === "function")
+        mostrarCarteira();
+
+    if (typeof atualizarHistorico === "function")
+        atualizarHistorico();
+
+    if (typeof atualizarIndicadores === "function")
+        atualizarIndicadores();
+
+    document.getElementById("compraQtd").value = "";
+    document.getElementById("compraPreco").value = "";
+
+    fecharCompraAdicional();
+
+    alert(
+        "Compra registrada!\n\n" +
+        ativo +
+        "\nQuantidade total: " +
+        novaQtd +
+        "\nNovo PM: R$ " +
+        novoPM.toFixed(2).replace(".", ",")
+    );
+
+    if (typeof atualizarCotacoesBrapi === "function")
+        atualizarCotacoesBrapi();
+}
+</script>
+
+<div class="card" id="dividendosRecebidosCard">
+
+<h2>💵 Dividendos Recebidos</h2>
+
+<div id="dividendosRecebidos"></div>
+
+</div>
+
+<script>
+function atualizarDividendosRecebidos() {
+
+    const campo = document.getElementById("dividendosRecebidos");
+
+    if (!campo) return;
+
+    const proventos = historico.filter(
+        item => item.tipo === "Provento"
+    );
+
+    if (!proventos.length) {
+        campo.innerHTML = "Nenhum dividendo recebido.";
+        return;
+    }
+
+    let total = 0;
+    let html = "";
+
+    proventos.forEach(item => {
+
+        const valor = Number(item.valor || 0);
+        total += valor;
+
+        html += `
+            <div class="item">
+                <strong>${item.ativo}</strong>
+                — ${item.data}
+                — R$ ${valor.toFixed(2).replace(".", ",")}
+            </div>
+        `;
+    });
+
+    html += `
+        <div class="total verde">
+            <strong>Total recebido: R$ ${total.toFixed(2).replace(".", ",")}</strong>
+        </div>
+    `;
+
+    campo.innerHTML = html;
+}
+
+atualizarDividendosRecebidos();
+</script>
+
+<div class="card">
+
+<h2>Histórico</h2>
+
+<div id="historico"></div>
+
+</div>
+
+
+<script>
+
+/*
+==================================================
+CARTEIRA ATUAL
+==================================================
+*/
+
+const carteiraInicial = [];
+
+
+/*
+==================================================
+CARTEIRA
+==================================================
+*/
+
+let carteira = JSON.parse(localStorage.getItem("carteira") || "null");
+
+if (!Array.isArray(carteira) || carteira.length === 0) {
+    carteira = JSON.parse(JSON.stringify(carteiraInicial));
+    salvar();
+}
+
+
+/*
+==================================================
+HISTÓRICO
+==================================================
+
+ZERADO DE PROPÓSITO PARA COMEÇAR A CENTRAL
+LIMPA.
+*/
+
+const historicoPadrao = [];
+
+let historico;
+
+try {
+    const historicoExistente =
+        JSON.parse(localStorage.getItem("historico") || "null");
+
+    if (Array.isArray(historicoExistente)) {
+        historico = historicoExistente;
+    } else {
+        historico = JSON.parse(JSON.stringify(historicoPadrao));
+    }
+
+} catch (erro) {
+    historico = JSON.parse(JSON.stringify(historicoPadrao));
+}
+
+
+
+/*
+==================================================
+SALVAR
+==================================================
+*/
+
+function salvar() {
+
+    localStorage.setItem(
+        "carteira",
+        JSON.stringify(carteira)
+    );
+
+    localStorage.setItem(
+        "historico",
+        JSON.stringify(historico)
+    );
+
+}
+
+
+/*
+==================================================
+DATA
+==================================================
+*/
+
+function dataHoje() {
+
+    const agora = new Date();
+
+    const dia =
+        String(agora.getDate()).padStart(2, "0");
+
+    const mes =
+        String(agora.getMonth() + 1).padStart(2, "0");
+
+    const ano =
+        agora.getFullYear();
+
+    return dia + "/" + mes + "/" + ano;
+
+}
+
+
+/*
+==================================================
+MOEDA
+==================================================
+*/
+
+function moeda(valor) {
+
+    return "R$ " +
+        Number(valor || 0)
+        .toFixed(2)
+        .replace(".", ",");
+
+}
+
+
+/*
+==================================================
+MOSTRAR CARTEIRA
+==================================================
+*/
+
+function mostrarCarteira() {
+    const div = document.getElementById("carteira");
+    if (!div) return;
+
+    div.innerHTML = "";
+
+    const VALOR_INVESTIDO = 0;
+    let valorInvestido = carteira.reduce((total, item) => {
+        const nome = String(item.ativo || "").trim().toUpperCase();
+        const tipo = String(item.tipo || item.categoria || item.classe || "").toLowerCase();
+        const qtd = Number(item.qtd || 0);
+
+        if (qtd <= 0) return total;
+
+        const ehRendaFixa =
+            tipo.includes("renda fixa") ||
+            tipo.includes("rdb") ||
+            tipo.includes("cdb") ||
+            tipo.includes("tesouro") ||
+            tipo.includes("lci") ||
+            tipo.includes("lca") ||
+            nome.includes("RDB");
+
+        if (ehRendaFixa) {
+            return total + Number(
+                item.valorAplicado ??
+                item.valorBase ??
+
+                0
+            );
+        }
+
+        return total + (qtd * Number(item.pm || 0));
+    }, 0);
+
+    carteira.forEach(item => {
+        let qtd = Number(item.qtd || 0);
+
+        if (String(item.ativo || "").trim().toUpperCase() === "RDB NUBANK")if (qtd <= 0) return;
+
+        const pm = Number(item.pm || 0);
+        const custo =
+            String(item.ativo || "").trim().toUpperCase() === "RDB NUBANK"
+                ? 791.47
+                : qtd * pm;
+
+        let valorAtual = 0;
+
+        try {
+            valorAtual = Number(calcularValorAtualItem(item) || 0);
+        } catch (e) {
+            valorAtual = Number(item.valorAtual || custo || 0);
+        }
+
+        div.innerHTML += `
+            <div class="item">
+                <strong>${item.ativo}</strong><br>
+                Quantidade: ${qtd}<br>
+                PM: ${moeda(pm)}<br>
+                Valor aportado: ${moeda(custo)}<br>
+                ${item.percentualCDI ? `<strong>${item.percentualCDI}% CDI</strong><br>` : ""}
+                ${item.valorBruto ? `Valor bruto: ${moeda(item.valorBruto)}<br>` : ""}
+                <strong>Valor Atual: ${moeda(valorAtual)}</strong>
+            </div>
+        `;
+    });
+
+    const campo = document.getElementById("valorInvestido");
+
+    if (campo) {
+        campo.innerText = moeda(0);
+    }
+}
+
+
+/*
+==================================================
+MOSTRAR TOTAIS
+==================================================
+*/
+
+function atualizarTotalGeral() {
+    atualizarIndicadores();
+}
+
+function mostrarTotais() {
+    const totalAportes = calcularCustoAportado();
+    const totalProventos = calcularProventosPagos();
+
+    const campoAportes = document.getElementById("totalAportes");
+    const campoProventos = document.getElementById("totalProventos");
+
+    if (campoAportes) {
+        campoAportes.innerText = moeda(totalAportes);
+    }
+
+    if (campoProventos) {
+        campoProventos.innerText = moeda(totalProventos);
+    }
+}
+
+
+/*
+==================================================
+MOSTRAR HISTÓRICO
+==================================================
+*/
+
+function mostrarHistorico() {
+
+    const div =
+        document.getElementById("historico");
+
+    if (!div) return;
+
+    div.innerHTML = "";
+
+    if (!Array.isArray(historico) || historico.length === 0) {
+
+        div.innerHTML =
+            "Nenhuma operação registrada.";
+
+        return;
+    }
+
+    historico.forEach((item, index) => {
+
+        const tipo =
+            String(item.tipo || "");
+
+        let conteudo = "";
+
+        /*
+        ==================================================
+        COMPRA
+        ==================================================
+        */
+
+        if (tipo === "Compra") {
+
+            const quantidade =
+                Number(
+                    item.quantidade ??
+                    item.qtd ??
+                    0
+                );
+
+            const preco =
+                Number(
+                    item.preco ??
+                    0
+                );
+
+            const valor =
+                Number(
+                    item.valor ??
+                    quantidade * preco
+                );
+
+            const pmAnterior =
+                Number(
+                    item.pmAnterior ??
+                    0
+                );
+
+            const pmDepois =
+                Number(
+                    item.pmDepois ??
+                    0
+                );
+
+            const quantidadeDepois =
+                Number(
+                    item.quantidadeDepois ??
+                    quantidade
+                );
+
+            conteudo = `
+                Ativo: <strong>${item.ativo || ""}</strong><br>
+                Quantidade comprada: ${quantidade}<br>
+                Preço unitário: ${moeda(preco)}<br>
+                Valor da compra: ${moeda(valor)}<br>
+                PM anterior: ${moeda(pmAnterior)}<br>
+                PM após compra: <strong>${moeda(pmDepois)}</strong><br>
+                Quantidade após compra: ${quantidadeDepois}
+            `;
+        }
+
+        /*
+        ==================================================
+        VENDA
+        ==================================================
+        */
+
+        else if (tipo === "Venda") {
+
+            const quantidade =
+                Number(
+                    item.quantidade ??
+                    item.qtd ??
+                    0
+                );
+
+            const preco =
+                Number(
+                    item.preco ??
+                    0
+                );
+
+            const valor =
+                Number(
+                    item.valor ??
+                    quantidade * preco
+                );
+
+            const pm =
+                Number(
+                    item.pmNaVenda ??
+                    item.pm ??
+                    0
+                );
+
+            const custo =
+                Number(
+                    item.custo ??
+                    quantidade * pm
+                );
+
+            const resultado =
+                Number(
+                    item.resultado ??
+                    valor - custo
+                );
+
+            const quantidadeDepois =
+                Number(
+                    item.quantidadeDepois ??
+                    0
+                );
+
+            const sinal =
+                resultado >= 0
+                    ? "🟢"
+                    : "🔴";
+
+            conteudo = `
+                Ativo: <strong>${item.ativo || ""}</strong><br>
+                Quantidade vendida: ${quantidade}<br>
+                Preço de venda: ${moeda(preco)}<br>
+                Valor da venda: ${moeda(valor)}<br>
+                PM na venda: ${moeda(pm)}<br>
+                Custo da posição: ${moeda(custo)}<br>
+                ${sinal} Resultado realizado:
+                <strong>${moeda(resultado)}</strong><br>
+                Quantidade restante: ${quantidadeDepois}
+            `;
+        }
+
+        /*
+        ==================================================
+        APORTE / PROVENTO / OUTROS
+        ==================================================
+        */
+
+        else {
+
+            conteudo = `
+                ${item.ativo
+                    ? "Ativo: <strong>" +
+                      item.ativo +
+                      "</strong><br>"
+                    : ""}
+
+                ${item.qtd
+                    ? "Quantidade: " +
+                      item.qtd +
+                      "<br>"
+                    : ""}
+
+                💰 Valor:
+                ${moeda(Number(item.valor || 0))}
+            `;
+        }
+
+        div.innerHTML += `
+
+            <div class="item">
+
+                📅 ${item.data || ""}<br>
+
+                <strong>
+                    ${tipo}
+                </strong><br>
+
+                ${conteudo}
+
+                <br><br>
+
+                <button
+                    class="excluir"
+                    onclick="excluirOperacao(${index})">
+
+                    🗑️ Excluir
+
+                </button>
+
+            </div>
+
+        `;
+    });
+}
+
+
+/*
+==================================================
+REGISTRAR
+==================================================
+*/
+
+function registrar() {
+
+    const tipo =
+        document.getElementById("tipo").value;
+
+    const ativoInput =
+        document.getElementById("ativo")
+        .value
+        .trim()
+        .toUpperCase();
+
+    const qtd =
+        Number(
+            document.getElementById("qtd").value
+        );
+
+    const valor =
+        Number(
+            document.getElementById("valor").value
+        );
+
+    if (!valor || valor <= 0) {
+
+        alert("Digite um valor.");
+
+        return;
+    }
+
+    /*
+    ==================================================
+    APORTE
+    ==================================================
+    */
+
+    if (tipo === "Aporte") {
+
+        historico.push({
+
+            data: dataHoje(),
+
+            tipo: "Aporte",
+
+            ativo: "",
+
+            qtd: 0,
+
+            valor: Number(valor.toFixed(2))
+
+        });
+    }
+
+
+    /*
+    ==================================================
+    PROVENTO
+    ==================================================
+    */
+
+    else if (tipo === "Provento") {
+
+        if (!ativoInput) {
+
+            alert("Digite o ativo.");
+
+            return;
+        }
+
+        historico.push({
+
+            data: dataHoje(),
+
+            tipo: "Provento",
+
+            ativo: ativoInput,
+
+            qtd: 0,
+
+            valor: Number(valor.toFixed(2))
+
+        });
+    }
+
+
+    /*
+    ==================================================
+    COMPRA / VENDA
+    ==================================================
+    */
+
+    else {
+
+        if (
+            !ativoInput ||
+            !qtd ||
+            qtd <= 0
+        ) {
+
+            alert(
+                "Digite ativo e quantidade."
+            );
+
+            return;
+        }
+
+        let item =
+            carteira.find(
+                x => x.ativo === ativoInput
+            );
+
+
+        /*
+        ==================================================
+        COMPRA
+        ==================================================
+        */
+
+        if (tipo === "Compra") {
+
+            const precoCompra =
+                valor / qtd;
+
+            /*
+            NOVO ATIVO
+            */
+
+            if (!item) {
+
+                item = {
+
+                    ativo: ativoInput,
+
+                    qtd: qtd,
+
+                    pm: precoCompra
+
+                };
+
+                carteira.push(item);
+
+                historico.push({
+
+                    data: dataHoje(),
+
+                    tipo: "Compra",
+
+                    ativo: ativoInput,
+
+                    quantidade: qtd,
+
+                    qtd: qtd,
+
+                    preco: Number(
+                        precoCompra.toFixed(8)
+                    ),
+
+                    valor: Number(
+                        valor.toFixed(2)
+                    ),
+
+                    pmAnterior: 0,
+
+                    pmNaCompra: Number(
+                        precoCompra.toFixed(8)
+                    ),
+
+                    pmDepois: Number(
+                        precoCompra.toFixed(8)
+                    ),
+
+                    quantidadeAnterior: 0,
+
+                    quantidadeDepois: qtd
+
+                });
+
+            }
+
+            /*
+            COMPRA ADICIONAL
+            */
+
+            else {
+
+                const qtdAnterior =
+                    Number(item.qtd || 0);
+
+                const pmAnterior =
+                    Number(item.pm || 0);
+
+                const custoAnterior =
+                    qtdAnterior * pmAnterior;
+
+                const quantidadeNova =
+                    qtdAnterior + qtd;
+
+                const pmNovo =
+                    (
+                        custoAnterior +
+                        valor
+                    ) /
+                    quantidadeNova;
+
+                item.pm = pmNovo;
+
+                item.qtd =
+                    quantidadeNova;
+
+                historico.push({
+
+                    data: dataHoje(),
+
+                    tipo: "Compra",
+
+                    ativo: ativoInput,
+
+                    quantidade: qtd,
+
+                    qtd: qtd,
+
+                    preco: Number(
+                        precoCompra.toFixed(8)
+                    ),
+
+                    valor: Number(
+                        valor.toFixed(2)
+                    ),
+
+                    pmAnterior: Number(
+                        pmAnterior.toFixed(8)
+                    ),
+
+                    pmNaCompra: Number(
+                        precoCompra.toFixed(8)
+                    ),
+
+                    pmDepois: Number(
+                        pmNovo.toFixed(8)
+                    ),
+
+                    quantidadeAnterior:
+                        qtdAnterior,
+
+                    quantidadeDepois:
+                        quantidadeNova
+
+                });
+            }
+        }
+
+
+        /*
+        ==================================================
+        VENDA
+        ==================================================
+        */
+
+        if (tipo === "Venda") {
+
+            if (!item) {
+
+                alert(
+                    "Ativo não encontrado."
+                );
+
+                return;
+            }
+
+            const qtdAtual =
+                Number(item.qtd || 0);
+
+            const pmNaVenda =
+                Number(item.pm || 0);
+
+            if (qtd > qtdAtual) {
+
+                alert(
+                    "Quantidade insuficiente.\n\n" +
+                    "Você possui " +
+                    qtdAtual +
+                    " unidades de " +
+                    ativoInput +
+                    "."
+                );
+
+                return;
+            }
+
+            const precoVenda =
+                valor / qtd;
+
+            const custoVenda =
+                qtd * pmNaVenda;
+
+            const resultado =
+                valor - custoVenda;
+
+            const quantidadeDepois =
+                qtdAtual - qtd;
+
+            item.qtd =
+                Number(
+                    quantidadeDepois.toFixed(6)
+                );
+
+            if (item.qtd <= 0) {
+
+                carteira =
+                    carteira.filter(
+                        x =>
+                        x.ativo !== ativoInput
+                    );
+            }
+
+            historico.push({
+
+                data: dataHoje(),
+
+                tipo: "Venda",
+
+                ativo: ativoInput,
+
+                quantidade: qtd,
+
+                qtd: qtd,
+
+                preco: Number(
+                    precoVenda.toFixed(8)
+                ),
+
+                valor: Number(
+                    valor.toFixed(2)
+                ),
+
+                pmNaVenda: Number(
+                    pmNaVenda.toFixed(8)
+                ),
+
+                custo: Number(
+                    custoVenda.toFixed(2)
+                ),
+
+                resultado: Number(
+                    resultado.toFixed(2)
+                ),
+
+                quantidadeAnterior:
+                    qtdAtual,
+
+                quantidadeDepois:
+                    quantidadeDepois
+
+            });
+        }
+    }
+
+
+    /*
+    ==================================================
+    SALVAR E ATUALIZAR
+    ==================================================
+    */
+
+    salvar();
+
+    mostrarCarteira();
+
+    mostrarHistorico();
+
+    mostrarTotais();
+
+
+    const ativoEl =
+        document.getElementById("ativo");
+
+    const qtdEl =
+        document.getElementById("qtd");
+
+    const valorEl =
+        document.getElementById("valor");
+
+    if (ativoEl)
+        ativoEl.value = "";
+
+    if (qtdEl)
+        qtdEl.value = "";
+
+    if (valorEl)
+        valorEl.value = "";
+
+}
+
+
+/*
+==================================================
+EXCLUIR OPERAÇÃO
+==================================================
+*/
+
+function excluirOperacao(index) {
+
+    const item = historico[index];
+
+    if (!item) return;
+
+    const confirmar =
+        confirm(
+            "Excluir esta operação?\n\n" +
+            item.tipo +
+            " — " +
+            (item.ativo || "") +
+            " — " +
+            moeda(item.valor)
+        );
+
+    if (!confirmar) return;
+
+
+    /*
+    ==================================================
+    APORTE / PROVENTO
+    ==================================================
+    */
+
+    if (
+        item.tipo === "Aporte" ||
+        item.tipo === "Provento"
+    ) {
+
+        historico.splice(index, 1);
+
+    }
+
+
+    /*
+    ==================================================
+    COMPRA
+    ==================================================
+    */
+
+    else if (item.tipo === "Compra") {
+
+        const ativo =
+            carteira.find(
+                x => x.ativo === item.ativo
+            );
+
+        const quantidadeAnterior =
+            Number(
+                item.quantidadeAnterior ??
+                0
+            );
+
+        const pmAnterior =
+            Number(
+                item.pmAnterior ??
+                0
+            );
+
+
+        /*
+        Compra de um ativo que não existia
+        antes desta operação.
+        */
+
+        if (quantidadeAnterior <= 0) {
+
+            if (ativo) {
+
+                carteira =
+                    carteira.filter(
+                        x =>
+                        x.ativo !== item.ativo
+                    );
+
+            }
+
+        }
+
+
+        /*
+        Compra adicional:
+        restaura exatamente a posição
+        anterior à compra.
+        */
+
+        else {
+
+            if (ativo) {
+
+                ativo.qtd =
+                    quantidadeAnterior;
+
+                ativo.pm =
+                    pmAnterior;
+
+            }
+
+            else {
+
+                carteira.push({
+
+                    ativo: item.ativo,
+
+                    qtd:
+                        quantidadeAnterior,
+
+                    pm:
+                        pmAnterior
+
+                });
+
+            }
+
+        }
+
+        historico.splice(index, 1);
+
+    }
+
+
+    /*
+    ==================================================
+    VENDA
+    ==================================================
+    */
+
+    else if (item.tipo === "Venda") {
+
+        const quantidadeAnterior =
+            Number(
+                item.quantidadeAnterior ??
+                item.qtd ??
+                0
+            );
+
+        const pmNaVenda =
+            Number(
+                item.pmNaVenda ??
+                0
+            );
+
+
+        let ativo =
+            carteira.find(
+                x => x.ativo === item.ativo
+            );
+
+
+        /*
+        Se a venda havia zerado a posição,
+        recria o ativo com a quantidade
+        e o PM existentes antes da venda.
+        */
+
+        if (!ativo) {
+
+            ativo = {
+
+                ativo: item.ativo,
+
+                qtd:
+                    quantidadeAnterior,
+
+                pm:
+                    pmNaVenda
+
+            };
+
+            carteira.push(ativo);
+
+        }
+
+        else {
+
+            /*
+            Restaura exatamente a quantidade
+            que existia antes da venda.
+            */
+
+            ativo.qtd =
+                quantidadeAnterior;
+
+
+            /*
+            Venda não altera o PM das
+            unidades restantes.
+            */
+
+            if (pmNaVenda > 0) {
+
+                ativo.pm =
+                    pmNaVenda;
+
+            }
+
+        }
+
+        historico.splice(index, 1);
+
+    }
+
+
+    salvar();
+
+    mostrarCarteira();
+
+    mostrarHistorico();
+
+    mostrarTotais();
+
+}
+
+
+/*
+==================================================
+INICIAR
+==================================================
+*/
+
+salvar();
+
+mostrarCarteira();
+
+mostrarHistorico();
+
+mostrarTotais();
+
+
+/*
+============================================================
+MOTOR DEFINITIVO DE CÁLCULOS
+============================================================
+
+REGRA:
+- PM = custo efetivamente aportado
+- Brapi = valor atual de ações/FIIs/ETFs
+- valorAtual = valor atual de ativos manuais
+- patrimônio = valor atual da carteira
+- ganho de capital = patrimônio - aportado
+- proventos pagos = somente histórico tipo Provento
+- lucro total = ganho de capital + proventos pagos
+
+NÃO SOMAR histórico de Aporte ao custo da carteira.
+A carteira já contém quantidade x PM.
+============================================================
+*/
+
+function normalizarAtivo(nome) {
+    return String(nome || "")
+        .trim()
+        .toUpperCase()
+        .replace(/F$/i, "");
+}
+
+function calcularCustoAportado() {
+    if (!Array.isArray(carteira)) return 0;
+
+    return carteira.reduce((total, item) => {
+        const nome = String(item.ativo || "").trim().toUpperCase();
+        const tipo = String(
+            item.tipo || item.categoria || item.classe || ""
+        ).toLowerCase();
+
+        const qtd = Number(item.qtd || 0);
+        if (qtd <= 0) return total;
+
+        const ehRendaFixa =
+            tipo.includes("renda fixa") ||
+            tipo.includes("rdb") ||
+            tipo.includes("cdb") ||
+            tipo.includes("tesouro") ||
+            tipo.includes("lci") ||
+            tipo.includes("lca") ||
+            nome.includes("RDB");
+
+        if (ehRendaFixa) {
+            return total + Number(
+                item.valorAplicado ??
+                item.valorBase ??
+
+                0
+            );
+        }
+
+        return total + (
+            qtd * Number(item.pm || 0)
+        );
+    }, 0);
+}
+
+function calcularProventosPagos() {
+    return historico.reduce((total, item) => {
+        if (item.tipo !== "Provento") return total;
+
+        return total + Number(item.valor || 0);
+    }, 0);
+}
+
+function calcularValorAtualItem(item)function calcularPatrimonioAtual() {
+    return carteira.reduce((total, item) => {
+        return total + calcularValorAtualItem(item);
+    }, 0);
+}
+
+
+function calcularLucroVendasRealizadas() {
+    if (typeof historico === "undefined") return 0;
+
+    return historico.reduce((total, item) => {
+        if (item.tipo !== "Venda") return total;
+        return total + Number(item.resultado || 0);
+    }, 0);
+}
+
+function atualizarIndicadores() {
+
+    const aportado = calcularCustoAportado();
+
+    const patrimonioBruto = calcularPatrimonioAtual();
+
+    const patrimonio = Number(
+        patrimonioBruto.toFixed(2)
+    );
+
+    const ganhoCapital = patrimonio - aportado;
+
+    const proventosPagos = calcularProventosPagos();
+
+    const lucroVendasRealizadas = calcularLucroVendasRealizadas();
+    const lucroTotal = ganhoCapital + proventosPagos + lucroVendasRealizadas;
+
+    const campoAportado =
+        document.getElementById("totalAportes");
+
+    const campoInvestido =
+        document.getElementById("valorInvestido");
+
+    const campoProventos =
+        document.getElementById("totalProventos");
+
+    const campoGeral =
+        document.getElementById("totalGeral");
+
+    const campoPatrimonio =
+        document.getElementById("patrimonioAtual");
+
+    const campoLucro =
+        document.getElementById("lucroPrejuizo");
+
+    if (campoInvestido) {
+        campoInvestido.innerText = moeda(aportado);
+    }
+
+    if (campoProventos) {
+        campoProventos.innerText = moeda(proventosPagos);
+    }
+
+    if (campoGeral) {
+        campoGeral.innerText = moeda(patrimonio);
+    }
+
+    if (campoPatrimonio) {
+        campoPatrimonio.innerText = moeda(patrimonio);
+    }
+
+    if (campoLucro) {
+        campoLucro.innerHTML =
+            (lucroTotal >= 0 ? "▲ " : "▼ ") +
+            moeda(lucroTotal) +
+            '<br><small>Ganho de capital: ' +
+            moeda(ganhoCapital) +
+            '</small>';
+    }
+
+    console.log("===== CENTRAL - CÁLCULO ATUAL =====");
+    console.log("Total aportado:", aportado.toFixed(2));
+    console.log("Patrimônio:", patrimonio.toFixed(2));
+    console.log("Ganho de capital:", ganhoCapital.toFixed(2));
+    console.log("Proventos pagos:", proventosPagos.toFixed(2));
+    console.log("Lucro total:", lucroTotal.toFixed(2));
+}
+
+function corrigirAtivosManuais() {
+
+    carteira.forEach(item =>);
+
+    salvar();
+}
+
+corrigirAtivosManuais();
+
+
+</script>
+
+
+
+
+
+
+<!-- FIM_PROVENTOS_RECEBIDOS_5_34_29_09_2026 -->
+
+
+
+
+<script>
+/* =========================================================
+   PROVENTOS A RECEBER — CONTROLE AUTOMÁTICO
+   - Cadastra valor + ativo + data prevista
+   - Na data prevista, transfere automaticamente para Recebidos
+   - Permite lançamento manual caso o usuário esqueça de cadastrar
+   ========================================================= */
+
+function obterProventosPendentes() {
+    try {
+        const dados = JSON.parse(localStorage.getItem("proventosPendentes") || "[]");
+        return Array.isArray(dados) ? dados : [];
+    } catch (e) {
+        return [];
+    }
+}
+
+function salvarProventosPendentes(lista) {
+    localStorage.setItem("proventosPendentes", JSON.stringify(lista));
+}
+
+function dataHojeISO() {
+    const agora = new Date();
+    const ano = agora.getFullYear();
+    const mes = String(agora.getMonth() + 1).padStart(2, "0");
+    const dia = String(agora.getDate()).padStart(2, "0");
+    return `${ano}-${mes}-${dia}`;
+}
+
+function formatarDataProvento(data) {
+    const p = String(data || "").split("-");
+    if (p.length === 3) return `${p[2]}/${p[1]}/${p[0]}`;
+    return data || "";
+}
+
+function formatarMoedaProvento(valor) {
+    return Number(valor || 0).toLocaleString("pt-BR", {
+        style: "currency",
+        currency: "BRL"
+    });
+}
+
+function atualizarProventosReceberUI() {
+    const campo = document.getElementById("proventosReceber");
+    const listaCampo = document.getElementById("proventosPendentesLista");
+    const pendentes = obterProventosPendentes();
+
+    const total = pendentes.reduce(
+        (soma, item) => soma + Number(item.valor || 0),
+        0
+    );
+
+    if (campo) campo.innerText = formatarMoedaProvento(total);
+
+    if (!listaCampo) return;
+
+    if (!pendentes.length) {
+        listaCampo.innerHTML = "<span style='opacity:.75'>Nenhum provento cadastrado.</span>";
+        return;
+    }
+
+    listaCampo.innerHTML = pendentes.map((item, indice) => `
+        <div style="padding:7px 0;border-bottom:1px solid #444;">
+            <strong>${item.ativo}</strong> — ${formatarMoedaProvento(item.valor)}
+            — previsto para <strong>${formatarDataProvento(item.data)}</strong>
+            <button onclick="excluirProventoPendente(${indice})" title="Excluir provento" style="margin-left:7px;padding:2px 7px;font-size:16px;line-height:1;background:#555;color:#ddd;border:0;border-radius:5px;box-shadow:none;cursor:pointer;">×</button>
+        </div>
+    `).join("");
+}
+
+function cadastrarProventoAReceber()function registrarProventoRecebidoManual()function processarProventosVencidos() {
+    const hoje = dataHojeISO();
+    const pendentes = obterProventosPendentes();
+    const vencidos = pendentes.filter(item => String(item.data) <= hoje);
+    const restantes = pendentes.filter(item => String(item.data) > hoje);
+
+    if (!vencidos.length) {
+        atualizarProventosReceberUI();
+        return;
+    }
+
+    vencidos.forEach(item => {
+        historico.push({
+            data: formatarDataProvento(item.data),
+            tipo: "Provento",
+            ativo: String(item.ativo || "").toUpperCase(),
+            qtd: 0,
+            valor: Number(Number(item.valor || 0).toFixed(2))
+        });
+    });
+
+    salvarProventosPendentes(restantes);
+    salvar();
+
+    if (typeof atualizarDividendosRecebidos === "function") {
+        atualizarDividendosRecebidos();
+    }
+
+    if (typeof atualizarIndicadores === "function") {
+        atualizarIndicadores();
+    }
+
+    atualizarProventosReceberUI();
+
+    alert(
+        vencidos.length === 1
+            ? "1 provento foi transferido automaticamente para Recebidos."
+            : `${vencidos.length} proventos foram transferidos automaticamente para Recebidos.`
+    );
+}
+
+function excluirProventoPendente(indice) {
+    const pendentes = obterProventosPendentes();
+    if (!pendentes[indice]) return;
+
+    const item = pendentes[indice];
+    const confirmar = confirm(
+        `Excluir ${item.ativo} — ${formatarMoedaProvento(item.valor)} previsto para ${formatarDataProvento(item.data)}?`
+    );
+
+    if (!confirmar) return;
+
+    pendentes.splice(indice, 1);
+    salvarProventosPendentes(pendentes);
+    atualizarProventosReceberUI();
+}
+
+/* Compatibilidade com a função antiga do botão. */
+function editarProventosReceber() {
+    cadastrarProventoAReceber();
+}
+
+processarProventosVencidos();
+atualizarProventosReceberUI();
+</script>
+
+
+<!-- ==================================================
+     HISTÓRICO DE VENDAS — PAINEL SEPARADO
+================================================== -->
+<div class="card" id="historicoVendasCard">
+    <h2>🔴 Histórico de Vendas</h2>
+    <div id="historicoVendas"></div>
+</div>
+
+<script>
+function atualizarHistoricoVendas() {
+
+    const painel = document.getElementById("historicoVendas");
+
+    if (!painel) return;
+
+    const vendas = (typeof historico !== "undefined"
+        ? historico.filter(item => item.tipo === "Venda")
+        : []);
+
+    if (!vendas.length) {
+        painel.innerHTML =
+            '<p style="opacity:.7;">Nenhuma venda registrada ainda.</p>';
+        return;
+    }
+
+    let html = `
+        <div style="overflow-x:auto;">
+        <table style="width:100%; border-collapse:collapse;">
+            <thead>
+                <tr>
+                    <th style="text-align:left;">Data</th>
+                    <th style="text-align:left;">Ativo</th>
+                    <th>Qtd.</th>
+                    <th>Preço</th>
+                    <th>Valor</th>
+                    <th>Resultado</th>
+                </tr>
+            </thead>
+            <tbody>
+    `;
+
+    vendas.slice().reverse().forEach(venda => {
+
+        const resultado = Number(venda.resultado || 0);
+
+        html += `
+            <tr>
+                <td>${venda.data || ""}</td>
+                <td>${venda.ativo || ""}</td>
+                <td style="text-align:center;">
+                    ${Number(venda.quantidade || 0)}
+                </td>
+                <td style="text-align:right;">
+                    R$ ${Number(venda.preco || 0).toFixed(2).replace(".", ",")}
+                </td>
+                <td style="text-align:right;">
+                    R$ ${Number(venda.valor || 0).toFixed(2).replace(".", ",")}
+                </td>
+                <td style="text-align:right; font-weight:bold;">
+                    ${resultado >= 0 ? "▲" : "▼"}
+                    R$ ${Math.abs(resultado).toFixed(2).replace(".", ",")}
+                </td>
+            </tr>
+        `;
+    });
+
+    html += `
+            </tbody>
+        </table>
+        </div>
+    `;
+
+    painel.innerHTML = html;
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    atualizarHistoricoVendas();
+});
+
+setInterval(atualizarHistoricoVendas, 1000);
+</script>
+
+
+<!-- ==================================================
+     RESULTADO DAS VENDAS
+================================================== -->
+<div class="card" id="resultadoVendasCard">
+    <h2>📊 Resultado das Vendas</h2>
+    <div id="resultadoVendas"></div>
+</div>
+
+<script>
+function atualizarResultadoVendas() {
+
+    const painel = document.getElementById("resultadoVendas");
+    if (!painel) return;
+
+    const vendas = (typeof historico !== "undefined")
+        ? historico.filter(item => item.tipo === "Venda")
+        : [];
+
+    const totalVendido = vendas.reduce(
+        (total, item) => total + Number(item.valor || 0), 0
+    );
+
+    const custoTotal = vendas.reduce(
+        (total, item) => total + Number(item.custo || 0), 0
+    );
+
+    const resultadoTotal = vendas.reduce(
+        (total, item) => total + Number(item.resultado || 0), 0
+    );
+
+    const operacoes = vendas.length;
+
+    const sinal = resultadoTotal >= 0 ? "▲" : "▼";
+    const valorResultado = Math.abs(resultadoTotal);
+
+    painel.innerHTML = `
+        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:10px;">
+
+            <div style="padding:10px;">
+                <strong>💰 Total vendido</strong><br>
+                R$ ${totalVendido.toFixed(2).replace(".", ",")}
+            </div>
+
+            <div style="padding:10px;">
+                <strong>📦 Custo das vendas</strong><br>
+                R$ ${custoTotal.toFixed(2).replace(".", ",")}
+            </div>
+
+            <div style="padding:10px;">
+                <strong>📈 Lucro/Prejuízo realizado</strong><br>
+                ${sinal} R$ ${valorResultado.toFixed(2).replace(".", ",")}
+            </div>
+
+            <div style="padding:10px;">
+                <strong>🔢 Operações</strong><br>
+                ${operacoes}
+            </div>
+
+        </div>
+    `;
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    atualizarResultadoVendas();
+});
+
+setInterval(atualizarResultadoVendas, 1000);
+</script>
+
+
+<!-- ==================================================
+     EVOLUÇÃO DA CARTEIRA
+================================================== -->
+<div class="card" id="evolucaoCarteiraCard">
+    <h2>📈 Evolução da Carteira</h2>
+    <div id="evolucaoCarteira"></div>
+</div>
+
+<script>
+function moedaEvolucao(valor) {
+    return Number(valor || 0)
+        .toFixed(2)
+        .replace(".", ",");
+}
+
+function numeroDoCampo(id) {
+    const el = document.getElementById(id);
+    if (!el) return null;
+
+    let texto = "";
+
+    if ("value" in el && el.value) {
+        texto = String(el.value);
+    } else {
+        texto = el.innerText || el.textContent || "";
+    }
+
+    texto = String(texto).trim();
+
+    if (!texto || /aguardando|calculando/i.test(texto)) {
+        return null;
+    }
+
+    // Mantém sinal negativo e converte formato brasileiro:
+    // R$ 1.717,47 -> 1717.47
+    // -R$ 120,47 -> -120.47
+    const limpo = texto
+        .replace(/R\$/gi, "")
+        .replace(/\s/g, "")
+        .replace(/\./g, "")
+        .replace(",", ".")
+        .replace(/[^0-9.-]/g, "");
+
+    const valor = Number(limpo);
+
+    return Number.isFinite(valor) ? valor : null;
+}
+
+function registrarEvolucaoCarteira() {
+
+    const aportado = numeroDoCampo("totalAportes");
+    const patrimonio = numeroDoCampo("patrimonioAtual");
+    const lucroTexto = document.getElementById("lucroPrejuizo");
+
+    if (aportado === null || patrimonio === null || !lucroTexto) return;
+
+    const lucro = numeroDoCampo("lucroPrejuizo");
+
+    if (lucro === null) return;
+
+    let historicoEvolucao = [];
+
+    try {
+        historicoEvolucao =
+            JSON.parse(localStorage.getItem("evolucaoCarteira") || "[]");
+    } catch (e) {
+        historicoEvolucao = [];
+    }
+
+    const hoje = new Date();
+
+    const data =
+        String(hoje.getDate()).padStart(2, "0") + "/" +
+        String(hoje.getMonth() + 1).padStart(2, "0") + "/" +
+        hoje.getFullYear();
+
+    // Remove snapshots antigos inválidos (patrimônio/aportado/lucro zerados)
+    historicoEvolucao = historicoEvolucao.filter(item => {
+        const patrimonioItem = Number(item.patrimonio ?? item.patrimonioAtual ?? 0);
+        const aportadoItem = Number(item.aportado ?? 0);
+
+        return !(patrimonioItem === 0 && aportadoItem === 0);
+    });
+
+    const ultimo =
+        historicoEvolucao[historicoEvolucao.length - 1];
+
+    if (ultimo && ultimo.data === data) {
+        ultimo.aportado = Number(aportado.toFixed(2));
+        ultimo.patrimonio = Number(patrimonio.toFixed(2));
+        ultimo.lucro = Number(lucro.toFixed(2));
+    } else {
+        historicoEvolucao.push({
+            data: data,
+            aportado: Number(aportado.toFixed(2)),
+            patrimonio: Number(patrimonio.toFixed(2)),
+            lucro: Number(lucro.toFixed(2))
+        });
+    }
+
+    if (historicoEvolucao.length > 365) {
+        historicoEvolucao =
+            historicoEvolucao.slice(-365);
+    }
+
+    localStorage.setItem(
+        "evolucaoCarteira",
+        JSON.stringify(historicoEvolucao)
+    );
+
+    mostrarEvolucaoCarteira(historicoEvolucao);
+}
+
+
+function registrarFechamentoMensal() {
+
+    try {
+
+        let evolucao = JSON.parse(
+            localStorage.getItem("evolucaoCarteira") || "[]"
+        );
+
+        if (!Array.isArray(evolucao) || !evolucao.length) return;
+
+        // Mantém somente snapshots válidos
+        evolucao = evolucao.filter(item => {
+            const patrimonio = Number(
+                item.patrimonio ?? item.patrimonioAtual ?? 0
+            );
+
+            const aportado = Number(item.aportado ?? 0);
+
+            return patrimonio > 0 || aportado > 0;
+        });
+
+        if (!evolucao.length) return;
+
+        const fechamentos = JSON.parse(
+            localStorage.getItem("fechamentoMensal") || "[]"
+        );
+
+        const porMes = {};
+
+        // Para cada mês, pega o último snapshot disponível
+        evolucao.forEach(item => {
+
+            if (!item.data) return;
+
+            const partes = item.data.split("/");
+
+            if (partes.length !== 3) return;
+
+            const mes = partes[1];
+            const ano = partes[2];
+            const chave = ano + "-" + mes;
+
+            const dataAtual =
+                new Date(
+                    Number(ano),
+                    Number(mes) - 1,
+                    Number(partes[0])
+                );
+
+            if (
+                !porMes[chave] ||
+                dataAtual > porMes[chave]._data
+            ) {
+                porMes[chave] = {
+                    _data: dataAtual,
+                    item: item
+                };
+            }
+        });
+
+        Object.keys(porMes).forEach(chave => {
+
+            const item = porMes[chave].item;
+
+            const patrimonio = Number(
+                item.patrimonio ?? item.patrimonioAtual ?? 0
+            );
+
+            const aportado = Number(item.aportado ?? 0);
+
+            const lucro = Number(
+                item.lucro ?? item.lucroPrejuizo ?? 0
+            );
+
+            if (patrimonio <= 0 && aportado <= 0) return;
+
+            const existente = fechamentos.findIndex(
+                x => x.mes === chave
+            );
+
+            const fechamento = {
+                mes: chave,
+                data: item.data,
+                patrimonio: Number(patrimonio.toFixed(2)),
+                aportado: Number(aportado.toFixed(2)),
+                lucro: Number(lucro.toFixed(2))
+            };
+
+            if (existente >= 0) {
+                fechamentos[existente] = fechamento;
+            } else {
+                fechamentos.push(fechamento);
+            }
+        });
+
+        fechamentos.sort((a, b) =>
+            a.mes.localeCompare(b.mes)
+        );
+
+        localStorage.setItem(
+            "fechamentoMensal",
+            JSON.stringify(fechamentos)
+        );
+
+    } catch (e) {
+        console.warn(
+            "Fechamento mensal não pôde ser atualizado:",
+            e
+        );
+    }
+}
+
+function mostrarEvolucaoCarteira(dados) {
+
+    const painel = document.getElementById("evolucaoCarteira");
+
+    if (!painel) return;
+
+    if (!dados.length) {
+        painel.innerHTML =
+            '<p style="opacity:.7;">A evolução começará a ser registrada a partir de hoje.</p>';
+        return;
+    }
+
+    const atual = dados[dados.length - 1];
+
+    let html = `
+        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(170px,1fr)); gap:10px; margin-bottom:14px;">
+
+            <div style="padding:10px;"><br>
+                R$ ${moedaEvolucao(atual.aportado)}
+            </div>
+
+            <div style="padding:10px;">
+                <strong>📊 Patrimônio</strong><br>
+                R$ ${moedaEvolucao(atual.patrimonio)}
+            </div>
+
+            <div style="padding:10px;">
+                <strong>📈 Lucro</strong><br>
+                ${atual.lucro >= 0 ? "▲" : "▼"}
+                R$ ${moedaEvolucao(Math.abs(atual.lucro))}
+            </div>
+
+            <div style="padding:10px;">
+                <strong>📅 Registros</strong><br>
+                ${dados.length}
+            </div>
+
+        </div>
+
+        <div style="overflow-x:auto;">
+            <table style="width:100%; border-collapse:collapse;">
+                <thead>
+                    <tr>
+                        <th style="text-align:left;">Data</th>
+                        <th>Patrimônio</th>
+                        <th>Lucro</th>
+                    </tr>
+                </thead>
+                <tbody>
+    `;
+
+    dados.slice().reverse().slice(0, 30).forEach(item => {
+
+        html += `
+            <tr>
+                <td>${item.data}</td>
+                <td style="text-align:right;">
+                    R$ ${moedaEvolucao(item.aportado)}
+                </td>
+                <td style="text-align:right;">
+                    R$ ${moedaEvolucao(item.patrimonio)}
+                </td>
+                <td style="text-align:right; font-weight:bold;">
+                    ${item.lucro >= 0 ? "▲" : "▼"}
+                    R$ ${moedaEvolucao(Math.abs(item.lucro))}
+                </td>
+            </tr>
+        `;
+    });
+
+    html += `
+                </tbody>
+            </table>
+        </div>
+
+        <p style="opacity:.65; margin-top:10px; font-size:12px;">
+            A Central registra automaticamente um ponto por dia.
+        </p>
+    `;
+
+    painel.innerHTML = html;
+}
+
+function iniciarEvolucaoCarteira() {
+    try {
+        const dados =
+            JSON.parse(localStorage.getItem("evolucaoCarteira") || "[]");
+
+        mostrarEvolucaoCarteira(dados);
+    } catch (e) {
+        mostrarEvolucaoCarteira([]);
+    }
+
+    registrarEvolucaoCarteira();
+}
+
+document.addEventListener(
+    "DOMContentLoaded",
+    iniciarEvolucaoCarteira
+);
+
+setInterval(registrarEvolucaoCarteira, 3000);
+setInterval(registrarFechamentoMensal, 3000);
+registrarFechamentoMensal();
+</script>
+
+
+<!-- ==================================================
+     PACOTE DE FERRAMENTAS DA CENTRAL
+================================================== -->
+
+<div class="card" id="pacoteCompletoCentral">
+
+<h2>🧰 Ferramentas da Central</h2>
+
+<!-- METAS -->
+<div class="card">
+<h3>🎯 Metas da Carteira</h3>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:8px;">
+<input id="metaPatrimonio" type="number" step="0.01" placeholder="Meta patrimônio">
+<input id="metaAporte" type="number" step="0.01" placeholder="Meta aporte mensal">
+<input id="metaProvento" type="number" step="0.01" placeholder="Meta proventos mensal">
+</div>
+
+<button onclick="salvarMetasCentral()">💾 Salvar metas</button>
+<div id="metasCentralResultado" style="margin-top:10px;"></div>
+</div>
+
+<!-- DISTRIBUIÇÃO -->
+<div class="card">
+<h3>🥧 Distribuição da Carteira</h3>
+<div id="distribuicaoCentral"></div>
+</div>
+
+<!-- PROVENTOS MENSAIS -->
+<div class="card">
+<h3>💰 Proventos por mês</h3>
+<div id="proventosMensaisCentral"></div>
+</div>
+
+
+<!-- COMPARADOR HISTÓRICO -->
+<div class="card" id="comparadorHistoricoCard">
+<h3>📊 Comparador Histórico</h3>
+
+<div style="display:flex; gap:10px; flex-wrap:wrap; align-items:end;">
+
+<div>
+<label style="display:block; margin-bottom:4px;">Período inicial</label>
+<input id="comparadorPeriodoInicial" type="month">
+</div>
+
+<div>
+<label style="display:block; margin-bottom:4px;">Período final</label>
+<input id="comparadorPeriodoFinal" type="month">
+</div>
+
+<button onclick="atualizarComparadorHistorico()">
+🔎 Comparar período
+</button>
+
+</div>
+
+<div id="comparadorHistoricoResultado" style="margin-top:15px;"></div>
+</div>
+
+<!-- ALERTAS -->
+<div class="card">
+<h3>🚨 Alertas da Carteira</h3>
+
+<input id="limiteAlertaCentral"
+       type="number"
+       step="0.1"
+       min="0"
+       value="10"
+       placeholder="Limite %">
+
+<button onclick="salvarLimiteAlertaCentral()">💾 Salvar limite</button>
+<div id="alertasCentral" style="margin-top:10px;"></div>
+</div>
+
+
+<!-- STATUS DA CENTRAL -->
+<div class="card" id="statusCentral">
+<h3>🟢 Status da Central</h3>
+
+<div id="statusCentralResultado"
+     style="line-height:1.8;">
+    ⏳ Verificando...
+</div>
+
+<button onclick="verificarStatusCentral()">
+🔄 Verificar agora
+</button>
+
+<div id="statusCentralHorario"
+     style="margin-top:8px;font-size:12px;opacity:.65;">
+</div>
+</div>
+
+<!-- BACKUP -->
+<div class="card">
+<h3>💾 Backup da Central</h3>
+
+<button onclick="baixarBackupCentral()">⬇️ Fazer backup</button>
+
+<input
+    type="file"
+    id="restaurarBackupCentral"
+    accept=".json"
+    style="display:none"
+    onchange="restaurarBackupCentralArquivo(event)"
+>
+
+<button onclick="document.getElementById('restaurarBackupCentral').click()">
+📥 Restaurar backup
+</button>
+
+<div id="backupCentralResultado" style="margin-top:8px;"></div>
+</div>
+
+<!-- FILTRO -->
+<div class="card">
+<h3>🔎 Filtro de Operações</h3>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:8px;">
+
+<select id="filtroTipoCentral" onchange="renderizarFiltroCentral()">
+<option value="">Todas as operações</option>
+<option value="Compra">Compra</option>
+<option value="Venda">Venda</option>
+<option value="Aporte">Aporte</option>
+<option value="Provento">Provento</option>
+</select>
+
+<select id="filtroAtivoCentral" onchange="renderizarFiltroCentral()">
+<option value="">Todos os ativos</option>
+</select>
+
+</div>
+
+<div id="filtroOperacoesCentral" style="margin-top:10px;"></div>
+</div>
+
+<!-- RANKING -->
+<div class="card">
+<h3>🏆 Ranking de Proventos</h3>
+<div id="rankingProventosCentral"></div>
+</div>
+
+<!-- PM -->
+<div class="card">
+<h3>🧮 Histórico de PM</h3>
+<div id="pmHistoricoCentral"></div>
+</div>
+
+</div>
+
+<script>
+
+function centralMoeda(valor) {
+    return Number(valor || 0).toFixed(2).replace(".", ",");
+}
+
+function centralNumeroCampo(id) {
+    const el = document.getElementById(id);
+    if (!el) return 0;
+
+    const texto = el.innerText || el.textContent || "";
+
+    const limpo = texto
+        .replace(/[^\d,-]/g, "")
+        .replace(/\./g, "")
+        .replace(",", ".");
+
+    const valor = Number(limpo);
+
+    return Number.isFinite(valor) ? valor : 0;
+}
+
+
+/* =========================
+   METAS
+========================= */
+
+function carregarMetasCentral() {
+    let metas = {};
+
+    try {
+        metas = JSON.parse(
+            localStorage.getItem("metasCentral") || "{}"
+        );
+    } catch (e) {}
+
+    const a = document.getElementById("metaPatrimonio");
+    const b = document.getElementById("metaAporte");
+    const c = document.getElementById("metaProvento");
+
+    if (a) a.value = metas.patrimonio || "";
+    if (b) b.value = metas.aporte || "";
+    if (c) c.value = metas.provento || "";
+
+    mostrarMetasCentral();
+}
+
+function salvarMetasCentral() {
+    const metas = {
+        patrimonio: Number(
+            document.getElementById("metaPatrimonio")?.value || 0
+        ),
+        aporte: Number(
+            document.getElementById("metaAporte")?.value || 0
+        ),
+        provento: Number(
+            document.getElementById("metaProvento")?.value || 0
+        )
+    };
+
+    localStorage.setItem(
+        "metasCentral",
+        JSON.stringify(metas)
+    );
+
+    mostrarMetasCentral();
+}
+
+function mostrarMetasCentral() {
+    const div = document.getElementById("metasCentralResultado");
+    if (!div) return;
+
+    let metas = {};
+
+    try {
+        metas = JSON.parse(
+            localStorage.getItem("metasCentral") || "{}"
+        );
+    } catch (e) {}
+
+    const patrimonio =
+        centralNumeroCampo("patrimonioAtual");
+
+    const meta =
+        Number(metas.patrimonio || 0);
+
+    if (meta <= 0) {
+        div.innerHTML = "Defina uma meta de patrimônio.";
+        return;
+    }
+
+    const pct =
+        Math.min(100, (patrimonio / meta) * 100);
+
+    div.innerHTML =
+        "<strong>Patrimônio:</strong> R$ " +
+        centralMoeda(patrimonio) +
+        " / R$ " +
+        centralMoeda(meta) +
+        " — " +
+        pct.toFixed(1) +
+        "%";
+}
+
+
+/* =========================
+   DISTRIBUIÇÃO
+========================= */
+
+function classificarDistribuicaoCentral(item)function atualizarDistribuicaoCentral() {
+
+    const painel =
+        document.getElementById("distribuicaoCentral");
+
+    if (!painel || typeof carteira === "undefined") return;
+
+    const grupos = {};
+
+    carteira.forEach(item => {
+
+        const classe =
+            classificarDistribuicaoCentral(item);
+
+        const valor =
+            typeof calcularValorAtualItem === "function"
+                ? Number(calcularValorAtualItem(item) || 0)
+                : Number(item.valorAtual || 0);
+
+        grupos[classe] =
+            (grupos[classe] || 0) + valor;
+    });
+
+    const total =
+        Object.values(grupos)
+            .reduce((a, b) => a + b, 0);
+
+    const ordem = [
+        "Ações",
+        "FIIs",
+        "ETFs",
+        "Cripto",
+        "Renda Fixa",
+        "Outros"
+    ];
+
+    const linhas =
+        ordem
+            .filter(tipo => grupos[tipo] !== undefined)
+            .map(tipo => {
+
+                const valor =
+                    Number(grupos[tipo] || 0);
+
+                const percentual =
+                    total > 0
+                        ? (valor / total) * 100
+                        : 0;
+
+                return `
+                    <tr>
+                        <td style="text-align:left;">
+                            ${tipo}
+                        </td>
+
+                        <td style="text-align:right;">
+                            R$ ${centralMoeda(valor)}
+                        </td>
+
+                        <td style="text-align:right;font-weight:bold;">
+                            ${percentual.toFixed(1)}%
+                        </td>
+                    </tr>
+                `;
+            })
+            .join("");
+
+    painel.innerHTML = `
+        <div style="overflow-x:auto;">
+            <table style="width:100%;border-collapse:collapse;">
+                <thead>
+                    <tr>
+                        <th style="text-align:left;">
+                            Classe
+                        </th>
+
+                        <th>
+                            Valor
+                        </th>
+
+                        <th>
+                            %
+                        </th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    ${linhas}
+                </tbody>
+            </table>
+        </div>
+    `;
+}
+
+
+/* =========================
+   PROVENTOS POR MÊS
+========================= */
+
+function atualizarProventosMensaisCentral() {
+    const painel =
+        document.getElementById("proventosMensaisCentral");
+
+    if (!painel || typeof historico === "undefined") return;
+
+    const meses = {};
+
+    historico
+        .filter(item => item.tipo === "Provento")
+        .forEach(item => {
+            const partes =
+                String(item.data || "").split("/");
+
+            const chave =
+                partes.length === 3
+                    ? partes[1] + "/" + partes[2]
+                    : String(item.data || "");
+
+            meses[chave] =
+                (meses[chave] || 0) +
+                Number(item.valor || 0);
+        });
+
+    const linhas =
+        Object.entries(meses)
+            .reverse()
+            .map(([mes, valor]) => `
+                <tr>
+                    <td>${mes}</td>
+                    <td style="text-align:right;">
+                        R$ ${centralMoeda(valor)}
+                    </td>
+                </tr>`
+            ).join("");
+
+    painel.innerHTML = linhas
+        ? `
+        <div style="overflow-x:auto;">
+        <table style="width:100%;border-collapse:collapse;">
+            <thead>
+                <tr>
+                    <th style="text-align:left;">Mês</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>${linhas}</tbody>
+        </table>
+        </div>`
+        : "<p>Nenhum provento registrado.</p>";
+}
+
+
+
+/* =========================
+   COMPARADOR HISTÓRICO
+========================= */
+
+function atualizarComparadorHistorico() {
+    const painel = document.getElementById("comparadorHistoricoResultado");
+    const campoInicial = document.getElementById("comparadorPeriodoInicial");
+    const campoFinal = document.getElementById("comparadorPeriodoFinal");
+
+    if (!painel || !campoInicial || !campoFinal) return;
+
+    const inicial = campoInicial.value;
+    const final = campoFinal.value;
+
+    if (!inicial || !final) {
+        painel.innerHTML =
+            '<p style="opacity:.7;">Selecione o período inicial e o período final.</p>';
+        return;
+    }
+
+    if (inicial > final) {
+        painel.innerHTML =
+            '<p style="color:#d9534f;">O período inicial não pode ser maior que o período final.</p>';
+        return;
+    }
+
+    function converterMes(data) {
+        const texto = String(data || "").trim();
+
+        if (/^\d{2}\/\d{2}\/\d{4}$/.test(texto)) {
+            const partes = texto.split("/");
+            return partes[2] + "-" + partes[1];
+        }
+
+        if (/^\d{4}-\d{2}-\d{2}$/.test(texto)) {
+            return texto.substring(0, 7);
+        }
+
+        if (/^\d{4}-\d{2}$/.test(texto)) {
+            return texto;
+        }
+
+        return "";
+    }
+
+    function converterData(data) {
+        const texto = String(data || "").trim();
+
+        if (/^\d{2}\/\d{2}\/\d{4}$/.test(texto)) {
+            const p = texto.split("/");
+            return p[2] + "-" + p[1] + "-" + p[0];
+        }
+
+        if (/^\d{4}-\d{2}-\d{2}$/.test(texto)) {
+            return texto;
+        }
+
+        return "";
+    }
+
+    const operacoes = Array.isArray(historico)
+        ? historico.filter(item => {
+            const mes = converterMes(item.data);
+            return mes && mes >= inicial && mes <= final;
+        })
+        : [];
+
+    const compras = operacoes.filter(item => item.tipo === "Compra");
+    const vendas = operacoes.filter(item => item.tipo === "Venda");
+    const proventos = operacoes.filter(item => item.tipo === "Provento");
+    const aportes = operacoes.filter(item => item.tipo === "Aporte");
+
+    const totalCompras = compras.reduce(
+        (total, item) => total + Number(item.valor || 0), 0
+    );
+
+    const totalVendido = vendas.reduce(
+        (total, item) => total + Number(item.valor || 0), 0
+    );
+
+    const custoVendas = vendas.reduce(
+        (total, item) => total + Number(item.custo || 0), 0
+    );
+
+    const resultadoVendas = vendas.reduce(
+        (total, item) => total + Number(item.resultado || 0), 0
+    );
+
+    const totalProventos = proventos.reduce(
+        (total, item) => total + Number(item.valor || 0), 0
+    );
+
+    const totalAportes = aportes.reduce(
+        (total, item) => total + Number(item.valor || 0), 0
+    );
+
+    const movimentacaoLiquida =
+        totalAportes +
+        totalProventos +
+        totalVendido -
+        totalCompras;
+
+    const moedaLocal = valor =>
+        "R$ " + Number(valor || 0)
+            .toFixed(2)
+            .replace(".", ",");
+
+    /* ==========================================
+       EVOLUÇÃO DA CARTEIRA NO PERÍODO
+    ========================================== */
+
+    let evolucao = [];
+
+    try {
+        evolucao =
+            JSON.parse(localStorage.getItem("evolucaoCarteira") || "[]");
+    } catch (e) {
+        evolucao = [];
+    }
+
+    if (!Array.isArray(evolucao)) evolucao = [];
+
+    const evolucaoPeriodo = evolucao
+        .filter(item => {
+            const mes = converterMes(item.data);
+            return mes && mes >= inicial && mes <= final;
+        })
+        .sort((a, b) =>
+            converterData(a.data).localeCompare(converterData(b.data))
+        );
+
+    let blocoEvolucao = "";
+
+    if (evolucaoPeriodo.length) {
+        const primeiro = evolucaoPeriodo[0];
+        const ultimo = evolucaoPeriodo[evolucaoPeriodo.length - 1];
+
+        const patrimonioInicial = Number(primeiro.patrimonio ?? primeiro.patrimonioAtual ?? 0);
+        const patrimonioFinal = Number(ultimo.patrimonio ?? ultimo.patrimonioAtual ?? 0);
+        const variacaoPatrimonio =
+            patrimonioFinal - patrimonioInicial;
+
+        const aportadoInicial = Number(primeiro.aportado || 0);
+        const aportadoFinal = Number(ultimo.aportado || 0);
+        const variacaoAportado =
+            aportadoFinal - aportadoInicial;
+
+        const lucroInicial = Number(primeiro.lucro || 0);
+        const lucroFinal = Number(ultimo.lucro ?? ultimo.lucroPrejuizo ?? 0);
+        const variacaoLucro =
+            lucroFinal - lucroInicial;
+
+        blocoEvolucao = `
+            <div style="
+                margin-top:18px;
+                padding-top:15px;
+                border-top:1px solid rgba(128,128,128,.25);
+            ">
+                <h3 style="margin-bottom:12px;">
+                    📈 Evolução da Carteira no Período
+                </h3>
+
+                <div style="
+                    display:grid;
+                    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+                    gap:10px;
+                    margin-bottom:15px;
+                ">
+
+                    <div class="item">
+                        <strong>🏁 Patrimônio inicial</strong><br>
+                        ${moedaLocal(patrimonioInicial)}
+                        <small style="display:block;opacity:.65;">
+                            ${primeiro.data}
+                        </small>
+                    </div>
+
+                    <div class="item">
+                        <strong>🏁 Patrimônio final</strong><br>
+                        ${moedaLocal(patrimonioFinal)}
+                        <small style="display:block;opacity:.65;">
+                            ${ultimo.data}
+                        </small>
+                    </div>
+
+                    <div class="item">
+                        <strong>📊 Variação do patrimônio</strong><br>
+                        ${variacaoPatrimonio >= 0 ? "▲ " : "▼ "}
+                        ${moedaLocal(Math.abs(variacaoPatrimonio))}
+                    </div>
+
+                    <div class="item">
+                        <strong>💰 Aportado inicial</strong><br>
+                        ${moedaLocal(aportadoInicial)}
+                    </div>
+
+                    <div class="item">
+                        <strong>💰 Aportado final</strong><br>
+                        ${moedaLocal(aportadoFinal)}
+                    </div>
+
+                    <div class="item">
+                        <strong>📈 Lucro inicial</strong><br>
+                        ${lucroInicial >= 0 ? "▲ " : "▼ "}
+                        ${moedaLocal(Math.abs(lucroInicial))}
+                    </div>
+
+                    <div class="item">
+                        <strong>📈 Lucro final</strong><br>
+                        ${lucroFinal >= 0 ? "▲ " : "▼ "}
+                        ${moedaLocal(Math.abs(lucroFinal))}
+                    </div>
+
+                    <div class="item">
+                        <strong>📈 Variação do lucro</strong><br>
+                        ${variacaoLucro >= 0 ? "▲ " : "▼ "}
+                        ${moedaLocal(Math.abs(variacaoLucro))}
+                    </div>
+
+                </div>
+
+                <p style="opacity:.65;font-size:12px;">
+                    ${evolucaoPeriodo.length} registro(s) diário(s)
+                    encontrado(s) no período.
+                </p>
+            </div>
+        `;
+    } else {
+        blocoEvolucao = `
+            <div style="
+                margin-top:18px;
+                padding-top:15px;
+                border-top:1px solid rgba(128,128,128,.25);
+            ">
+                <h3>📈 Evolução da Carteira no Período</h3>
+                <p style="opacity:.7;">
+                    Não há registros de evolução da carteira nesse período.
+                    A Central não inventará valores históricos.
+                </p>
+            </div>
+        `;
+    }
+
+    let html = `
+        <div style="
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+            gap:10px;
+            margin-bottom:15px;
+        ">
+
+            <div class="item">
+                <strong>🟢 Compras</strong><br>
+                ${moedaLocal(totalCompras)}
+            </div>
+
+            <div class="item">
+                <strong>🔴 Vendas</strong><br>
+                ${moedaLocal(totalVendido)}
+            </div>
+
+            <div class="item">
+                <strong>💰 Custo vendido</strong><br>
+                ${moedaLocal(custoVendas)}
+            </div>
+
+            <div class="item">
+                <strong>📈 Resultado realizado</strong><br>
+                ${moedaLocal(resultadoVendas)}
+            </div>
+
+            <div class="item">
+                <strong>💵 Proventos</strong><br>
+                ${moedaLocal(totalProventos)}
+            </div>
+
+            <div class="item">
+                <strong>💳 Aportes</strong><br>
+                ${moedaLocal(totalAportes)}
+            </div>
+
+            <div class="item">
+                <strong>🔄 Movimentação líquida</strong><br>
+                ${moedaLocal(movimentacaoLiquida)}
+            </div>
+
+            <div class="item">
+                <strong>📋 Operações</strong><br>
+                ${operacoes.length}
+            </div>
+
+        </div>
+
+        ${blocoEvolucao}
+
+        <div style="overflow-x:auto;margin-top:18px;">
+        <table style="width:100%;border-collapse:collapse;">
+            <thead>
+                <tr>
+                    <th style="text-align:left;">Data</th>
+                    <th style="text-align:left;">Tipo</th>
+                    <th style="text-align:left;">Ativo</th>
+                    <th>Qtd.</th>
+                    <th>Valor</th>
+                    <th>Resultado</th>
+                </tr>
+            </thead>
+            <tbody>
+    `;
+
+    operacoes.slice().reverse().forEach(item => {
+
+        const resultado =
+            item.tipo === "Venda"
+                ? Number(item.resultado || 0)
+                : null;
+
+        html += `
+            <tr>
+                <td>${item.data || ""}</td>
+                <td>${item.tipo || ""}</td>
+                <td>${item.ativo || ""}</td>
+                <td style="text-align:center;">
+                    ${Number(item.quantidade ?? item.qtd ?? 0)}
+                </td>
+                <td style="text-align:right;">
+                    ${moedaLocal(item.valor || 0)}
+                </td>
+                <td style="text-align:right;">
+                    ${
+                        resultado === null
+                            ? "-"
+                            : (resultado >= 0 ? "▲ " : "▼ ") +
+                              moedaLocal(Math.abs(resultado))
+                    }
+                </td>
+            </tr>
+        `;
+    });
+
+    html += `
+            </tbody>
+        </table>
+        </div>
+    `;
+
+    
+    /* ===== BLOCO ANUAL DO COMPARADOR ===== */
+
+    let htmlAnualComparador = "";
+
+    try {
+        const dadosAnuais = {};
+        const historicoAnual = Array.isArray(historico) ? historico : [];
+
+        function mesAnoComparador(data) {
+            const texto = String(data || "").trim();
+
+            if (/^\d{2}\/\d{2}\/\d{4}$/.test(texto)) {
+                const p = texto.split("/");
+                return p[2] + "-" + p[1];
+            }
+
+            if (/^\d{4}-\d{2}-\d{2}$/.test(texto)) {
+                return texto.substring(0, 7);
+            }
+
+            return "";
+        }
+
+        function anoComparador(data) {
+            const mes = mesAnoComparador(data);
+            return mes ? mes.substring(0, 4) : "";
+        }
+
+        function moedaAnualComparador(valor) {
+            return "R$ " + Number(valor || 0)
+                .toFixed(2)
+                .replace(".", ",");
+        }
+
+        historicoAnual.forEach(op => {
+            const mes = mesAnoComparador(op.data);
+            const ano = mes ? mes.substring(0, 4) : "";
+
+            if (!ano) return;
+
+            if (mes < inicial || mes > final) return;
+
+            if (!dadosAnuais[ano]) {
+                dadosAnuais[ano] = {
+                    compras: 0,
+                    vendas: 0,
+                    proventos: 0,
+                    aportes: 0,
+                    resultado: 0,
+                    operacoes: 0
+                };
+            }
+
+            const d = dadosAnuais[ano];
+
+            d.operacoes++;
+
+            if (op.tipo === "Compra")
+                d.compras += Number(op.valor || 0);
+
+            if (op.tipo === "Venda") {
+                d.vendas += Number(op.valor || 0);
+                d.resultado += Number(op.resultado || 0);
+            }
+
+            if (op.tipo === "Provento")
+                d.proventos += Number(op.valor || 0);
+
+            if (op.tipo === "Aporte")
+                d.aportes += Number(op.valor || 0);
+        });
+
+        let evolucaoAnual = [];
+
+        try {
+            evolucaoAnual = JSON.parse(
+                localStorage.getItem("evolucaoCarteira") || "[]"
+            );
+        } catch (e) {
+            evolucaoAnual = [];
+        }
+
+        if (!Array.isArray(evolucaoAnual))
+            evolucaoAnual = [];
+
+        evolucaoAnual.forEach(reg => {
+            const mes = mesAnoComparador(reg.data);
+            const ano = mes ? mes.substring(0, 4) : "";
+
+            if (!ano) return;
+            if (mes < inicial || mes > final) return;
+
+            if (!dadosAnuais[ano]) {
+                dadosAnuais[ano] = {
+                    compras: 0,
+                    vendas: 0,
+                    proventos: 0,
+                    aportes: 0,
+                    resultado: 0,
+                    operacoes: 0
+                };
+            }
+
+            dadosAnuais[ano].evolucao =
+                dadosAnuais[ano].evolucao || [];
+
+            dadosAnuais[ano].evolucao.push(reg);
+        });
+
+        const anos = Object.keys(dadosAnuais)
+            .sort();
+
+        if (anos.length) {
+
+            htmlAnualComparador = `
+                <div style="
+                    margin-top:22px;
+                    padding-top:15px;
+                    border-top:1px solid rgba(128,128,128,.25);
+                ">
+                    <h3>📆 Comparação Anual</h3>
+
+                    <div style="overflow-x:auto;">
+                    <table style="width:100%;border-collapse:collapse;">
+                        <thead>
+                            <tr>
+                                <th style="text-align:left;">Ano</th>
+                                <th>Patrimônio inicial</th>
+                                <th>Patrimônio final</th>
+                                <th>Variação</th>
+                                <th>Compras</th>
+                                <th>Vendas</th>
+                                <th>Proventos</th>
+                                <th>Resultado realizado</th>
+                                <th>Lucro final</th>
+                                <th>Ops.</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+            `;
+
+            anos.forEach(ano => {
+                const d = dadosAnuais[ano];
+
+                let patrimonioInicial = null;
+                let patrimonioFinal = null;
+                let lucroFinal = null;
+
+                if (Array.isArray(d.evolucao) && d.evolucao.length) {
+
+                    d.evolucao.sort((a, b) => {
+                        const ma = mesAnoComparador(a.data);
+                        const mb = mesAnoComparador(b.data);
+                        return ma.localeCompare(mb);
+                    });
+
+                    const primeiro = d.evolucao[0];
+                    const ultimo =
+                        d.evolucao[d.evolucao.length - 1];
+
+                    patrimonioInicial =
+                        Number(primeiro.patrimonio || 0);
+
+                    patrimonioFinal =
+                        Number(ultimo.patrimonio || 0);
+
+                    lucroFinal =
+                        Number(ultimo.lucro || 0);
+                }
+
+                let variacao = null;
+
+                if (
+                    patrimonioInicial !== null &&
+                    patrimonioFinal !== null
+                ) {
+                    variacao =
+                        patrimonioFinal - patrimonioInicial;
+                }
+
+                htmlAnualComparador += `
+                    <tr>
+                        <td>${ano}</td>
+
+                        <td style="text-align:right;">
+                            ${
+                                patrimonioInicial === null
+                                    ? "-"
+                                    : moedaAnualComparador(
+                                        patrimonioInicial
+                                    )
+                            }
+                        </td>
+
+                        <td style="text-align:right;">
+                            ${
+                                patrimonioFinal === null
+                                    ? "-"
+                                    : moedaAnualComparador(
+                                        patrimonioFinal
+                                    )
+                            }
+                        </td>
+
+                        <td style="text-align:right;font-weight:bold;">
+                            ${
+                                variacao === null
+                                    ? "-"
+                                    : (
+                                        variacao >= 0
+                                            ? "▲ "
+                                            : "▼ "
+                                    ) +
+                                    moedaAnualComparador(
+                                        Math.abs(variacao)
+                                    )
+                            }
+                        </td>
+
+                        <td style="text-align:right;">
+                            ${moedaAnualComparador(d.aportes)}
+                        </td>
+
+                        <td style="text-align:right;">
+                            ${moedaAnualComparador(d.compras)}
+                        </td>
+
+                        <td style="text-align:right;">
+                            ${moedaAnualComparador(d.vendas)}
+                        </td>
+
+                        <td style="text-align:right;">
+                            ${moedaAnualComparador(d.proventos)}
+                        </td>
+
+                        <td style="text-align:right;">
+                            ${
+                                d.resultado >= 0
+                                    ? "▲ "
+                                    : "▼ "
+                            }
+                            ${moedaAnualComparador(
+                                Math.abs(d.resultado)
+                            )}
+                        </td>
+
+                        <td style="text-align:right;">
+                            ${
+                                lucroFinal === null
+                                    ? "-"
+                                    : (
+                                        lucroFinal >= 0
+                                            ? "▲ "
+                                            : "▼ "
+                                    ) +
+                                    moedaAnualComparador(
+                                        Math.abs(lucroFinal)
+                                    )
+                            }
+                        </td>
+
+                        <td style="text-align:center;">
+                            ${d.operacoes}
+                        </td>
+                    </tr>
+                `;
+            });
+
+            htmlAnualComparador += `
+                        </tbody>
+                    </table>
+                    </div>
+
+                    <p style="
+                        opacity:.65;
+                        font-size:12px;
+                        margin-top:8px;
+                    ">
+                        A comparação anual utiliza somente os registros
+                        existentes no período selecionado. Patrimônio e
+                        lucro dependem dos snapshots registrados em
+                        "evolucaoCarteira". Movimentações utilizam o
+                        histórico de operações da Central.
+                    </p>
+                </div>
+            `;
+        }
+    } catch (erroAnual) {
+        console.error(
+            "Erro no comparador anual:",
+            erroAnual
+        );
+    }
+
+    html += htmlAnualComparador;
+
+    /* ===== FIM DO BLOCO ANUAL DO COMPARADOR ===== */
+
+painel.innerHTML = html;
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    const agora = new Date();
+    const mesAtual =
+        agora.getFullYear() +
+        "-" +
+        String(agora.getMonth() + 1).padStart(2, "0");
+
+    const inicial = document.getElementById("comparadorPeriodoInicial");
+    const final = document.getElementById("comparadorPeriodoFinal");
+
+    if (inicial && final) {
+        inicial.value = mesAtual;
+        final.value = mesAtual;
+    }
+});
+
+
+/* =========================
+   ALERTAS
+========================= */
+
+function carregarLimiteAlertaCentral() {
+    const salvo =
+        localStorage.getItem("limiteAlertaCentral");
+
+    const campo =
+        document.getElementById("limiteAlertaCentral");
+
+    if (campo && salvo !== null)
+        campo.value = salvo;
+}
+
+function salvarLimiteAlertaCentral() {
+    const limite =
+        Number(
+            document.getElementById(
+                "limiteAlertaCentral"
+            )?.value || 10
+        );
+
+    localStorage.setItem(
+        "limiteAlertaCentral",
+        String(limite)
+    );
+
+    atualizarAlertasCentral();
+}
+
+function atualizarAlertasCentral() {
+    const painel =
+        document.getElementById("alertasCentral");
+
+    if (!painel || typeof carteira === "undefined") return;
+
+    const limite =
+        Number(
+            localStorage.getItem(
+                "limiteAlertaCentral"
+            ) || 10
+        );
+
+    const alertas = [];
+
+    carteira.forEach(item => {
+        const qtd = Number(item.qtd || 0);
+        if (qtd <= 0) return;
+
+        const simbolo =
+            typeof normalizarAtivo === "function"
+                ? normalizarAtivo(item.ativo)
+                : String(item.ativo || "").toUpperCase();
+
+        const pm = Number(item.pm || 0);
+
+        let atual = 0;
+
+        if (
+            item.valorAtual !== undefined &&
+            item.valorAtual !== null
+        ) {
+            atual =
+                Number(item.valorAtual || 0) / qtd;
+        } else if (
+            typeof precosBrapi !== "undefined"
+        ) {
+            atual =
+                Number(precosBrapi[simbolo] || 0);
+        }
+
+        if (atual <= 0) {
+            alertas.push(
+                "⚠️ " + item.ativo +
+                ": cotação não disponível."
+            );
+            return;
+        }
+
+        if (pm <= 0) return;
+
+        const variacao =
+            ((atual - pm) / pm) * 100;
+
+        if (Math.abs(variacao) >= limite) {
+            alertas.push(
+                (variacao >= 0 ? "📈 " : "📉 ") +
+                item.ativo +
+                ": " +
+                (variacao >= 0 ? "+" : "") +
+                variacao.toFixed(2) +
+                "% contra o PM."
+            );
+        }
+    });
+
+    painel.innerHTML =
+        alertas.length
+            ? alertas.map(x => "<div>" + x + "</div>").join("")
+            : "<p>✅ Nenhum alerta no limite definido.</p>";
+}
+
+
+/* =========================
+   BACKUP
+========================= */
+
+function baixarBackupCentral() {
+    const backup = {
+        versao: 1,
+        data: new Date().toISOString(),
+
+        carteira:
+            typeof carteira !== "undefined"
+                ? carteira
+                : [],
+
+        historico:
+            typeof historico !== "undefined"
+                ? historico
+                : [],
+
+        extras: {
+            proventosReceber:
+                localStorage.getItem("proventosReceber"),
+
+            evolucaoCarteira:
+                localStorage.getItem("evolucaoCarteira"),
+
+            metasCentral:
+                localStorage.getItem("metasCentral"),
+
+            limiteAlertaCentral:
+                localStorage.getItem("limiteAlertaCentral")
+        }
+    };
+
+    const blob =
+        new Blob(
+            [JSON.stringify(backup, null, 2)],
+            {type:"application/json"}
+        );
+
+    const url =
+        URL.createObjectURL(blob);
+
+    const a =
+        document.createElement("a");
+
+    const agora = new Date();
+
+    a.download =
+        "backup-central-" +
+        agora.getFullYear() +
+        String(agora.getMonth()+1).padStart(2,"0") +
+        String(agora.getDate()).padStart(2,"0") +
+        "-" +
+        String(agora.getHours()).padStart(2,"0") +
+        String(agora.getMinutes()).padStart(2,"0") +
+        ".json";
+
+    a.href = url;
+    a.click();
+
+    URL.revokeObjectURL(url);
+
+    const div =
+        document.getElementById(
+            "backupCentralResultado"
+        );
+
+    if (div)
+        div.innerText =
+            "✅ Backup criado com sucesso.";
+}
+
+function restaurarBackupCentralArquivo(event) {
+    const arquivo =
+        event.target.files[0];
+
+    if (!arquivo) return;
+
+    const leitor = new FileReader();
+
+    leitor.onload = function() {
+        try {
+            const backup =
+                JSON.parse(leitor.result);
+
+            if (
+                !backup ||
+                !Array.isArray(backup.carteira) ||
+                !Array.isArray(backup.historico)
+            ) {
+                alert("Backup inválido.");
+                return;
+            }
+
+            if (!confirm(
+                "Restaurar este backup?\n\n" +
+                "Carteira e histórico atuais serão substituídos."
+            )) return;
+
+            localStorage.setItem(
+                "carteira",
+                JSON.stringify(backup.carteira)
+            );
+
+            localStorage.setItem(
+                "historico",
+                JSON.stringify(backup.historico)
+            );
+
+            if (backup.extras) {
+                Object.entries(
+                    backup.extras
+                ).forEach(([chave, valor]) => {
+                    if (valor !== null &&
+                        valor !== undefined) {
+                        localStorage.setItem(
+                            chave,
+                            valor
+                        );
+                    }
+                });
+            }
+
+            alert(
+                "Backup restaurado. A Central será recarregada."
+            );
+
+            location.reload();
+
+        } catch (erro) {
+            alert("Erro ao restaurar o backup.");
+        }
+    };
+
+    leitor.readAsText(arquivo);
+}
+
+
+/* =========================
+   FILTRO
+========================= */
+
+function prepararFiltroCentral() {
+    const select =
+        document.getElementById(
+            "filtroAtivoCentral"
+        );
+
+    if (!select ||
+        typeof historico === "undefined") return;
+
+    const atual = select.value;
+
+    const ativos = [];
+
+    historico
+        .filter(item => item.tipo === "Compra")
+        .forEach(item => {
+            const ativo =
+                item.ativo || "Outro";
+
+            const qtd =
+                Number(
+                    item.quantidade ||
+                    item.qtd ||
+                    0
+                );
+
+            const preco =
+                Number(item.preco || 0);
+
+            if (!acumulado[ativo]) {
+                acumulado[ativo] = {
+                    qtd: 0,
+                    custo: 0
+                };
+            }
+
+            acumulado[ativo].qtd += qtd;
+            acumulado[ativo].custo +=
+                qtd * preco;
+
+            const pm =
+                acumulado[ativo].qtd > 0
+                    ? acumulado[ativo].custo /
+                      acumulado[ativo].qtd
+                    : 0;
+
+            linhas.push({
+                data: item.data || "",
+                ativo,
+                qtd,
+                preco,
+                pm
+            });
+        });
+
+    if (!linhas.length) {
+        painel.innerHTML =
+            "<p>Nenhuma compra registrada.</p>";
+        return;
+    }
+
+    painel.innerHTML = `
+        <div style="overflow-x:auto;">
+        <table style="width:100%;border-collapse:collapse;">
+            <thead>
+                <tr>
+                    <th>Data</th>
+                    <th style="text-align:left;">Ativo</th>
+                    <th>Qtd.</th>
+                    <th>Preço</th>
+                    <th>PM acumulado</th>
+                </tr>
+            </thead>
+            <tbody>
+                ${
+                    linhas.slice().reverse().map(item => `
+                    <tr>
+                        <td>${item.data}</td>
+                        <td>${item.ativo}</td>
+                        <td style="text-align:right;">
+                            ${item.qtd}
+                        </td>
+                        <td style="text-align:right;">
+                            R$ ${centralMoeda(item.preco)}
+                        </td>
+                        <td style="text-align:right;">
+                            R$ ${centralMoeda(item.pm)}
+                        </td>
+                    </tr>
+                    `).join("")
+                }
+            </tbody>
+        </table>
+        </div>
+
+        <p style="opacity:.65;font-size:12px;">
+            Histórico calculado a partir das compras registradas.
+        </p>
+    `;
+}
+
+
+/* =========================
+   INICIALIZAÇÃO
+========================= */
+
+function atualizarFerramentasCentral() {
+    carregarMetasCentral();
+    carregarLimiteAlertaCentral();
+
+    atualizarDistribuicaoCentral();
+    atualizarProventosMensaisCentral();
+    atualizarAlertasCentral();
+    prepararFiltroCentral();
+    atualizarRankingProventosCentral();
+    atualizarPMHistoricoCentral();
+}
+
+document.addEventListener(
+    "DOMContentLoaded",
+    atualizarFerramentasCentral
+);
+
+setInterval(
+    atualizarFerramentasCentral,
+    3000
+);
+
+
+
+/* =========================================================
+   STATUS DA CENTRAL + CRIPTOS AUTOMÁTICAS
+   ========================================================= */
+
+async function atualizarCriptosAutomaticamente() {
+
+    try {
+
+        const resposta =
+            await fetch("/cripto?_=" + Date.now(), {
+                cache: "no-store"
+            });
+
+        if (!resposta.ok)
+            throw new Error("Falha na consulta das criptos.");
+
+        const dados = await resposta.json();
+
+        const btc =
+            Number(dados.bitcoin?.brl || 0);
+
+        const shib =
+            Number(dados["shiba-inu"]?.brl || 0);
+
+        if (btc > 0)if (shib > 0)localStorage.setItem(
+            "ultimaAtualizacaoCriptos",
+            new Date().toISOString()
+        );
+
+        return {
+            ok: true,
+            btc: btc,
+            shib: shib
+        };
+
+    } catch (erro) {
+
+        console.error(
+            "Erro ao atualizar criptos:",
+            erro
+        );
+
+        return {
+            ok: false,
+            erro: erro.message
+        };
+    }
+}
+
+
+function atualizarValorCriptoCentral(
+    simbolo,
+    preco
+)async function verificarStatusCentral() {
+
+    const painel =
+        document.getElementById(
+            "statusCentralResultado"
+        );
+
+    const horario =
+        document.getElementById(
+            "statusCentralHorario"
+        );
+
+    if (!painel) return;
+
+    painel.innerHTML =
+        "⏳ Verificando Central...";
+
+    const resultado = [];
+
+    /* SERVIDOR */
+    try {
+
+        const resposta =
+            await fetch(
+                "/status?_=" + Date.now(),
+                {cache:"no-store"}
+            );
+
+        if (!resposta.ok)
+            throw new Error();
+
+        const status =
+            await resposta.json();
+
+        resultado.push(
+            "🟢 Servidor: <b>Online</b>"
+        );
+
+        resultado.push(
+            status.brapi_token
+                ? "🟢 BRAPI: <b>Conectada</b>"
+                : "🟡 BRAPI: <b>sem token</b>"
+        );
+
+    } catch (erro) {
+
+        resultado.push(
+            "🔴 Servidor: <b>Falha</b>"
+        );
+    }
+
+    /* CRIPTOS */
+    const cripto =
+        await atualizarCriptosAutomaticamente();
+
+    if (cripto.ok) {
+
+        resultado.push(
+            "🟢 Criptos: <b>Atualizadas</b>"
+        );
+
+    } else {
+
+        resultado.push(
+            "🔴 Criptos: <b>Falha na atualização</b>"
+        );
+    }
+
+    /* CARTEIRA */
+    if (
+        typeof carteira !== "undefined" &&
+        Array.isArray(carteira)
+    ) {
+
+        resultado.push(
+            "🟢 Carteira: <b>Carregada</b>"
+        );
+
+    } else {
+
+        resultado.push(
+            "🔴 Carteira: <b>Não carregada</b>"
+        );
+    }
+
+    /* BACKUP */
+    const ultimoBackup =
+        localStorage.getItem(
+            "ultimoBackupCentral"
+        );
+
+    resultado.push(
+        ultimoBackup
+            ? "🟢 Backup: <b>registrado</b>"
+            : "🟡 Backup: <b>nenhum registro de data</b>"
+    );
+
+    painel.innerHTML =
+        resultado
+            .map(x => "<div>" + x + "</div>")
+            .join("");
+
+    const agora = new Date();
+
+    const horarioTexto =
+        agora.toLocaleString(
+            "pt-BR"
+        );
+
+    if (horario)
+        horario.innerText =
+            "Última verificação: " +
+            horarioTexto;
+
+    localStorage.setItem(
+        "ultimaVerificacaoCentral",
+        agora.toISOString()
+    );
+}
+
+
+/* Atualização automática das criptos */
+setInterval(
+    atualizarCriptosAutomaticamente,
+    60000
+);
+
+
+/* Verificação inicial */
+setTimeout(
+    verificarStatusCentral,
+    1500
+);
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+})();
+</script>
+<script id="RV415_RENDA_FIXA_V2">
+(function())();
+</script>
+
+
+
+
+
+<script>
+/* RV415_COTACOES_FIX */
+(function ())();
+</script>
+
+
+<script>
+/* RV415_CANONICAL_FIX_FINAL */
+(function ())();
+</script>
+
+
+<!-- RV415_GARE_HTML_FIX_START -->
+<script>
+(function ())();
+</script>
+<!-- RV415_GARE_HTML_FIX_END -->
+
+
+<script>
+/* RV415_COTACOES_VISUAL_FIX */
+(function ())();
+</script>
+
+
+<style id="RV415_TEMAS_V1">
+/* =========================================================
+   RV415 - SISTEMA DE TEMAS
+   3 opções: Clássico / Dark / Light
+   Não altera funções ou cálculos da Central.
+   ========================================================= */
+
+:root {
+    --rv-bg: initial;
+    --rv-card: initial;
+    --rv-text: initial;
+    --rv-border: initial;
+}
+
+/* BOTÃO DE TEMAS */
+#rv415-theme-selector {
+    position: fixed;
+    top: 14px;
+    right: 14px;
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px;
+    border-radius: 12px;
+    background: rgba(255,255,255,.92);
+    border: 1px solid rgba(0,0,0,.12);
+    box-shadow: 0 4px 18px rgba(0,0,0,.12);
+    backdrop-filter: blur(8px);
+}
+
+#rv415-theme-selector span {
+    font-size: 13px;
+    font-weight: 700;
+    padding: 0 4px;
+}
+
+#rv415-theme-selector button {
+    border: 0;
+    border-radius: 8px;
+    padding: 7px 10px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 12px;
+    transition: .2s;
+}
+
+#rv415-theme-selector button:hover {
+    transform: translateY(-1px);
+}
+
+#rv415-theme-selector button.rv415-active {
+    outline: 2px solid currentColor;
+}
+
+/* =========================================================
+   DARK
+   ========================================================= */
+body.rv415-theme-dark {
+    background: #111827 !important;
+    color: #e5e7eb !important;
+}
+
+body.rv415-theme-dark .card,
+body.rv415-theme-dark .card-container,
+body.rv415-theme-dark section,
+body.rv415-theme-dark .box,
+body.rv415-theme-dark .panel {
+    background-color: #1f2937 !important;
+    color: #e5e7eb !important;
+    border-color: #374151 !important;
+}
+
+body.rv415-theme-dark input,
+body.rv415-theme-dark select,
+body.rv415-theme-dark textarea {
+    background: #111827 !important;
+    color: #e5e7eb !important;
+    border-color: #4b5563 !important;
+}
+
+body.rv415-theme-dark table {
+    color: #e5e7eb !important;
+}
+
+body.rv415-theme-dark th {
+    background: #374151 !important;
+    color: #f9fafb !important;
+}
+
+body.rv415-theme-dark td {
+    border-color: #374151 !important;
+}
+
+body.rv415-theme-dark #rv415-theme-selector {
+    background: rgba(31,41,55,.94);
+    border-color: #4b5563;
+    color: #f9fafb;
+}
+
+body.rv415-theme-dark #rv415-theme-selector button {
+    background: #374151;
+    color: #f9fafb;
+}
+
+/* =========================================================
+   LIGHT
+   ========================================================= */
+body.rv415-theme-light {
+    background: #f3f6fa !important;
+    color: #1f2937 !important;
+}
+
+body.rv415-theme-light .card,
+body.rv415-theme-light .card-container,
+body.rv415-theme-light section,
+body.rv415-theme-light .box,
+body.rv415-theme-light .panel {
+    background-color: #ffffff !important;
+    color: #1f2937 !important;
+    border-color: #dbe3ec !important;
+    box-shadow: 0 4px 16px rgba(15,23,42,.07);
+}
+
+body.rv415-theme-light input,
+body.rv415-theme-light select,
+body.rv415-theme-light textarea {
+    background: #ffffff !important;
+    color: #1f2937 !important;
+    border-color: #cbd5e1 !important;
+}
+
+body.rv415-theme-light #rv415-theme-selector {
+    background: rgba(255,255,255,.95);
+}
+
+/* =========================================================
+   MODERNO DARK - pequenos acabamentos
+   ========================================================= */
+body.rv415-theme-dark .card,
+body.rv415-theme-dark .card-container {
+    box-shadow: 0 6px 24px rgba(0,0,0,.28);
+}
+
+body.rv415-theme-dark h1,
+body.rv415-theme-dark h2,
+body.rv415-theme-dark h3 {
+    color: #f9fafb !important;
+}
+
+/* Transição suave */
+body {
+    transition: background-color .25s ease, color .25s ease;
+}
+
+body .card,
+body .card-container,
+body section {
+    transition: background-color .25s ease, color .25s ease,
+                border-color .25s ease, box-shadow .25s ease;
+}
+</style>
+
+<div id="rv415-theme-selector">
+    <span>🎨</span>
+    
+    <button type="button" data-rv415-theme="dark">🌑 Dark</button>
+    <button type="button" data-rv415-theme="light">☀️ Light</button>
+</div>
+
+<script id="RV415_TEMAS_JS_V1">
+(function () {
+    const STORAGE_KEY = "rv415_tema";
+
+    function aplicarTema(tema) {
+        document.body.classList.remove(
+            "rv415-theme-dark",
+            "rv415-theme-light"
+        );
+
+        if (tema === "dark") {
+            document.body.classList.add("rv415-theme-dark");
+        } else if (tema === "light") {
+            document.body.classList.add("rv415-theme-light");
+        }
+
+        localStorage.setItem(STORAGE_KEY, tema);
+
+        document.querySelectorAll(
+            "#rv415-theme-selector button"
+        ).forEach(btn => {
+            btn.classList.toggle(
+                "rv415-active",
+                btn.dataset.rv415Theme === tema
+            );
+        });
+    }
+
+    function iniciarTemas() {
+        const salvo = localStorage.getItem(STORAGE_KEY) || "classic";
+
+        document.querySelectorAll(
+            "#rv415-theme-selector button"
+        ).forEach(btn => {
+            btn.addEventListener("click", function () {
+                aplicarTema(this.dataset.rv415Theme);
+            });
+        });
+
+        aplicarTema(salvo);
+    }
+
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", iniciarTemas);
+    } else {
+        iniciarTemas();
+    }
+})();
+</script>
+
+
+<style id="RV415_BALOES_V2">
+
+/* =========================================================
+   RV415 — BALÕES DE ALERTA V2
+   Visual aplicado ao painel REAL: #alertasCentral
+   Não altera a lógica dos alertas.
+   ========================================================= */
+
+/* PAINEL */
+#alertasCentral {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 12px !important;
+}
+
+/* CADA BALÃO */
+#alertasCentral > div,
+#alertasCentral > p {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 46px;
+    box-sizing: border-box;
+    padding: 12px 16px 12px 20px;
+    border-radius: 14px;
+    font-weight: 600;
+    line-height: 1.45;
+    letter-spacing: .1px;
+    overflow: hidden;
+
+    animation: RV415AlertaEntrada .28s ease-out;
+
+    transition:
+        transform .18s ease,
+        box-shadow .18s ease,
+        border-color .18s ease;
+}
+
+/* BARRA LATERAL */
+#alertasCentral > div::before,
+#alertasCentral > p::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 5px;
+    border-radius: 14px 0 0 14px;
+}
+
+/* BRILHO DISCRETO */
+#alertasCentral > div::after {
+    content: "";
+    position: absolute;
+    left: -80px;
+    top: 0;
+    width: 70px;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.18),
+        transparent
+    );
+    transform: skewX(-18deg);
+    transition: left .45s ease;
+}
+
+#alertasCentral > div:hover::after {
+    left: 120%;
+}
+
+#alertasCentral > div:hover,
+#alertasCentral > p:hover {
+    transform: translateX(3px);
+}
+
+/* =========================================================
+   CLÁSSICO
+   ========================================================= */
+
+body:not(.rv415-theme-dark):not(.rv415-theme-light)
+#alertasCentral > div {
+
+    background: linear-gradient(
+        135deg,
+        #ffffff,
+        #f5f7fa
+    ) !important;
+
+    color: #253044 !important;
+
+    border: 1px solid rgba(30,41,59,.10) !important;
+
+    box-shadow:
+        0 5px 14px rgba(15,23,42,.10),
+        0 1px 3px rgba(15,23,42,.06) !important;
+}
+
+body:not(.rv415-theme-dark):not(.rv415-theme-light)
+#alertasCentral > div::before {
+    background: linear-gradient(
+        180deg,
+        #2563eb,
+        #60a5fa
+    );
+}
+
+body:not(.rv415-theme-dark):not(.rv415-theme-light)
+#alertasCentral > p {
+
+    background: linear-gradient(
+        135deg,
+        #f0fdf4,
+        #ffffff
+    ) !important;
+
+    color: #166534 !important;
+
+    border: 1px solid rgba(34,197,94,.18) !important;
+
+    box-shadow: 0 5px 14px rgba(22,101,52,.08) !important;
+}
+
+body:not(.rv415-theme-dark):not(.rv415-theme-light)
+#alertasCentral > p::before {
+    background: #22c55e;
+}
+
+/* =========================================================
+   DARK
+   ========================================================= */
+
+body.rv415-theme-dark #alertasCentral > div {
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(31,41,55,.98),
+            rgba(17,24,39,.98)
+        ) !important;
+
+    color: #f3f4f6 !important;
+
+    border: 1px solid rgba(148,163,184,.16) !important;
+
+    box-shadow:
+        0 8px 22px rgba(0,0,0,.38),
+        inset 0 1px 0 rgba(255,255,255,.035) !important;
+}
+
+body.rv415-theme-dark #alertasCentral > div::before {
+    background: linear-gradient(
+        180deg,
+        #60a5fa,
+        #2563eb
+    );
+}
+
+body.rv415-theme-dark #alertasCentral > p {
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(20,83,45,.42),
+            rgba(17,24,39,.98)
+        ) !important;
+
+    color: #bbf7d0 !important;
+
+    border: 1px solid rgba(74,222,128,.18) !important;
+
+    box-shadow:
+        0 8px 22px rgba(0,0,0,.32) !important;
+}
+
+body.rv415-theme-dark #alertasCentral > p::before {
+    background: #4ade80;
+}
+
+/* =========================================================
+   LIGHT
+   ========================================================= */
+
+body.rv415-theme-light #alertasCentral > div {
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #f0f7ff
+        ) !important;
+
+    color: #172033 !important;
+
+    border: 1px solid rgba(59,130,246,.18) !important;
+
+    box-shadow:
+        0 7px 20px rgba(37,99,235,.12),
+        0 1px 3px rgba(37,99,235,.08) !important;
+}
+
+body.rv415-theme-light #alertasCentral > div::before {
+    background: linear-gradient(
+        180deg,
+        #3b82f6,
+        #06b6d4
+    );
+}
+
+body.rv415-theme-light #alertasCentral > p {
+
+    background:
+        linear-gradient(
+            135deg,
+            #ecfdf5,
+            #ffffff
+        ) !important;
+
+    color: #166534 !important;
+
+    border: 1px solid rgba(34,197,94,.20) !important;
+
+    box-shadow:
+        0 7px 20px rgba(34,197,94,.10) !important;
+}
+
+body.rv415-theme-light #alertasCentral > p::before {
+    background: #22c55e;
+}
+
+/* =========================================================
+   ANIMAÇÃO
+   ========================================================= */
+
+@keyframes RV415AlertaEntrada {
+
+    from {
+        opacity: 0;
+        transform: translateY(-7px) scale(.985);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* =========================================================
+   CELULAR
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    #alertasCentral {
+        gap: 8px;
+    }
+
+    #alertasCentral > div,
+    #alertasCentral > p {
+
+        min-height: 44px;
+
+        padding:
+            10px
+            12px
+            10px
+            17px;
+
+        border-radius: 12px;
+
+        font-size: 13px;
+    }
+
+    #alertasCentral > div::before,
+    #alertasCentral > p::before {
+        width: 4px;
+        border-radius: 12px 0 0 12px;
+    }
+}
+
+</style>
+
+
+<style id="RV415_BALOES_V3">
+
+/* =========================================================
+   RV415 — BALÕES PREMIUM V3
+   Visual financeiro / dashboard
+   Somente CSS — lógica dos alertas preservada.
+   ========================================================= */
+
+/* PAINEL */
+#alertasCentral {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 12px !important;
+    margin-top: 14px !important;
+    padding: 2px !important;
+}
+
+/* =========================================================
+   CARTÃO BASE
+   ========================================================= */
+
+#alertasCentral > div,
+#alertasCentral > p {
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+    min-height: 52px;
+
+    box-sizing: border-box;
+
+    padding: 13px 18px 13px 24px !important;
+
+    border-radius: 16px !important;
+
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.5;
+
+    letter-spacing: .05px;
+
+    overflow: hidden;
+
+    border-width: 1px !important;
+    border-style: solid !important;
+
+    transform: translateZ(0);
+
+    transition:
+        transform .22s cubic-bezier(.2,.8,.2,1),
+        box-shadow .22s ease,
+        border-color .22s ease,
+        filter .22s ease !important;
+
+    animation:
+        RV415PremiumEntrada .38s cubic-bezier(.2,.8,.2,1) both;
+}
+
+/* BARRA LATERAL PREMIUM */
+#alertasCentral > div::before,
+#alertasCentral > p::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 8px;
+    bottom: 8px;
+
+    width: 4px;
+
+    border-radius: 0 8px 8px 0;
+
+    transition:
+        width .22s ease,
+        top .22s ease,
+        bottom .22s ease;
+}
+
+/* HALO INTERNO */
+#alertasCentral > div::after {
+
+    content: "";
+
+    position: absolute;
+
+    pointer-events: none;
+
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 1px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.35),
+        transparent
+    );
+
+    opacity: .55;
+}
+
+/* HOVER */
+#alertasCentral > div:hover,
+#alertasCentral > p:hover {
+
+    transform:
+        translateY(-2px)
+        translateX(2px)
+        scale(1.005);
+
+    filter: brightness(1.025);
+}
+
+#alertasCentral > div:hover::before,
+#alertasCentral > p:hover::before {
+
+    width: 6px;
+    top: 5px;
+    bottom: 5px;
+}
+
+/* =========================================================
+   CLÁSSICO — FINANCEIRO E LIMPO
+   ========================================================= */
+
+body:not(.rv415-theme-dark):not(.rv415-theme-light)
+#alertasCentral > div {
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff 0%,
+            #f8fafc 55%,
+            #f1f5f9 100%
+        ) !important;
+
+    color: #172033 !important;
+
+    border-color:
+        rgba(30,41,59,.10) !important;
+
+    box-shadow:
+        0 7px 18px rgba(15,23,42,.08),
+        0 2px 5px rgba(15,23,42,.05),
+        inset 0 1px 0 rgba(255,255,255,.9) !important;
+}
+
+body:not(.rv415-theme-dark):not(.rv415-theme-light)
+#alertasCentral > div::before {
+
+    background:
+        linear-gradient(
+            180deg,
+            #2563eb,
+            #60a5fa
+        );
+}
+
+body:not(.rv415-theme-dark):not(.rv415-theme-light)
+#alertasCentral > div:hover {
+
+    border-color:
+        rgba(37,99,235,.22) !important;
+
+    box-shadow:
+        0 12px 26px rgba(15,23,42,.12),
+        0 3px 8px rgba(37,99,235,.08) !important;
+}
+
+/* CLÁSSICO — SEM ALERTAS */
+body:not(.rv415-theme-dark):not(.rv415-theme-light)
+#alertasCentral > p {
+
+    background:
+        linear-gradient(
+            135deg,
+            #f0fdf4,
+            #ffffff
+        ) !important;
+
+    color: #166534 !important;
+
+    border-color:
+        rgba(34,197,94,.20) !important;
+
+    box-shadow:
+        0 7px 18px rgba(22,101,52,.07) !important;
+}
+
+body:not(.rv415-theme-dark):not(.rv415-theme-light)
+#alertasCentral > p::before {
+
+    background:
+        linear-gradient(
+            180deg,
+            #16a34a,
+            #4ade80
+        );
+}
+
+/* =========================================================
+   DARK — PREMIUM / TECNOLÓGICO
+   ========================================================= */
+
+body.rv415-theme-dark #alertasCentral > div {
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(30,41,59,.98),
+            rgba(15,23,42,.99)
+        ) !important;
+
+    color: #f1f5f9 !important;
+
+    border-color:
+        rgba(148,163,184,.14) !important;
+
+    box-shadow:
+        0 10px 28px rgba(0,0,0,.42),
+        0 2px 8px rgba(0,0,0,.30),
+        inset 0 1px 0 rgba(255,255,255,.045) !important;
+}
+
+body.rv415-theme-dark #alertasCentral > div::before {
+
+    background:
+        linear-gradient(
+            180deg,
+            #38bdf8,
+            #3b82f6,
+            #6366f1
+        );
+}
+
+body.rv415-theme-dark #alertasCentral > div:hover {
+
+    border-color:
+        rgba(96,165,250,.28) !important;
+
+    box-shadow:
+        0 14px 34px rgba(0,0,0,.52),
+        0 0 22px rgba(59,130,246,.08),
+        inset 0 1px 0 rgba(255,255,255,.06) !important;
+}
+
+/* DARK — NENHUM ALERTA */
+body.rv415-theme-dark #alertasCentral > p {
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(20,83,45,.38),
+            rgba(15,23,42,.98)
+        ) !important;
+
+    color: #bbf7d0 !important;
+
+    border-color:
+        rgba(74,222,128,.18) !important;
+
+    box-shadow:
+        0 9px 25px rgba(0,0,0,.35) !important;
+}
+
+body.rv415-theme-dark #alertasCentral > p::before {
+
+    background:
+        linear-gradient(
+            180deg,
+            #22c55e,
+            #4ade80
+        );
+}
+
+/* =========================================================
+   LIGHT — MODERNO / AZUL
+   ========================================================= */
+
+body.rv415-theme-light #alertasCentral > div {
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #f8fbff 50%,
+            #eff6ff
+        ) !important;
+
+    color: #172033 !important;
+
+    border-color:
+        rgba(59,130,246,.16) !important;
+
+    box-shadow:
+        0 9px 24px rgba(37,99,235,.10),
+        0 2px 6px rgba(37,99,235,.05),
+        inset 0 1px 0 rgba(255,255,255,.95) !important;
+}
+
+body.rv415-theme-light #alertasCentral > div::before {
+
+    background:
+        linear-gradient(
+            180deg,
+            #2563eb,
+            #3b82f6,
+            #06b6d4
+        );
+}
+
+body.rv415-theme-light #alertasCentral > div:hover {
+
+    border-color:
+        rgba(37,99,235,.27) !important;
+
+    box-shadow:
+        0 13px 30px rgba(37,99,235,.14),
+        0 3px 8px rgba(6,182,212,.08) !important;
+}
+
+/* LIGHT — NENHUM ALERTA */
+body.rv415-theme-light #alertasCentral > p {
+
+    background:
+        linear-gradient(
+            135deg,
+            #ecfdf5,
+            #ffffff
+        ) !important;
+
+    color: #166534 !important;
+
+    border-color:
+        rgba(34,197,94,.18) !important;
+
+    box-shadow:
+        0 8px 22px rgba(34,197,94,.08) !important;
+}
+
+body.rv415-theme-light #alertasCentral > p::before {
+
+    background:
+        linear-gradient(
+            180deg,
+            #16a34a,
+            #4ade80
+        );
+}
+
+/* =========================================================
+   TEXTO DOS ALERTAS
+   ========================================================= */
+
+#alertasCentral > div {
+    text-rendering: optimizeLegibility;
+}
+
+#alertasCentral > div::first-letter {
+    font-size: 1.08em;
+}
+
+/* =========================================================
+   ANIMAÇÃO
+   ========================================================= */
+
+@keyframes RV415PremiumEntrada {
+
+    0% {
+        opacity: 0;
+        transform:
+            translateY(-9px)
+            scale(.975);
+    }
+
+    65% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+/* =========================================================
+   CELULAR
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    #alertasCentral {
+        gap: 9px !important;
+        padding: 1px !important;
+    }
+
+    #alertasCentral > div,
+    #alertasCentral > p {
+
+        min-height: 48px;
+
+        padding:
+            11px
+            13px
+            11px
+            19px !important;
+
+        border-radius: 13px !important;
+
+        font-size: 13px;
+
+        line-height: 1.42;
+    }
+
+    #alertasCentral > div::before,
+    #alertasCentral > p::before {
+
+        width: 4px;
+
+        top: 7px;
+        bottom: 7px;
+
+        border-radius: 0 7px 7px 0;
+    }
+
+    #alertasCentral > div:hover,
+    #alertasCentral > p:hover {
+
+        transform: translateX(1px);
+    }
+}
+
+/* =========================================================
+   REDUÇÃO DE MOVIMENTO
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    #alertasCentral > div,
+    #alertasCentral > p {
+
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+</style>
+
+
+<script id="RV415_PREMIUM_FINAL_JS">
+(function () {
+
+    const STORAGE_KEY = "rv415_premium_visual";
+
+    function aplicarPremium() {
+
+        const ativo =
+            localStorage.getItem(STORAGE_KEY) === "1";
+
+        document.body.classList.toggle(
+            "rv415-premium-active",
+            ativo
+        );
+
+        const botao =
+            document.getElementById("rv415PremiumToggle");
+
+        if (botao) {
+
+            botao.setAttribute(
+                "aria-pressed",
+                ativo ? "true" : "false"
+            );
+
+            const texto =
+                botao.querySelector(".rv415-premium-text");
+
+            if (texto) {
+                texto.textContent =
+                    ativo
+                        ? "PREMIUM ATIVO"
+                        : "MODO PREMIUM";
+            }
+        }
+    }
+
+    function criarBotaoPremium() {
+
+        if (!document.body) return;
+
+        if (
+            document.getElementById(
+                "rv415PremiumToggle"
+            )
+        ) return;
+
+        const botao =
+            document.createElement("button");
+
+        botao.id =
+            "rv415PremiumToggle";
+
+        botao.type =
+            "button";
+
+        botao.title =
+            "Ativar ou desativar o visual Premium";
+
+        botao.innerHTML = `
+            <span class="rv415-premium-dot"></span>
+            <span class="rv415-premium-text">
+                MODO PREMIUM
+            </span>
+        `;
+
+        botao.addEventListener(
+            "click",
+            function () {
+
+                const ativo =
+                    document.body.classList.contains(
+                        "rv415-premium-active"
+                    );
+
+                localStorage.setItem(
+                    STORAGE_KEY,
+                    ativo ? "0" : "1"
+                );
+
+                aplicarPremium();
+            }
+        );
+
+        document.body.appendChild(botao);
+
+        aplicarPremium();
+    }
+
+    if (document.readyState === "loading") {
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            criarBotaoPremium
+        );
+
+    } else {
+
+        criarBotaoPremium();
+    }
+
+})();
+</script>
+
+
+<!-- PERSONALIZAR_CENTRAL_V2 -->
+<style id="personalizacao-central-css">
+body.pc-premium {
+  background: linear-gradient(135deg,#eef2ff,#f8fafc,#ecfdf5) !important;
+  color:#172033 !important;
+}
+body.pc-premium .card,
+body.pc-premium .card-box,
+body.pc-premium section,
+body.pc-premium .dashboard-card,
+body.pc-premium .box,
+body.pc-premium .panel {
+  border-radius:18px !important;
+  box-shadow:0 8px 24px rgba(15,23,42,.10) !important;
+}
+body.pc-dark {
+  background:#0f172a !important;
+  color:#e5e7eb !important;
+}
+body.pc-dark .card,
+body.pc-dark .card-box,
+body.pc-dark section,
+body.pc-dark .dashboard-card,
+body.pc-dark .box,
+body.pc-dark .panel {
+  background:#1e293b !important;
+  color:#e5e7eb !important;
+  border-color:#334155 !important;
+  border-radius:14px !important;
+}
+body.pc-dark header,
+body.pc-dark nav {
+  background:#020617 !important;
+  color:#f8fafc !important;
+}
+body.pc-dark button {
+  border-color:#475569 !important;
+}
+body.pc-premium button {
+  border-radius:12px !important;
+}
+</style>
+<style>
+/* PREMIUM_VISUAL_SEGURO_V1 */
+body.pc-premium {
+    background: linear-gradient(135deg, #d7eaff 0%, #edf6ff 52%, #e7f5ef 100%) !important;
+}
+
+body.pc-premium header {
+    background: #cfe7ff !important;
+    color: #163b63 !important;
+}
+
+body.pc-premium header * {
+    color: #163b63 !important;
+}
+
+body.pc-premium header button {
+    background: #ffffff !important;
+    color: #163b63 !important;
+}
+</style>
+<style>
+/* PREMIUM_TITULO_METALICO_V1 */
+body.pc-premium header h1,
+body.pc-premium header h2,
+body.pc-premium .titulo,
+body.pc-premium .title,
+body.pc-premium .logo,
+body.pc-premium .brand {
+    color: #4a4f55 !important;
+    text-shadow: 0 1px 1px rgba(255,255,255,.65) !important;
+}
+</style>
+<style>
+/* PREMIUM_TITULO_GRAFITE_FORTE_V1 */
+body.pc-premium header h1,
+body.pc-premium header h2,
+body.pc-premium header .titulo,
+body.pc-premium header .title,
+body.pc-premium header .logo,
+body.pc-premium header .brand {
+    color: #25282c !important;
+    text-shadow:
+        0 1px 0 rgba(255,255,255,.75),
+        0 2px 2px rgba(0,0,0,.35) !important;
+    font-weight: 900 !important;
+}
+</style>
+<style>
+/* PREMIUM_AZUL_ACINZENTADO_FORTE_V1 */
+body.pc-premium {
+    background: linear-gradient(
+        135deg,
+        #b8c9dc 0%,
+        #c7d5e3 45%,
+        #b9ccd8 100%
+    ) !important;
+}
+
+body.pc-premium header {
+    background: linear-gradient(
+        135deg,
+        #9eb5cc 0%,
+        #afc4d7 100%
+    ) !important;
+}
+</style>
+<style>
+/* PREMIUM_CONTORNOS_CAIXAS_V1 */
+body.pc-premium .card,
+body.pc-premium .card-container,
+body.pc-premium .caixa,
+body.pc-premium .box,
+body.pc-premium .panel,
+body.pc-premium section {
+    border: 1px solid #60758a !important;
+    box-shadow:
+        0 2px 8px rgba(25,38,52,.18),
+        inset 0 0 0 1px rgba(255,255,255,.28) !important;
+}
+
+body.pc-premium table {
+    border: 1px solid #60758a !important;
+}
+
+body.pc-premium th,
+body.pc-premium td {
+    border-color: rgba(96,117,138,.45) !important;
+}
+</style>
+<style>
+/* CLASSICO_FUNDO_CINZA_AZULADO_V1 */
+
+/* NOVO FUNDO SOMENTE DO TEMA CLÁSSICO */
+body.pc-classic {
+    background: linear-gradient(
+        135deg,
+        #d9dde2 0%,
+        #e5e8eb 50%,
+        #d2d8de 100%
+    ) !important;
+}
+
+/* fallback: se o Clássico não usar a classe explícita */
+body:not(.pc-premium):not(.pc-dark) {
+    background: linear-gradient(
+        135deg,
+        #d9dde2 0%,
+        #e5e8eb 50%,
+        #d2d8de 100%
+    ) !important;
+}
+</style>
+<style>
+/* CLASSICO_FUNDO_DOURADO_V1 */
+
+/* FUNDO DOURADO SOMENTE NO TEMA CLÁSSICO */
+body.pc-classic {
+    background: linear-gradient(
+        135deg,
+        #e6d5a8 0%,
+        #f1e4bf 48%,
+        #dfc98f 100%
+    ) !important;
+}
+
+body:not(.pc-premium):not(.pc-dark) {
+    background: linear-gradient(
+        135deg,
+        #e6d5a8 0%,
+        #f1e4bf 48%,
+        #dfc98f 100%
+    ) !important;
+}
+</style>
+
+
+
+
+
+
+
+
+<div id="painelPersonalizacao" style="
+display:none;position:fixed;top:70px;right:20px;width:310px;
+max-width:calc(100vw - 40px);background:white;color:#111827;
+border-radius:16px;padding:20px;box-shadow:0 15px 45px rgba(0,0,0,.30);
+z-index:999999;border:1px solid #ddd;font-family:inherit;">
+<button onclick="fecharPersonalizacao()" style="float:right;border:0;background:none;font-size:22px;cursor:pointer;">×</button>
+<h3>⚙️ Personalizar Central</h3>
+
+<label>Tema</label>
+<select id="pcTema" onchange="aplicarPersonalizacao()" style="width:100%;padding:9px;border-radius:9px;">
+<option value="classico">Clássico</option>
+<option value="premium">✨ Premium</option>
+<option value="dark">🌙 Dark</option>
+</select>
+
+<label style="display:block;margin-top:14px;">Cartões</label>
+<select id="pcCartoes" onchange="aplicarPersonalizacao()" style="width:100%;padding:9px;border-radius:9px;">
+<option value="normal">Normal</option>
+<option value="arredondado">Arredondado</option>
+<option value="moderno">Moderno</option>
+</select>
+
+<label style="display:block;margin-top:14px;">Densidade</label>
+<select id="pcDensidade" onchange="aplicarPersonalizacao()" style="width:100%;padding:9px;border-radius:9px;">
+<option value="normal">Normal</option>
+<option value="compacta">Compacta</option>
+<option value="confortavel">Confortável</option>
+</select>
+
+<button onclick="restaurarPersonalizacao()" style="margin-top:18px;width:100%;padding:10px;border:0;border-radius:9px;cursor:pointer;">
+↩ Restaurar padrão
+</button>
+</div>
+
+<script>
+function abrirPersonalizacao(){
+  const p=document.getElementById('painelPersonalizacao');
+  if(p) p.style.display='block';
+}
+
+function fecharPersonalizacao(){
+  const p=document.getElementById('painelPersonalizacao');
+  if(p) p.style.display='none';
+}
+
+function aplicarPersonalizacao(){
+  const tema=document.getElementById('pcTema')?.value || 'classico';
+  const cartoes=document.getElementById('pcCartoes')?.value || 'normal';
+  const densidade=document.getElementById('pcDensidade')?.value || 'normal';
+
+  document.body.classList.remove(
+    'pc-premium','pc-dark',
+    'pc-cards-arredondado','pc-cards-moderno',
+    'pc-density-compacta','pc-density-normal','pc-density-confortavel'
+  );
+
+  if(tema==='premium') document.body.classList.add('pc-premium');
+  if(tema==='dark') document.body.classList.add('pc-dark');
+
+  if(cartoes==='arredondado')
+    document.body.classList.add('pc-cards-arredondado');
+
+  if(cartoes==='moderno')
+    document.body.classList.add('pc-cards-moderno');
+
+  document.body.classList.add(
+    'pc-density-' + densidade
+  );
+
+  localStorage.setItem('centralPersonalizacao',JSON.stringify({
+    tema:tema,
+    cartoes:cartoes,
+    densidade:densidade
+  }));
+}
+
+function restaurarPersonalizacao(){
+  document.getElementById('pcTema').value='classico';
+  document.getElementById('pcCartoes').value='normal';
+  document.getElementById('pcDensidade').value='normal';
+  document.body.classList.remove('pc-premium','pc-dark');
+  localStorage.removeItem('centralPersonalizacao');
+}
+
+function carregarPersonalizacao(){
+  try{
+    const p=JSON.parse(localStorage.getItem('centralPersonalizacao'));
+    if(!p)return;
+    if(p.tema)document.getElementById('pcTema').value=p.tema;
+    if(p.cartoes)document.getElementById('pcCartoes').value=p.cartoes;
+    if(p.densidade)document.getElementById('pcDensidade').value=p.densidade;
+    aplicarPersonalizacao();
+  }catch(e){}
+}
+
+document.addEventListener('DOMContentLoaded',carregarPersonalizacao);
+</script>
+
+
+<script>
+(function() {
+    function corrigirTituloPremium() {
+        if (!document.body) return;
+
+        const todos = document.body.querySelectorAll("*");
+
+        todos.forEach(function(el) {
+            if (el.children.length === 0) {
+                const texto = (el.textContent || "").trim();
+                if (texto.includes("CENTRAL DE INVESTIMENTO")) {
+                    el.classList.add("central-titulo-premium-forcado");
+                }
+            }
+        });
+    }
+
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", corrigirTituloPremium);
+    } else {
+        corrigirTituloPremium();
+    }
+
+    setTimeout(corrigirTituloPremium, 500);
+})();
+</script>
+
+
+<script id="CORRECAO_APORTE_RDB_2026_10_05">
+(function(){
+    try {
+        const carteira = JSON.parse(localStorage.getItem("carteira") || "[]");
+
+        carteira.forEach(function(item){
+            const nome = String(item.ativo || "").trim().toUpperCase();
+
+            if (
+                nome === "RENDA FIXA" ||
+                nome === "RDB" ||
+                nome === "RDB NUBANK" ||
+                nome.includes("RDB NUBANK")
+            )});
+
+        localStorage.setItem("carteira", JSON.stringify(carteira));
+
+        const historico = JSON.parse(
+            localStorage.getItem("historico") || "[]"
+        );
+
+        const existeHistorico = historico.some(function(item){
+            return String(item.tipo || "").toLowerCase() === "aporte" &&
+                   Number(item.valor || 0) === 92.82 &&
+                   String(item.data || "") === "05/10/2026";
+        });
+
+        if (!existeHistorico) {
+            historico.push({
+                data: "05/10/2026",
+                tipo: "Aporte",
+                ativo: "Renda Fixa",
+                qtd: 92.82,
+                valor: 92.82
+            });
+        }
+
+        localStorage.setItem(
+            "historico",
+            JSON.stringify(historico)
+        );
+
+        if (typeof carteira !== "undefined") {
+            window.carteira = carteira;
+        }
+
+        if (typeof mostrarCarteira === "function") mostrarCarteira();
+        if (typeof mostrarHistorico === "function") mostrarHistorico();
+        if (typeof mostrarTotais === "function") mostrarTotais();
+        if (typeof atualizarIndicadores === "function") atualizarIndicadores();
+
+    } catch(e) {
+        console.error("Correção aporte RDB 05/10/2026:", e);
+    }
+})();
+</script>
+
+<script>
+(function () {
+    function atualizarValorRDBVisual() {
+        const el = document.getElementById("valorRDB");
+        if (!el) return;
+
+        try {
+            let dados = null;
+
+            if (typeof obterCarteira === "function") {
+                try {
+                    dados = obterCarteira();
+                } catch (e) {}
+            }
+
+            if (!Array.isArray(dados) && Array.isArray(window.carteira)) {
+                dados = window.carteira;
+            }
+
+            if (!Array.isArray(dados)) {
+                try {
+                    dados = JSON.parse(localStorage.getItem("carteira") || "[]");
+                } catch (e) {}
+            }
+
+            if (!Array.isArray(dados)) return;
+
+            const rdb = dados.find(function (item) {
+                const nome = String(item.ativo || "").trim().toUpperCase();
+                const tipo = String(item.tipo || "").trim().toUpperCase();
+
+                return (
+                    nome === "RENDA FIXA" ||
+                    nome === "RDB" ||
+                    nome === "RDB NUBANK" ||
+                    nome.includes("RDB NUBANK") ||
+                    tipo === "RENDA FIXA"
+                );
+            });
+
+            if (!rdb) return;
+
+            const valor = Number(
+                rdb.valorAtual ||
+                rdb.valorBruto ||
+                rdb.valorBase ||
+                rdb.valorAplicado ||
+                0
+            );
+
+            if (valor > 0) {
+                el.textContent = "R$ " + valor.toLocaleString("pt-BR", {
+                    minimumFractionDigits: 2,
+                    maximumFractionDigits: 2
+                });
+            }
+        } catch (e) {
+            console.error("Erro ao atualizar Renda Fixa:", e);
+        }
+    }
+
+    window.atualizarValorRDBVisual = atualizarValorRDBVisual;
+
+    window.addEventListener("load", function () {
+        atualizarValorRDBVisual();
+        setTimeout(atualizarValorRDBVisual, 1000);
+        setTimeout(atualizarValorRDBVisual, 2500);
+        setTimeout(atualizarValorRDBVisual, 5000);
+    });
+
+    setInterval(atualizarValorRDBVisual, 5000);
+})();
+</script>
+
+</body>
+</html>
+```
+
+
+
+
