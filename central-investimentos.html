@@ -358,7 +358,12 @@ background:#374151;color:white;font-weight:600;cursor:pointer;">
 
 <div id="formAdicionarAtivo" style="display:none; margin-top:12px;">
 
-    <input id="novoAtivo" placeholder="Ticker — ex: ITUB4">
+    
+<div>
+<label for="dataCompra">Data da compra</label>
+<input type="date" id="dataCompra">
+</div>
+<input id="novoAtivo" placeholder="Ticker — ex: ITUB4">
 
     <select id="novoTipo">
         <option value="Ação">Ação</option>
@@ -1165,7 +1170,12 @@ ZERADO DE PROPÓSITO PARA COMEÇAR A CENTRAL
 LIMPA.
 */
 
-const historicoPadrao = [];
+const historicoPadrao = [
+    
+    
+    {data:"28/09/2026", tipo:"Provento", ativo:"BBAS3", qtd:0, valor:0.68},
+    {data:"28/09/2026", tipo:"Provento", ativo:"BBAS3", qtd:0, valor:0.02},
+    {data:"28/09/2026", tipo:"Provento", ativo:"BBAS3", qtd:0, valor:0.23}];
 
 let historico;
 
