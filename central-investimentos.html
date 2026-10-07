@@ -264,24 +264,10 @@ body.pc-premium header h2</style>
 
 <!-- TITULO_DIRETO_GRAFITE_V1 -->
 
-<script id="limpeza-central-virgem">
-(function())();
-</script>
 
 
-<script id="central-virgem-final">
-(function(){
-  try {
-    const apagar = [];
-    for (let i=0; i<localStorage.length; i++) {
-      const k = localStorage.key(i);
-      if (k && /carteira|ativo|aporte|histor|registro|provento|dividend|compra|venda|renda|patrimonio|investido|cripto/i.test(k)) apagar.push(k);
-    }
-    apagar.forEach(k => localStorage.removeItem(k));
-    sessionStorage.clear();
-  } catch(e) {}
-})();
-</script>
+
+
 
 </head>
 
@@ -433,6 +419,9 @@ function adicionarNovoAtivo() {
             .replace(",", ".")
     );
 
+    const campoData = document.getElementById("dataCompra");
+    const dataISO = campoData ? campoData.value : "";
+
     if (!ativo) {
         alert("Informe o ticker.");
         return;
@@ -448,6 +437,16 @@ function adicionarNovoAtivo() {
         return;
     }
 
+    if (!dataISO) {
+        alert("Informe a data da compra.");
+        return;
+    }
+
+    const partesData = dataISO.split("-");
+    const dataCompra = partesData.length === 3
+        ? partesData[2] + "/" + partesData[1] + "/" + partesData[0]
+        : new Date().toLocaleDateString("pt-BR");
+
     const simbolo = ativo.replace(/F$/i, "");
 
     const existente = carteira.find(
@@ -456,7 +455,7 @@ function adicionarNovoAtivo() {
 
     if (existente) {
         alert(
-            "Esse ativo já está na carteira.\\n\\n" +
+            "Esse ativo já está na carteira.\n\n" +
             "Para não alterar seu PM atual automaticamente, " +
             "vamos manter o cadastro existente."
         );
@@ -467,16 +466,15 @@ function adicionarNovoAtivo() {
         ativo: ativo,
         qtd: qtd,
         pm: pm,
-        tipo: tipo
+        tipo: tipo,
+        dataCompra: dataISO
     };
 
     carteira.push(novo);
 
-    salvar();
-
-    // Registra automaticamente a compra no histórico
     historico.push({
-        data: new Date().toLocaleDateString("pt-BR"),
+        data: dataCompra,
+        dataCompra: dataISO,
         tipo: "Compra",
         ativo: ativo,
         qtd: qtd,
@@ -487,13 +485,20 @@ function adicionarNovoAtivo() {
 
     salvar();
 
-    // Atualiza a tela
+    if (typeof mostrarTotais === "function") {
+        mostrarTotais();
+    }
+
     if (typeof mostrarCarteira === "function") {
         mostrarCarteira();
     }
 
     if (typeof atualizarHistorico === "function") {
         atualizarHistorico();
+    }
+
+    if (typeof mostrarHistorico === "function") {
+        mostrarHistorico();
     }
 
     if (typeof atualizarIndicadores === "function") {
@@ -509,9 +514,12 @@ function adicionarNovoAtivo() {
     document.getElementById("novaQtd").value = "";
     document.getElementById("novoPM").value = "";
 
+    if (campoData) {
+        campoData.value = "";
+    }
+
     fecharAdicionarAtivo();
 
-    // Tenta buscar a cotação imediatamente
     if (typeof atualizarCotacoesBrapi === "function") {
         atualizarCotacoesBrapi();
     }
@@ -1138,6 +1146,47 @@ atualizarDividendosRecebidos();
 
 <script>
 
+
+/*
+==================================================
+PERSISTÊNCIA NO SERVIDOR
+==================================================
+*/
+
+function carregarDadosServidor() {
+    try {
+        const xhr = new XMLHttpRequest();
+        xhr.open("GET", "/dados", false);
+        xhr.send(null);
+
+        if (xhr.status === 200) {
+            const dados = JSON.parse(xhr.responseText);
+
+            if (Array.isArray(dados.carteira) && dados.carteira.length > 0) {
+                localStorage.setItem(
+                    "carteira",
+                    JSON.stringify(dados.carteira)
+                );
+            }
+
+            if (Array.isArray(dados.historico) && dados.historico.length > 0) {
+                localStorage.setItem(
+                    "historico",
+                    JSON.stringify(dados.historico)
+                );
+            }
+
+            return dados;
+        }
+    } catch (erro) {
+        console.error("Falha ao carregar dados do servidor:", erro);
+    }
+
+    return null;
+}
+
+carregarDadosServidor();
+
 /*
 ==================================================
 CARTEIRA ATUAL
@@ -1153,11 +1202,30 @@ CARTEIRA
 ==================================================
 */
 
-let carteira = JSON.parse(localStorage.getItem("carteira") || "null");
+let carteira;
 
-if (!Array.isArray(carteira) || carteira.length === 0) {
+try {
+    const carteiraSalva = JSON.parse(
+        localStorage.getItem("carteira") || "null"
+    );
+
+    const carteiraSeguranca = JSON.parse(
+        localStorage.getItem("centralCarteiraSeguranca") || "null"
+    );
+
+    if (Array.isArray(carteiraSalva) && carteiraSalva.length > 0) {
+        carteira = carteiraSalva;
+    } else if (Array.isArray(carteiraSeguranca) && carteiraSeguranca.length > 0) {
+        carteira = carteiraSeguranca;
+        localStorage.setItem(
+            "carteira",
+            JSON.stringify(carteira)
+        );
+    } else {
+        carteira = JSON.parse(JSON.stringify(carteiraInicial));
+    }
+} catch (erro) {
     carteira = JSON.parse(JSON.stringify(carteiraInicial));
-    salvar();
 }
 
 
@@ -1203,16 +1271,47 @@ SALVAR
 
 function salvar() {
 
-    localStorage.setItem(
-        "carteira",
-        JSON.stringify(carteira)
-    );
+    const carteiraJSON = JSON.stringify(carteira);
+    const historicoJSON = JSON.stringify(historico);
 
-    localStorage.setItem(
-        "historico",
-        JSON.stringify(historico)
-    );
+    try {
+        localStorage.setItem("carteira", carteiraJSON);
+        localStorage.setItem("historico", historicoJSON);
+    } catch (erro) {
+        console.warn("localStorage indisponível:", erro);
+    }
 
+    try {
+        if (Array.isArray(carteira) && carteira.length > 0) {
+            localStorage.setItem(
+                "centralCarteiraSeguranca",
+                carteiraJSON
+            );
+        }
+
+        if (Array.isArray(historico)) {
+            localStorage.setItem(
+                "centralHistoricoSeguranca",
+                historicoJSON
+            );
+        }
+    } catch (erro) {}
+
+    try {
+        const xhr = new XMLHttpRequest();
+        xhr.open("POST", "/dados", false);
+        xhr.setRequestHeader("Content-Type", "application/json");
+        xhr.send(JSON.stringify({
+            carteira: carteira,
+            historico: historico
+        }));
+
+        if (xhr.status !== 200) {
+            console.error("Servidor não confirmou o salvamento:", xhr.status);
+        }
+    } catch (erro) {
+        console.error("Falha ao salvar no servidor:", erro);
+    }
 }
 
 
@@ -1332,7 +1431,7 @@ function mostrarCarteira() {
     const campo = document.getElementById("valorInvestido");
 
     if (campo) {
-        campo.innerText = moeda(0);
+        campo.innerText = moeda(valorInvestido);
     }
 }
 
@@ -1348,6 +1447,28 @@ function atualizarTotalGeral() {
 }
 
 function mostrarTotais() {
+
+    let patrimonio = 0;
+
+    if (Array.isArray(carteira)) {
+        carteira.forEach(item => {
+            try {
+                patrimonio += Number(calcularValorAtualItem(item) || 0);
+            } catch (e) {
+                const qtd = Number(item.qtd || item.quantidade || 0);
+                const pm = Number(item.pm || item.preco || 0);
+                patrimonio += qtd * pm;
+            }
+        });
+    }
+
+    patrimonio = Number(patrimonio.toFixed(2));
+
+    const campoGeral = document.getElementById("totalGeral");
+    if (campoGeral) {
+        campoGeral.innerText = moeda(patrimonio);
+    }
+
     const totalAportes = calcularCustoAportado();
     const totalProventos = calcularProventosPagos();
 
@@ -2208,6 +2329,10 @@ mostrarHistorico();
 
 mostrarTotais();
 
+if (typeof atualizarIndicadores === "function") {
+    atualizarIndicadores();
+}
+
 
 /*
 ============================================================
@@ -2279,7 +2404,65 @@ function calcularProventosPagos() {
     }, 0);
 }
 
-function calcularValorAtualItem(item)function calcularPatrimonioAtual() {
+function calcularValorAtualItem(item) {
+    const qtd = Number(item.qtd || 0);
+    if (qtd <= 0) return 0;
+
+    const simbolo = normalizarAtivo(item.ativo);
+    const tipo = String(item.tipo || item.categoria || item.classe || "").toLowerCase();
+
+    /*
+     * RENDA FIXA:
+     * Mantém o valor atualizado manualmente pelo motor do CDI.
+     */
+    const ehRendaFixa =
+        tipo.includes("renda fixa") ||
+        tipo.includes("rdb") ||
+        tipo.includes("cdb") ||
+        tipo.includes("tesouro") ||
+        tipo.includes("lci") ||
+        tipo.includes("lca");
+
+    if (ehRendaFixa) {
+        return Number(item.valorAtual || item.valorBase || item.valorAplicado || 0);
+    }
+
+    /*
+     * CRIPTOS:
+     * Mantém os valores manuais atuais enquanto não houver
+     * uma fonte automática de cotação configurada para elas.
+     */
+    const ehCripto =
+        tipo.includes("cripto") ||
+        tipo.includes("crypto");
+
+    if (ehCripto || simbolo === "BTC" || simbolo === "SHIB") {
+        return Number(item.valorAtual || 0);
+    }
+
+    /*
+     * AÇÕES / FIIs / ETFs:
+     * PRIMEIRO tenta a cotação automática da BRAPI.
+     */
+    const precoAtual = Number(precosBrapi[simbolo] || 0);
+
+    if (precoAtual > 0) {
+        return qtd * precoAtual;
+    }
+
+    /*
+     * Fallback:
+     * Se a BRAPI ainda não respondeu, preserva o valor atual
+     * já existente em vez de zerar o patrimônio.
+     */
+    if (item.valorAtual !== undefined && item.valorAtual !== null) {
+        return Number(item.valorAtual || 0);
+    }
+
+    return qtd * Number(item.pm || 0);
+}
+
+function calcularPatrimonioAtual() {
     return carteira.reduce((total, item) => {
         return total + calcularValorAtualItem(item);
     }, 0);
@@ -2365,7 +2548,11 @@ function atualizarIndicadores() {
 
 function corrigirAtivosManuais() {
 
-    carteira.forEach(item =>);
+    if (!Array.isArray(carteira)) return;
+
+    carteira.forEach(item => {
+        if (!item || typeof item !== "object") return;
+    });
 
     salvar();
 }

@@ -6,6 +6,32 @@ app = Flask(__name__)
 
 BASE = Path("/home/fagner/Investimentos/Central")
 TOKEN_FILE = BASE / "brapi0token.txt"
+DADOS_FILE = BASE / "central-dados.json"
+
+def ler_dados():
+    import json
+    if not DADOS_FILE.exists():
+        return {"carteira": [], "historico": []}
+    try:
+        dados = json.loads(DADOS_FILE.read_text(encoding="utf-8"))
+        if not isinstance(dados, dict):
+            return {"carteira": [], "historico": []}
+        return {
+            "carteira": dados.get("carteira") if isinstance(dados.get("carteira"), list) else [],
+            "historico": dados.get("historico") if isinstance(dados.get("historico"), list) else []
+        }
+    except Exception:
+        return {"carteira": [], "historico": []}
+
+def gravar_dados(dados):
+    import json
+    temporario = DADOS_FILE.with_suffix(".tmp")
+    temporario.write_text(
+        json.dumps(dados, ensure_ascii=False, indent=2),
+        encoding="utf-8"
+    )
+    temporario.replace(DADOS_FILE)
+
 
 def obter_token():
     if not TOKEN_FILE.exists():
