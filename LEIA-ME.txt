@@ -1,0 +1,33 @@
+# Presente — Ferramentas e Simuladores de Investimentos
+
+Este pacote contém somente seis calculadoras e o simulador de investimentos de longo prazo. Não contém a Central completa, o servidor, o histórico da carteira, proventos, o robô Zion nem módulos de persistência da Central.
+
+## Arquivo principal
+
+- `ferramentas-financeiras.html` — página independente, compatível com navegadores modernos no Windows e Linux. Pode ser aberta diretamente no navegador para testar os cálculos.
+
+## Ferramentas incluídas
+
+1. Distribuidor Inteligente de Aportes
+2. Calculadora de Aportes
+3. Simulador de Preço Médio
+4. Juros Compostos
+5. Meta Financeira
+6. Independência Financeira
+7. Simulador de Investimentos de Longo Prazo (comparação de 2 a 6 opções)
+
+## Integrar à Central Windows existente
+
+1. Faça uma cópia de segurança do projeto Windows da Central.
+2. Copie `ferramentas-financeiras.html` para a pasta em que fica `central-investimentos.html`.
+3. Acrescente um link no menu/área de ferramentas da Central apontando para `ferramentas-financeiras.html`.
+4. Teste no notebook Windows antes de publicar no GitHub.
+
+O formato exato do link e eventual rota Flask dependem de como a Central Windows atual serve os arquivos. Este pacote não altera `servidor.py` nem substitui a Central existente.
+
+## Observações
+
+- O Distribuidor pede que a usuária informe os saldos por classe; não lê a variável global `carteira` nem depende dos dados da Central.
+- As ferramentas de aportes, preço médio, juros compostos, meta e independência são cálculos locais e não salvam registros.
+- O simulador de longo prazo usa os campos próprios `si-*`, compara de 2 a 6 opções e não lê nem altera dados da carteira.
+- As projeções são estimativas matemáticas; confira as regras e taxas dos produtos antes de tomar decisões.

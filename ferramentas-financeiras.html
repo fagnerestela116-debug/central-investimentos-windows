@@ -1,0 +1,637 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Ferramentas e Simuladores de Investimentos</title><style>
+:root{color-scheme:dark;--bg:#0c151d;--panel:#14232d;--line:#00dc46;--gold:#f0cc83;--text:#f1f5f7;--muted:#bac6cd}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top,#182b36 0,#0c151d 65%);color:var(--text);font:15px/1.5 system-ui,-apple-system,Segoe UI,sans-serif}header{padding:28px max(18px,calc((100% - 1200px)/2));border-bottom:1px solid #b8945155;background:#101b24}h1{margin:0;color:var(--gold);font-size:clamp(24px,4vw,34px)}header p{margin:8px 0 0;color:var(--muted)}main{max-width:1240px;margin:auto;padding:20px 16px 90px}.tools-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));gap:16px}.card{display:block!important;min-width:0;align-self:start;background:linear-gradient(145deg,#172833,#101b24);color:var(--text);border:1px solid #00dc4680!important;border-radius:14px;padding:18px!important;margin:0!important;box-shadow:0 8px 24px #0003}.card h2{font-size:20px;color:var(--gold);margin:0 0 10px}.card h3{font-size:16px;color:var(--gold)}.card p{color:var(--muted)}.card input,.card select{max-width:100%;min-height:40px;color:var(--text);background:#0d1a22!important;border:1px solid #52616a!important;border-radius:8px;padding:9px!important}.card button{background:#173a2a!important;color:#fff!important;border:1px solid #00dc46!important;border-radius:8px!important;padding:10px 14px!important;font-weight:750;cursor:pointer}.card label{display:block;margin:8px 0}.card table{width:100%;border-collapse:collapse;font-size:13px}.card th,.card td{padding:7px;border-bottom:1px solid #ffffff20;text-align:right}.card th:first-child,.card td:first-child{text-align:left}.presente-campos{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}.presente-campos label{font-size:13px;color:var(--muted)}.presente-campos input{display:block;width:100%;margin-top:4px}.presente-resultado{margin-top:12px;overflow-wrap:anywhere}.presente-resultado p{margin:8px 0}.presente-nota{font-size:12px;color:var(--muted)!important}.si-grade{grid-template-columns:repeat(auto-fit,minmax(145px,1fr))}@media(max-width:500px){main{padding:12px 10px 90px}.card{padding:13px!important}}
+</style></head><body><header><h1>Ferramentas e Simuladores de Investimentos</h1><p>Pacote independente para uso junto à Central Windows. Cada cálculo usa apenas os campos preenchidos nesta página.</p></header><main><div class="tools-grid"><section class="card" id="distribuidorInteligenteAportesCentral" style="padding:16px;margin:10px 0;display:block;">
+<h2>🧭 Distribuidor Inteligente de Aportes</h2>
+<p>Informe o aporte, os valores atuais por classe e as metas percentuais. A ferramenta calcula uma divisão sugerida sem consultar outras telas ou dados externos.</p>
+<div class="presente-campos">
+<label>Próximo aporte (R$)<input id="distAporteCentral" min="0.01" step="0.01" type="number" value="420"/></label>
+<label>Saldo atual — Ações (R$)<input id="distAtualAcoesCentral" min="0" step="0.01" type="number" value="0"/></label>
+<label>Saldo atual — FIIs (R$)<input id="distAtualFiisCentral" min="0" step="0.01" type="number" value="0"/></label>
+<label>Saldo atual — ETFs (R$)<input id="distAtualEtfsCentral" min="0" step="0.01" type="number" value="0"/></label>
+<label>Saldo atual — Cripto (R$)<input id="distAtualCriptoCentral" min="0" step="0.01" type="number" value="0"/></label>
+<label>Saldo atual — Renda Fixa (R$)<input id="distAtualRfCentral" min="0" step="0.01" type="number" value="0"/></label>
+</div>
+<h3>Metas de distribuição (%) — soma exata de 100%</h3>
+<div class="presente-campos">
+<label>Ações (%)<input id="distMetaAcoesCentral" max="100" min="0" step="0.01" type="number" value="30"/></label>
+<label>FIIs (%)<input id="distMetaFiisCentral" max="100" min="0" step="0.01" type="number" value="20"/></label>
+<label>ETFs (%)<input id="distMetaEtfsCentral" max="100" min="0" step="0.01" type="number" value="10"/></label>
+<label>Cripto (%)<input id="distMetaCriptoCentral" max="100" min="0" step="0.01" type="number" value="10"/></label>
+<label>Renda Fixa (%)<input id="distMetaRfCentral" max="100" min="0" step="0.01" type="number" value="30"/></label>
+</div>
+<button onclick="calcularDistribuidorInteligenteAportesCentral()" type="button">Calcular distribuição</button>
+<div aria-live="polite" class="presente-resultado" id="distResultadoCentral">Preencha os valores e calcule a simulação.</div>
+<p class="presente-nota">Simulação isolada: não registra compras, não altera saldos e não acessa dados da Central.</p>
+</section>
+<section class="card" id="calculadoraAportesCentral" style="border:2px solid #00DC46!important;
+  box-sizing:border-box;border-radius:12px;padding:16px;margin:12px 0 20px;display:block;">
+<h2>🧮 Calculadora de Aportes</h2>
+<p>Simule a distribuição de um aporte. Esta ferramenta não altera nem salva dados da carteira.</p>
+<label for="aporteTotalCentral" style="display:block;margin:12px 0 5px;font-weight:700;">
+    Valor disponível para simulação (R$)
+  </label>
+<input id="aporteTotalCentral" inputmode="decimal" min="0.01" step="0.01" style="box-sizing:border-box;width:100%;max-width:420px;padding:11px;border:1px solid #00DC46;border-radius:8px;background:transparent;color:inherit;" type="number" value="100"/>
+<p style="font-weight:700;margin-top:18px;">Distribuição desejada (%)</p>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;">
+<div>
+<label for="aportePercentual1Central">Destino 1 — Renda Fixa (%)</label>
+<input id="aportePercentual1Central" max="100" min="0" step="1" style="box-sizing:border-box;width:100%;padding:10px;border:1px solid #00DC46;border-radius:8px;background:transparent;color:inherit;" type="number" value="50"/>
+</div>
+<div>
+<label for="aportePercentual2Central">Destino 2 — Ações/FIIs (%)</label>
+<input id="aportePercentual2Central" max="100" min="0" step="1" style="box-sizing:border-box;width:100%;padding:10px;border:1px solid #00DC46;border-radius:8px;background:transparent;color:inherit;" type="number" value="30"/>
+</div>
+<div>
+<label for="aportePercentual3Central">Destino 3 — Outros (%)</label>
+<input id="aportePercentual3Central" max="100" min="0" step="1" style="box-sizing:border-box;width:100%;padding:10px;border:1px solid #00DC46;border-radius:8px;background:transparent;color:inherit;" type="number" value="20"/>
+</div>
+</div>
+<button onclick="calcularAportesCentral()" style="margin-top:16px;padding:11px 16px;border:1px solid #00DC46;
+    border-radius:8px;background:#008F2E;color:#FFFFFF;font-weight:800;cursor:pointer;" type="button">
+    Calcular simulação
+  </button>
+<div aria-live="polite" id="resultadoCalculadoraAportesCentral" role="status" style="margin-top:16px;padding:12px;border:1px solid #00DC46;border-radius:8px;white-space:pre-line;">
+    Informe o valor e confira os percentuais antes de calcular.
+  </div>
+<p style="font-size:13px;">Simulação matemática, sem recomendação de investimento. Confira seus objetivos e riscos antes de decidir.</p>
+</section>
+<section class="card" id="simuladorPrecoMedioCentral" style="border:2px solid #00DC46!important;
+  box-sizing:border-box;border-radius:12px;padding:16px;margin:12px 0 20px;display:block;">
+<h2>📊 Simulador de Preço Médio</h2>
+<p>Compare uma possível compra e veja o preço médio estimado, sem alterar sua carteira ou salvar dados.</p>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;">
+<div>
+<label for="pmQtdAtualCentral">Quantidade atual</label>
+<input id="pmQtdAtualCentral" min="0" step="any" style="box-sizing:border-box;width:100%;padding:10px;border:1px solid #00DC46;border-radius:8px;background:transparent;color:inherit;" type="number" value="0"/>
+</div>
+<div>
+<label for="pmPrecoMedioAtualCentral">Preço médio atual (R$)</label>
+<input id="pmPrecoMedioAtualCentral" min="0" step="any" style="box-sizing:border-box;width:100%;padding:10px;border:1px solid #00DC46;border-radius:8px;background:transparent;color:inherit;" type="number" value="0"/>
+</div>
+<div>
+<label for="pmQtdCompraCentral">Quantidade que pretende comprar</label>
+<input id="pmQtdCompraCentral" min="0.00000001" step="any" style="box-sizing:border-box;width:100%;padding:10px;border:1px solid #00DC46;border-radius:8px;background:transparent;color:inherit;" type="number" value="1"/>
+</div>
+<div>
+<label for="pmPrecoCompraCentral">Preço por unidade na nova compra (R$)</label>
+<input id="pmPrecoCompraCentral" min="0.00000001" step="any" style="box-sizing:border-box;width:100%;padding:10px;border:1px solid #00DC46;border-radius:8px;background:transparent;color:inherit;" type="number" value="10"/>
+</div>
+</div>
+<button onclick="calcularSimuladorPrecoMedioCentral()" style="margin-top:16px;padding:11px 16px;border:1px solid #00DC46;
+    border-radius:8px;background:#008F2E;color:#FFFFFF;font-weight:800;cursor:pointer;" type="button">
+    Calcular novo preço médio
+  </button>
+<div aria-live="polite" id="resultadoSimuladorPrecoMedioCentral" role="status" style="margin-top:16px;padding:12px;border:1px solid #00DC46;border-radius:8px;white-space:pre-line;">
+    Preencha os campos e calcule sua simulação.
+  </div>
+<p style="font-size:13px;">Estimativa sem taxas, impostos ou outros custos. O resultado não é uma ordem de compra nem uma recomendação de investimento.</p>
+</section>
+<section class="card" id="calculadoraJurosCompostosCentral" style="border:2px solid #00DC46!important;
+  box-sizing:border-box;border-radius:12px;padding:16px;margin:12px 0 20px;display:block;">
+<h2>📈 Calculadora de Juros Compostos</h2>
+<p>Projete o crescimento do dinheiro com aportes mensais. A simulação não altera nem salva dados da carteira.</p>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;">
+<div>
+<label for="jurosValorInicialCentral">Valor inicial investido (R$)</label>
+<input id="jurosValorInicialCentral" min="0" step="0.01" style="box-sizing:border-box;width:100%;padding:10px;border:1px solid #00DC46;border-radius:8px;background:transparent;color:inherit;" type="number" value="1000"/>
+</div>
+<div>
+<label for="jurosAporteMensalCentral">Aporte mensal (R$)</label>
+<input id="jurosAporteMensalCentral" min="0" step="0.01" style="box-sizing:border-box;width:100%;padding:10px;border:1px solid #00DC46;border-radius:8px;background:transparent;color:inherit;" type="number" value="100"/>
+</div>
+<div>
+<label for="jurosTaxaMensalCentral">Taxa mensal (%)</label>
+<input id="jurosTaxaMensalCentral" max="100" min="-100" step="0.01" style="box-sizing:border-box;width:100%;padding:10px;border:1px solid #00DC46;border-radius:8px;background:transparent;color:inherit;" type="number" value="0.8"/>
+</div>
+<div>
+<label for="jurosPrazoMesesCentral">Prazo (meses)</label>
+<input id="jurosPrazoMesesCentral" max="1200" min="1" step="1" style="box-sizing:border-box;width:100%;padding:10px;border:1px solid #00DC46;border-radius:8px;background:transparent;color:inherit;" type="number" value="60"/>
+</div>
+</div>
+<button onclick="calcularJurosCompostosCentral()" style="margin-top:16px;padding:11px 16px;border:1px solid #00DC46;
+    border-radius:8px;background:#008F2E;color:#FFFFFF;font-weight:800;cursor:pointer;" type="button">
+    Calcular projeção
+  </button>
+<div aria-live="polite" id="resultadoJurosCompostosCentral" role="status" style="margin-top:16px;padding:12px;border:1px solid #00DC46;border-radius:8px;white-space:pre-line;">
+    Informe os valores e calcule a projeção.
+  </div>
+<p style="font-size:13px;">Estimativa com taxa mensal constante e aportes no fim de cada mês. Não considera impostos, taxas ou inflação e não garante rendimentos futuros.</p>
+</section>
+<section class="card" id="calculadoraMetaFinanceiraCentral" style="margin:16px 0;padding:18px;border-radius:12px;display:block;">
+<h2>🎯 Calculadora de Meta Financeira</h2>
+<p>Descubra quanto tempo pode levar para atingir sua meta.
+  A simulação não altera nem salva dados da carteira.</p>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;">
+<label>Valor já acumulado (R$)
+      <input id="metaValorInicial" min="0" step="0.01" style="display:block;width:100%;box-sizing:border-box;padding:10px;" type="number" value="1000"/>
+</label>
+<label>Meta financeira (R$)
+      <input id="metaValorObjetivo" min="0.01" step="0.01" style="display:block;width:100%;box-sizing:border-box;padding:10px;" type="number" value="10000"/>
+</label>
+<label>Aporte mensal (R$)
+      <input id="metaAporteMensal" min="0" step="0.01" style="display:block;width:100%;box-sizing:border-box;padding:10px;" type="number" value="300"/>
+</label>
+<label>Taxa mensal estimada (%)
+      <input id="metaTaxaMensal" max="100" min="0" step="0.01" style="display:block;width:100%;box-sizing:border-box;padding:10px;" type="number" value="0.8"/>
+</label>
+</div>
+<button id="btnCalcularMetaFinanceiraCentral" style="margin-top:14px;padding:12px 18px;border:0;border-radius:8px;
+    background:#008F2E;color:white;font-weight:800;cursor:pointer;" type="button">
+    Calcular minha meta</button>
+<div aria-live="polite" id="resultadoMetaFinanceiraCentral" style="margin-top:16px;padding:14px;border-radius:10px;">
+    Preencha os valores e clique em “Calcular minha meta”.
+  </div>
+<p style="font-size:12px;opacity:.8;">
+    Projeção matemática, sem garantia de rentabilidade. Não considera impostos,
+    taxas, inflação nem variações dos investimentos.
+  </p>
+</section>
+<section class="card" id="calculadoraIndependenciaFinanceiraCentral" style="display:block;">
+<h2>🏖️ Calculadora de Independência Financeira</h2>
+<p>Estime o patrimônio necessário para gerar uma renda mensal. Esta simulação é independente e não altera os dados da carteira.</p>
+<label for="independenciaRendaMensalCentral">Renda mensal desejada (R$)</label>
+<input id="independenciaRendaMensalCentral" min="0.01" step="0.01" style="width:100%;box-sizing:border-box;margin:5px 0 12px;" type="number" value="2000"/>
+<label for="independenciaTaxaMensalCentral">Taxa líquida mensal estimada (%)</label>
+<input id="independenciaTaxaMensalCentral" min="0.01" step="0.01" style="width:100%;box-sizing:border-box;margin:5px 0 12px;" type="number" value="0.5"/>
+<button id="btnCalcularIndependenciaCentral" style="padding:10px 14px;border-radius:8px;border:1px solid #008F2E;font-weight:700;cursor:pointer;" type="button">Calcular patrimônio necessário</button>
+<div aria-live="polite" id="resultadoIndependenciaFinanceiraCentral" role="status" style="margin-top:12px;"></div>
+<p style="font-size:12px;opacity:.8;">Estimativa simplificada: não considera inflação futura, variação dos rendimentos, impostos adicionais ou mudanças nas despesas. A taxa informada não é garantida.</p>
+</section></div></main><script>window.calcularDistribuidorInteligenteAportesCentral = function () {
+  const brl = n => Number(n).toLocaleString("pt-BR", {style:"currency",currency:"BRL"});
+  const pct = n => Number(n).toLocaleString("pt-BR", {minimumFractionDigits:2,maximumFractionDigits:2});
+  const out = document.getElementById("distResultadoCentral");
+  const aporte = Number(document.getElementById("distAporteCentral").value);
+  const classes = [
+    {nome:"Ações", metaId:"distMetaAcoesCentral", atualId:"distAtualAcoesCentral"},
+    {nome:"FIIs", metaId:"distMetaFiisCentral", atualId:"distAtualFiisCentral"},
+    {nome:"ETFs", metaId:"distMetaEtfsCentral", atualId:"distAtualEtfsCentral"},
+    {nome:"Cripto", metaId:"distMetaCriptoCentral", atualId:"distAtualCriptoCentral"},
+    {nome:"Renda Fixa", metaId:"distMetaRfCentral", atualId:"distAtualRfCentral"}
+  ];
+  if (!Number.isFinite(aporte) || aporte <= 0) { out.textContent="Informe um aporte maior que zero."; return; }
+  for (const c of classes) {
+    const m = document.getElementById(c.metaId), a = document.getElementById(c.atualId);
+    if (!m || !a || m.value.trim()==="" || a.value.trim()==="") { out.textContent="Preencha todos os campos."; return; }
+    c.meta=Number(m.value); c.atual=Number(a.value);
+    if (!Number.isFinite(c.meta) || c.meta<0 || c.meta>100 || !Number.isFinite(c.atual) || c.atual<0) { out.textContent="Metas devem ficar entre 0% e 100%, e saldos não podem ser negativos."; return; }
+  }
+  const somaMeta=classes.reduce((s,c)=>s+c.meta,0);
+  if (Math.abs(somaMeta-100)>0.001) { out.textContent="As metas somam "+pct(somaMeta)+"%. Ajuste para 100%."; return; }
+  const total=classes.reduce((s,c)=>s+c.atual,0), projetado=total+aporte;
+  const faltas=classes.map(c=>Math.max(0,projetado*c.meta/100-c.atual));
+  const pesos=faltas.some(v=>v>0.000001)?faltas:classes.map(c=>c.meta);
+  const somaPesos=pesos.reduce((a,b)=>a+b,0);
+  let distribuido=0; const centavos=Math.round(aporte*100);
+  classes.forEach((c,i)=>{const parte=i===classes.length-1?centavos-distribuido:Math.round(centavos*(somaPesos?pesos[i]/somaPesos:1/classes.length));c.sugerido=parte/100;distribuido+=parte;});
+  let rows="";
+  classes.forEach(c=>{const atualPct=total>0?c.atual/total*100:0;const finalPct=projetado>0?(c.atual+c.sugerido)/projetado*100:0;rows+="<tr><td>"+c.nome+"</td><td>"+brl(c.atual)+"</td><td>"+pct(atualPct)+"%</td><td>"+pct(c.meta)+"%</td><td><strong>"+brl(c.sugerido)+"</strong></td><td>"+pct(finalPct)+"%</td></tr>";});
+  const abaixo=total>0?classes.filter(c=>c.atual/total*100<c.meta-0.01).map(c=>c.nome):[];
+  const status=total<=0?"Como todos os saldos estão zerados, a divisão segue as metas definidas.":abaixo.length?"Abaixo da meta atual: "+abaixo.join(", ")+".":"Nenhuma classe está abaixo da meta atual.";
+  out.innerHTML="<p><strong>Saldos informados:</strong> "+brl(total)+"</p><p><strong>Aporte:</strong> "+brl(aporte)+" — <strong>Total projetado:</strong> "+brl(projetado)+"</p><div style='overflow-x:auto'><table><thead><tr><th>Classe</th><th>Atual</th><th>Atual (%)</th><th>Meta (%)</th><th>Sugerido</th><th>Após (%)</th></tr></thead><tbody>"+rows+"</tbody></table></div><p>"+status+"</p><p><strong>Divisão sugerida:</strong> "+classes.filter(c=>c.sugerido>0).map(c=>c.nome+": "+brl(c.sugerido)).join(" | ")+"</p><p class='presente-nota'>Simulação educativa; não é ordem de compra nem recomendação financeira.</p>";
+};</script><script>
+(function () {
+  function dinheiroBR(valor) {
+    return valor.toLocaleString("pt-BR", {
+      style: "currency", currency: "BRL"
+    });
+  }
+
+  window.calcularAportesCentral = function () {
+    const total = Number(document.getElementById("aporteTotalCentral").value);
+    const campos = [
+      document.getElementById("aportePercentual1Central"),
+      document.getElementById("aportePercentual2Central"),
+      document.getElementById("aportePercentual3Central")
+    ];
+    const saida = document.getElementById("resultadoCalculadoraAportesCentral");
+    const percentuais = campos.map(campo => Number(campo.value));
+
+    if (!Number.isFinite(total) || total <= 0 ||
+        campos.some(campo => campo.value.trim() === "") ||
+        percentuais.some(p => !Number.isFinite(p) || p < 0 || p > 100)) {
+      saida.textContent = "Confira o valor do aporte e informe percentuais entre 0% e 100%.";
+      return;
+    }
+
+    const soma = percentuais.reduce((a, b) => a + b, 0);
+    if (Math.abs(soma - 100) > 0.000001) {
+      saida.textContent = "Os percentuais somam " + soma.toLocaleString("pt-BR") +
+        "%. Ajuste os três destinos para totalizar exatamente 100%.";
+      return;
+    }
+
+    const centavos = Math.round(total * 100);
+    const valores = percentuais.map(p => Math.floor(centavos * p / 100));
+    let restante = centavos - valores.reduce((a, b) => a + b, 0);
+
+    for (let i = 0; restante > 0; i = (i + 1) % valores.length) {
+      if (percentuais[i] > 0) {
+        valores[i]++;
+        restante--;
+      }
+    }
+
+    const nomes = ["Renda Fixa", "Ações/FIIs", "Outros"];
+    const linhas = percentuais.map((p, i) =>
+      nomes[i] + ": " + p.toLocaleString("pt-BR") + "% — " +
+      dinheiroBR(valores[i] / 100)
+    );
+
+    linhas.push("", "Total distribuído: " +
+      dinheiroBR(valores.reduce((a, b) => a + b, 0) / 100));
+    saida.textContent = linhas.join("\n");
+  };
+})();
+</script><script>
+(function () {
+  const obterNumero = id => {
+    const campo = document.getElementById(id);
+    if (!campo || campo.value.trim() === "") return NaN;
+    return Number(campo.value);
+  };
+
+  const dinheiro = valor => valor.toLocaleString("pt-BR", {
+    style: "currency", currency: "BRL"
+  });
+
+  window.calcularSimuladorPrecoMedioCentral = function () {
+    const qtdAtual = obterNumero("pmQtdAtualCentral");
+    const pmAtual = obterNumero("pmPrecoMedioAtualCentral");
+    const qtdCompra = obterNumero("pmQtdCompraCentral");
+    const precoCompra = obterNumero("pmPrecoCompraCentral");
+    const saida = document.getElementById("resultadoSimuladorPrecoMedioCentral");
+
+    if (![qtdAtual, pmAtual, qtdCompra, precoCompra].every(Number.isFinite) ||
+        qtdAtual < 0 || pmAtual < 0 || qtdCompra <= 0 || precoCompra <= 0) {
+      saida.textContent =
+        "Confira os campos: quantidade e preço médio atuais não podem ser negativos; a nova quantidade e o preço da compra devem ser maiores que zero.";
+      return;
+    }
+
+    if (qtdAtual === 0 && pmAtual !== 0) {
+      saida.textContent =
+        "Quando a quantidade atual é zero, informe preço médio atual igual a zero.";
+      return;
+    }
+
+    const custoAtual = qtdAtual * pmAtual;
+    const custoCompra = qtdCompra * precoCompra;
+    const qtdFinal = qtdAtual + qtdCompra;
+    const custoFinal = custoAtual + custoCompra;
+    const pmFinal = custoFinal / qtdFinal;
+
+    saida.textContent = [
+      "Quantidade total após a compra: " +
+        qtdFinal.toLocaleString("pt-BR", {maximumFractionDigits: 8}),
+      "Custo estimado da posição atual: " + dinheiro(custoAtual),
+      "Valor da nova compra: " + dinheiro(custoCompra),
+      "Total investido estimado: " + dinheiro(custoFinal),
+      "",
+      "NOVO PREÇO MÉDIO ESTIMADO: " + dinheiro(pmFinal)
+    ].join("\n");
+  };
+})();
+</script><script>
+(function () {
+  function numero(id) {
+    const campo = document.getElementById(id);
+    return !campo || campo.value.trim() === "" ? NaN : Number(campo.value);
+  }
+
+  function moeda(valor) {
+    return valor.toLocaleString("pt-BR", {style:"currency", currency:"BRL"});
+  }
+
+  window.calcularJurosCompostosCentral = function () {
+    const inicial = numero("jurosValorInicialCentral");
+    const aporte = numero("jurosAporteMensalCentral");
+    const taxaPct = numero("jurosTaxaMensalCentral");
+    const meses = numero("jurosPrazoMesesCentral");
+    const saida = document.getElementById("resultadoJurosCompostosCentral");
+
+    if (![inicial, aporte, taxaPct, meses].every(Number.isFinite) ||
+        inicial < 0 || aporte < 0 || taxaPct < -100 || taxaPct > 100 ||
+        !Number.isInteger(meses) || meses < 1 || meses > 1200) {
+      saida.textContent = "Confira os dados: valores iniciais e aportes não podem ser negativos; a taxa deve ficar entre -100% e 100% ao mês; o prazo deve ser de 1 a 1200 meses.";
+      return;
+    }
+
+    const taxa = taxaPct / 100;
+    let saldo = inicial;
+    for (let i = 0; i < meses; i++) saldo = saldo * (1 + taxa) + aporte;
+
+    const total = inicial + aporte * meses;
+    const rendimento = saldo - total;
+    const anos = Math.floor(meses / 12);
+    const sobra = meses % 12;
+    let prazo = anos ? anos + (anos === 1 ? " ano" : " anos") : "";
+    if (sobra) prazo += (prazo ? " e " : "") + sobra + (sobra === 1 ? " mês" : " meses");
+
+    saida.textContent = [
+      "Prazo: " + prazo,
+      "Total colocado do próprio bolso: " + moeda(total),
+      "Rendimento estimado: " + moeda(rendimento),
+      "",
+      "PATRIMÔNIO PROJETADO: " + moeda(saldo)
+    ].join("\n");
+  };
+})();
+</script><script>
+(function () {
+  const botao = document.getElementById("btnCalcularMetaFinanceiraCentral");
+  if (!botao || botao.dataset.iniciado === "sim") return;
+  botao.dataset.iniciado = "sim";
+
+  const dinheiro = valor => valor.toLocaleString("pt-BR", {
+    style: "currency", currency: "BRL"
+  });
+
+  botao.addEventListener("click", function () {
+    const inicial = Number(document.getElementById("metaValorInicial").value);
+    const objetivo = Number(document.getElementById("metaValorObjetivo").value);
+    const aporte = Number(document.getElementById("metaAporteMensal").value);
+    const taxaPct = Number(document.getElementById("metaTaxaMensal").value);
+    const resultado = document.getElementById("resultadoMetaFinanceiraCentral");
+
+    if (![inicial, objetivo, aporte, taxaPct].every(Number.isFinite) ||
+        inicial < 0 || objetivo <= 0 || aporte < 0 ||
+        taxaPct < 0 || taxaPct > 100) {
+      resultado.textContent = "Confira os valores informados.";
+      return;
+    }
+
+    if (inicial >= objetivo) {
+      resultado.innerHTML = "<strong>Meta já alcançada!</strong><br>Valor atual: " +
+        dinheiro(inicial);
+      return;
+    }
+
+    const taxa = taxaPct / 100;
+    let saldo = inicial;
+    let meses = 0;
+    const limite = 12000;
+
+    while (saldo < objetivo && meses < limite) {
+      saldo = saldo * (1 + taxa) + aporte;
+      meses++;
+      if (!Number.isFinite(saldo)) break;
+    }
+
+    if (saldo < objetivo || !Number.isFinite(saldo)) {
+      resultado.textContent =
+        "Com esses parâmetros, não foi possível projetar o alcance da meta em até 1.000 anos.";
+      return;
+    }
+
+    const totalAportado = inicial + aporte * meses;
+    const rendimento = saldo - totalAportado;
+    const anos = Math.floor(meses / 12);
+    const mesesRestantes = meses % 12;
+    let prazo = "";
+    if (anos > 0) prazo += anos + (anos === 1 ? " ano" : " anos");
+    if (mesesRestantes > 0) {
+      prazo += (prazo ? " e " : "") + mesesRestantes +
+        (mesesRestantes === 1 ? " mês" : " meses");
+    }
+    if (!prazo) prazo = "menos de um mês";
+
+    resultado.innerHTML =
+      "<strong>Prazo estimado: " + prazo + "</strong><br>" +
+      "Meta desejada: " + dinheiro(objetivo) + "<br>" +
+      "Saldo projetado ao atingir a meta: " + dinheiro(saldo) + "<br>" +
+      "Total colocado do próprio bolso: " + dinheiro(totalAportado) + "<br>" +
+      "Rendimento estimado: " + dinheiro(rendimento);
+  });
+})();
+</script><script>(function(){
+ const botao=document.getElementById("btnCalcularIndependenciaCentral");
+ if(!botao)return;
+ botao.addEventListener("click",function(){
+   const renda=Number(document.getElementById("independenciaRendaMensalCentral").value);
+   const taxaPct=Number(document.getElementById("independenciaTaxaMensalCentral").value);
+   const out=document.getElementById("resultadoIndependenciaFinanceiraCentral");
+   const moeda=n=>Number(n).toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
+   if(!Number.isFinite(renda)||!Number.isFinite(taxaPct)||renda<=0||taxaPct<=0||taxaPct>100){out.textContent="Informe renda mensal maior que zero e taxa mensal entre 0% e 100%.";return;}
+   const capital=renda/(taxaPct/100);
+   out.innerHTML="<strong>Patrimônio estimado necessário: "+moeda(capital)+"</strong><br>Renda mensal desejada: "+moeda(renda)+"<br>Taxa líquida mensal informada: "+taxaPct.toLocaleString("pt-BR")+"%<br><span class='presente-nota'>Cálculo simplificado: renda mensal ÷ taxa líquida mensal. Não considera inflação futura, variação de rendimento ou mudanças nas despesas.</span>";
+ });
+})();</script><script>
+/* Simulador de Investimentos — módulo isolado da Central.
+   Não lê nem altera carteira, histórico, proventos ou cálculos existentes. */
+(() => {
+"use strict";
+if (document.getElementById("si-botao")) return;
+
+const estilo = document.createElement("style");
+estilo.textContent = `
+#si-botao{position:fixed;left:18px;bottom:22px;z-index:99990;background:#172a35;color:#f0cc83;border:1px solid #b89451;border-radius:12px;padding:12px 16px;font-weight:700;cursor:pointer;box-shadow:0 4px 18px #0004}
+#si-painel{position:fixed;inset:4vh 3vw;z-index:99991;background:#101b24;color:#f1f5f7;border:1px solid #b89451;border-radius:16px;padding:20px;overflow:auto;box-shadow:0 10px 50px #0009;font:14px system-ui,sans-serif}
+#si-painel[hidden]{display:none}#si-painel *{box-sizing:border-box} #si-calcular{position:relative;z-index:1000000;pointer-events:auto;cursor:pointer;touch-action:manipulation} #si-painel .si-acoes{position:relative;z-index:999999;pointer-events:auto}
+#si-painel h2,#si-painel h3{color:#f0cc83;margin:8px 0 14px}
+#si-fechar{float:right;background:#34434d;color:white;border:0;border-radius:8px;padding:8px 12px;cursor:pointer}
+.si-grade{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:12px}
+.si-campo{display:flex;flex-direction:column;gap:5px}.si-campo label{color:#c4d0d7}
+.si-campo input,.si-campo select{width:100%;padding:10px;border-radius:8px;border:1px solid #53636c;background:#1d2c36;color:white}
+.si-acoes{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0}
+.si-acoes button{padding:10px 14px;border-radius:8px;border:1px solid #b89451;background:#263b47;color:#f0cc83;cursor:pointer}
+.si-resultados{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.si-card{border:1px solid #52616a;border-radius:12px;padding:14px;background:#192832}
+.si-card.si-melhor{border-color:#e0bd71}.si-valor{font-size:22px;font-weight:750;margin:8px 0;color:#f0cc83}
+.si-linha{display:flex;justify-content:space-between;gap:10px;padding:5px 0;border-bottom:1px solid #ffffff12}
+.si-nota{color:#bac6cd;font-size:12px;line-height:1.5;margin-top:16px}
+@media(max-width:600px){#si-painel{inset:1vh 1vw;padding:13px}#si-botao{right:10px;bottom:10px}}
+`;
+document.head.appendChild(estilo);
+
+const botao = document.createElement("button");
+botao.id = "si-botao";
+botao.type = "button";
+botao.textContent = "▤ Simulador de Investimentos";
+botao.setAttribute("aria-label","Abrir Simulador de Investimentos");
+
+const painel = document.createElement("section");
+painel.id = "si-painel";
+painel.hidden = true;
+painel.setAttribute("role","dialog");
+painel.setAttribute("aria-modal","true");
+painel.setAttribute("aria-label","Simulador de Investimentos");
+painel.innerHTML = `
+<button id="si-fechar" type="button">Fechar ✕</button>
+<h2>Simulador de Investimentos</h2>
+<p>Compare patrimônio líquido e poder de compra futuro sem alterar os dados da sua carteira.</p>
+<h3>Seu plano</h3>
+<div class="si-grade">
+<div class="si-campo"><label for="si-inicial">Investimento inicial (R$)</label><input id="si-inicial" type="number" min="0" step="100" value="10000"></div>
+<div class="si-campo"><label for="si-aporte">Aporte mensal (R$)</label><input id="si-aporte" type="number" min="0" step="50" value="500"></div>
+<div class="si-campo"><label for="si-anos">Prazo (anos)</label><input id="si-anos" type="number" min="1" max="50" value="20"></div>
+<div class="si-campo"><label for="si-inflacao">Inflação anual (%)</label><input id="si-inflacao" type="number" min="0" max="100" step=".1" value="4.5"></div>
+<div class="si-campo"><label for="si-cenario">Cenário do CDI</label><select id="si-cenario"><option value="-2">CDI desfavorável (-2 p.p.)</option><option value="0" selected>Base</option><option value="2">CDI favorável (+2 p.p.)</option></select></div>
+</div>
+
+<h3>CDI de referência</h3>
+<div class="si-grade">
+  <div class="si-campo">
+    <label for="si-cdi">CDI anual estimado (%)</label>
+    <input id="si-cdi" type="number" min="0" max="100" step=".1" value="10.5">
+  </div>
+</div>
+<h3>Escolha os investimentos para comparar</h3>
+<p class="si-nota">Selecione de 2 a 6 opções. Você pode repetir o mesmo tipo com taxas diferentes.</p>
+<div class="si-campo">
+<label for="si-quantidade">Quantidade de investimentos</label>
+<select id="si-quantidade">
+<option value="2">2 investimentos</option>
+<option value="3" selected>3 investimentos</option>
+<option value="4">4 investimentos</option>
+<option value="5">5 investimentos</option>
+<option value="6">6 investimentos</option>
+</select>
+</div>
+<div id="si-opcoes" class="si-grade"></div>
+<p class="si-nota">CDB, RDB, LCI e LCA usam percentual do CDI. Tesouro Selic e Prefixado usam taxa anual nominal. Tesouro IPCA+ usa taxa real acima da inflação, em modelo simplificado.</p>
+<div class="si-acoes"><button id="si-calcular" type="button">Calcular comparação</button></div>
+<div id="si-saida" aria-live="polite"></div>
+<p class="si-nota">Estimativa matemática, não recomendação financeira. Considera taxas constantes e aportes no fim do mês. IR regressivo estimado para cada período de aplicação do RDB. Nos vencimentos intermediários, o modelo presume reinvestimento do saldo líquido à mesma taxa, sem garantia de renovação nas mesmas condições. Não inclui taxas de custódia, IOF, spreads, risco de crédito, liquidez, marcação a mercado nem mudanças legais. Taxas e regras devem ser confirmadas para cada produto. O simulador não consulta cotações ao vivo.</p>`;
+document.body.append(botao, painel);
+
+const el = id => document.getElementById("si-"+id);
+const numero = id => Number(el(id).value);
+const dinheiro = n => n.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
+const pct = n => (n*100).toLocaleString("pt-BR",{maximumFractionDigits:2})+"%";
+
+
+function renderOpcoes() {
+  const tipos=[
+    ["cdb","CDB (% CDI)",100],["rdb","RDB (% CDI)",110],
+    ["lci","LCI (% CDI)",95],["lca","LCA (% CDI)",95],
+    ["selic","Tesouro Selic (% a.a.)",10.5],
+    ["prefixado","Tesouro Prefixado (% a.a.)",12],
+    ["ipca","Tesouro IPCA+ (% real)",6]];
+  const rotuloTaxa = tipo =>
+    ["cdb","rdb","lci","lca"].includes(tipo) ? "Taxa (% do CDI)" :
+    tipo==="ipca" ? "Taxa real anual (%)" :
+    "Taxa nominal anual (%)";
+  const area=el("opcoes");
+  const anteriores=Array.from(area.querySelectorAll("[data-opcao]")).map(c=>[
+    c.querySelector("select").value,
+    c.querySelector("[data-taxa]").value,
+    c.querySelector("[data-venc]").value
+  ]);
+  area.innerHTML="";
+  for(let i=0;i<6;i++){
+    const tipo=anteriores[i]?.[0]||tipos[i][0];
+    const taxa=anteriores[i]?.[1]??(tipos.find(t=>t[0]===tipo)||tipos[0])[2];
+    const venc=anteriores[i]?.[2]??0;
+    const c=document.createElement("article");
+    c.className="si-card"; c.dataset.opcao=i+1;
+    c.innerHTML=`<h3>Investimento ${i+1}</h3>
+    <div class="si-campo"><label>Tipo de investimento</label><select data-tipo>${tipos.map(t=>`<option value="${t[0]}" ${t[0]===tipo?"selected":""}>${t[1]}</option>`).join("")}</select></div>
+    <div class="si-campo"><label data-taxa-label>${rotuloTaxa(tipo)}</label><input data-taxa type="number" min="0.1" max="300" step=".1" value="${taxa}"></div>
+    <div class="si-campo"><label>Vencimento (meses; 0 = sem vencimento intermediário)</label><input data-venc type="number" min="0" max="600" step="1" value="${venc}"></div>`;
+    c.style.display = i < numero("quantidade") ? "" : "none";
+    c.querySelector("[data-tipo]").addEventListener("change", ev=>{
+      const escolhido=tipos.find(t=>t[0]===ev.target.value);
+      c.querySelector("[data-taxa]").value=escolhido[2];
+      c.querySelector("[data-taxa-label]").textContent=rotuloTaxa(ev.target.value);
+      calcular();
+    });
+    area.appendChild(c);
+  }
+}
+el("quantidade").addEventListener("change",()=>{el("opcoes").querySelectorAll("[data-opcao]").forEach((c,i)=>{c.style.display=i<numero("quantidade")?"":"none";});calcular();});
+renderOpcoes();
+
+function calcular(){
+  const inicial=numero("inicial"),aporte=numero("aporte"),anos=numero("anos");
+  const inflacao=numero("inflacao")/100,cdi=Math.max(0,numero("cdi")/100+numero("cenario")/100);
+  const opcoes=Array.from(el("opcoes").querySelectorAll("[data-opcao]")).filter(c=>c.style.display!=="none").map(c=>({
+    tipo:c.querySelector("[data-tipo]").value,
+    taxa:Number(c.querySelector("[data-taxa]").value),
+    venc:Number(c.querySelector("[data-venc]").value)
+  }));
+  const saida=el("saida");
+
+  if(!Number.isFinite(inicial+aporte+anos+inflacao+cdi)||inicial<0||aporte<0||anos<1||anos>50||inflacao<0||inflacao>=1||opcoes.length<2||opcoes.some(o=>!Number.isFinite(o.taxa+o.venc)||o.taxa<=0||o.taxa>300||!Number.isInteger(o.venc)||o.venc<0||o.venc>600)){
+    saida.textContent="Confira os valores, as taxas e os vencimentos.";return;
+  }
+  const meses=Math.round(anos*12),aportado=inicial+aporte*meses;
+  const nomes={cdb:"CDB",rdb:"RDB",lci:"LCI",lca:"LCA",selic:"Tesouro Selic",prefixado:"Tesouro Prefixado",ipca:"Tesouro IPCA+"};
+  const ir=d=>d<=180?.225:d<=360?.20:d<=720?.175:.15; // IR regressivo: 22,5%, 20%, 17,5%, 15%
+  const dinheiro=n=>Number.isFinite(n)?n.toLocaleString("pt-BR",{style:"currency",currency:"BRL"}):"Não calculado";
+  const pct=n=>(n*100).toLocaleString("pt-BR",{maximumFractionDigits:2})+"%";
+  const resultados=opcoes.map((o,indice)=>{
+    const bancario=["cdb","rdb","lci","lca"].includes(o.tipo);
+    const isento=["lci","lca"].includes(o.tipo);
+    const real=o.tipo==="ipca";
+    const taxa=bancario?Math.pow(1+cdi,o.taxa/100)-1:real?(1+inflacao)*(1+o.taxa/100)-1:o.taxa/100;
+    const mensal=Math.pow(1+taxa,1/12)-1;
+    let bruto=0,liquido=0,imposto=0;
+    for(let m=0;m<=meses;m++){
+      const capital=m===0?inicial:aporte;if(!capital)continue;
+      let restante=meses-m,saldo=capital;
+      bruto+=capital*Math.pow(1+mensal,restante);
+      while(restante>0){
+        const periodo=o.venc?Math.min(o.venc,restante):restante;
+        const montante=saldo*Math.pow(1+mensal,periodo);
+        const tributo=isento?0:Math.max(0,montante-saldo)*ir(periodo*365.2425/12);
+        imposto+=tributo;
+        saldo=montante-tributo;
+        restante-=periodo;
+      }
+      liquido+=saldo;
+    }
+    const poder=liquido/Math.pow(1+inflacao,anos);
+    return {opcao:indice+1,nome:nomes[o.tipo],taxa:o.taxa,tipo:o.tipo,bruto,liquido,imposto,poder,ganho:liquido-aportado,aportado,venc:o.venc,anual:taxa};
+  }).sort((a,b)=>b.poder-a.poder);
+  saida.innerHTML=`<h3>Comparação de ${resultados.length} investimentos</h3><p>CDI de referência no cenário: <strong>${pct(cdi)}</strong>.</p><div class="si-resultados">${resultados.map((r,i)=>`<article class="si-card ${i===0?"si-melhor":""}"><h3>${i===0?"★ ":""}Opção ${r.opcao}: ${r.nome} — ${r.taxa}% ${["cdb","rdb","lci","lca"].includes(r.tipo)?"do CDI":(r.tipo==="ipca"?"real":"a.a.")}</h3><div class="si-linha"><span>Saldo líquido estimado</span></div><div class="si-valor">${dinheiro(r.liquido)}</div><div class="si-linha"><span>Total aportado</span><strong>${dinheiro(r.aportado)}</strong></div><div class="si-linha"><span>Saldo bruto estimado</span><strong>${dinheiro(r.bruto)}</strong></div><div class="si-linha"><span>IR estimado</span><strong>${dinheiro(r.imposto)}</strong></div><div class="si-linha"><span>Ganho líquido</span><strong>${dinheiro(r.ganho)}</strong></div><div class="si-linha"><span>Poder de compra de hoje</span><strong>${dinheiro(r.poder)}</strong></div><div class="si-linha"><span>Taxa anual estimada</span><strong>${pct(r.anual)}</strong></div><div class="si-linha"><span>Vencimento</span><strong>${r.venc?r.venc+" meses":"Sem vencimento intermediário"}</strong></div></article>`).join("")}</div><p><strong>Maior poder de compra estimado entre as opções comparadas:</strong> Opção ${resultados[0].opcao} — ${resultados[0].nome}, ${dinheiro(resultados[0].poder)} em valores de hoje.</p><p class="si-nota">Modelo simplificado, sem cotações ao vivo, custódia, IOF ou marcação a mercado. LCI/LCA consideradas isentas de IR; demais opções usam aproximação regressiva por período de aplicação. Confirme taxas e regras vigentes. O resultado é estimativa, não recomendação financeira.</p>`
+}
+
+botao.addEventListener("click",()=>{painel.hidden=false;});
+el("fechar").addEventListener("click",()=>{painel.hidden=true;});
+
+var botaoFeedback=el("calcular");
+var textoBotaoOriginal=botaoFeedback.textContent.trim()||"Calcular comparação";
+botaoFeedback.onclick=function(e){
+  e.preventDefault();
+  if(botaoFeedback.disabled)return;
+  botaoFeedback.disabled=true;
+  botaoFeedback.classList.remove("si-calculado","si-erro");
+  botaoFeedback.classList.add("si-calculando");
+  botaoFeedback.textContent="⏳ CALCULANDO SIMULAÇÃO...";
+  botaoFeedback.setAttribute("aria-live","polite");
+  setTimeout(function(){
+    try{
+      calcular();
+      botaoFeedback.classList.remove("si-calculando","si-erro");
+      botaoFeedback.classList.add("si-calculado");
+      botaoFeedback.textContent="✓ SIMULAÇÃO CONCLUÍDA";
+      botaoFeedback.setAttribute("aria-label","Simulação executada. Altere os dados ou clique para recalcular.");
+    }catch(erro){
+      botaoFeedback.classList.remove("si-calculando","si-calculado");
+      botaoFeedback.classList.add("si-erro");
+      botaoFeedback.textContent="⚠ ERRO NO CÁLCULO";
+      console.error("Erro no simulador de investimentos:",erro);
+    }finally{
+      botaoFeedback.disabled=false;
+    }
+  },40);
+};
+var painelFeedback=document.getElementById("si-painel");
+if(painelFeedback){
+  ["input","change"].forEach(function(tipoEvento){
+    painelFeedback.addEventListener(tipoEvento,function(evento){
+      if(evento.target.matches("input,select,textarea")){
+        botaoFeedback.classList.remove("si-calculando","si-calculado","si-erro");
+        botaoFeedback.textContent=textoBotaoOriginal;
+        botaoFeedback.removeAttribute("aria-label");
+        botaoFeedback.disabled=false;
+      }
+    });
+  });
+}
+
+painel.addEventListener("keydown",e=>{if(e.key==="Escape")painel.hidden=true;});
+calcular();
+})();
+</script></body></html>

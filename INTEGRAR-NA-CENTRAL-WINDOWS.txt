@@ -1,0 +1,9 @@
+INTEGRAR SEM SUBSTITUIR A CENTRAL
+
+1. Faça backup da pasta do projeto Windows existente.
+2. Copie ferramentas-financeiras.html para a mesma pasta de central-investimentos.html.
+3. Acrescente ao menu existente um link: <a href="ferramentas-financeiras.html">Ferramentas e Simuladores</a>
+4. Se o servidor Flask não servir arquivos HTML adicionais na raiz, será necessário acrescentar uma rota para servir este arquivo; não substitua o servidor existente sem verificar sua estrutura.
+5. Teste a página e cada botão no Windows antes de publicar.
+
+Este pacote não contém a Central completa e não substitui os arquivos existentes.
